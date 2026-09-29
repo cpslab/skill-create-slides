@@ -1,0 +1,127 @@
+{
+  "name": "research-presentation-slides",
+  "version": "1.1.0",
+  "packaged_on": "2026-09-29",
+  "visual_example": {
+    "kind": "fictional research with synthetic data",
+    "slide_count": 6,
+    "presentations_skill_version": "26.904.11930",
+    "structural_check": "passed",
+    "final_pptx_reimport_and_all_slide_visual_review": "performed",
+    "native_elements": [
+      "text",
+      "shapes",
+      "connectors",
+      "table",
+      "chart with embedded workbook"
+    ],
+    "powerpoint_application_editing": "not_performed",
+    "known_preview_difference": "Renderer displays square markers as circles and dashed lines as solid; the PPTX retains the requested marker and dash properties."
+  },
+  "files": {
+    "SKILL.md": {
+      "bytes": 10491,
+      "sha256": "3c182e539da851250b420109595860d5e00d7c587e47e1053a1cbf5f0558db38"
+    },
+    "agents/openai.yaml": {
+      "bytes": 187,
+      "sha256": "df245d5a607ad2141adb634a8afa8e84c7d7cf6a61d3361dec4fb6f46648b1dd"
+    },
+    "assets/NewmajimeModeLogoSmall.png": {
+      "bytes": 5890,
+      "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+    },
+    "assets/example-source.org": {
+      "bytes": 3565,
+      "sha256": "988a585f5e3016a3b96c4d86122c8a1e60863703abd185dc5ca76d7c781e1871"
+    },
+    "assets/input-brief.org": {
+      "bytes": 2337,
+      "sha256": "32d325ac03f3596d6ffe8564ac0521dd52dff639c3fcbe3d0a4ad851aa9515ce"
+    },
+    "assets/quality-review.org": {
+      "bytes": 1421,
+      "sha256": "2cd2f53d1d20b86f911d6399c58827ee95eff74a2538848e09c3403f77f7d2d2"
+    },
+    "assets/visual-reference/build.mjs": {
+      "bytes": 11913,
+      "sha256": "80d92ef5b244813eee52c699921b9b7d4a0fc562c581fc955d33e432d8a2c813"
+    },
+    "assets/visual-reference/contact-sheet.png": {
+      "bytes": 168667,
+      "sha256": "b4e2f357fbd0e9db23f616f62542f287a7f2647db1df1db8bde6f140fe2a5a93"
+    },
+    "assets/visual-reference/cps-layout-reference.pptx": {
+      "bytes": 68795,
+      "sha256": "3c4618ae03ab92ce555cec6b9964427c8b1e6d5f9fbaf284667d164d689aacae"
+    },
+    "assets/visual-reference/slide-1.png": {
+      "bytes": 84215,
+      "sha256": "1ac6b9c3ccbd73ec2def24066a7db10995438d879473a855eb9c8bf132c48f03"
+    },
+    "assets/visual-reference/slide-2.png": {
+      "bytes": 37180,
+      "sha256": "f97e1aa4dc375c80c1e5067e61fb291ad8e86079fc0d89bd4e4f52b5fc3c8434"
+    },
+    "assets/visual-reference/slide-3.png": {
+      "bytes": 102527,
+      "sha256": "d8d4df1600e7a057c0af8cc7d281948343db12f2f20d7e0e558982b2aa6efa3e"
+    },
+    "assets/visual-reference/slide-4.png": {
+      "bytes": 145429,
+      "sha256": "2cbb2be85da97d4027ce7f3e37c9e5c6f151f66b8e0a945d9fcbd8ee76724145"
+    },
+    "assets/visual-reference/slide-5.png": {
+      "bytes": 118168,
+      "sha256": "c5cb34a274666c3379c06f5ff64904636d0a1f2af64408190cc506e363066c28"
+    },
+    "assets/visual-reference/slide-6.png": {
+      "bytes": 135129,
+      "sha256": "b2190ad0e39acf457cb1c7fd8b3f4f091a7cc2d5046ee72e0b8f95737465b41e"
+    },
+    "assets/workflow-template.org": {
+      "bytes": 2853,
+      "sha256": "99f4d8ce1b05bf195719a960b06d934aa85b2bcd2934783650bf533ca4463770"
+    },
+    "references/cps-lab-style.md": {
+      "bytes": 17531,
+      "sha256": "8fb3f8f59f5f14e2e7e73743e9f407dd9aa0dbdd642e7c8a6c89207bc703c425"
+    },
+    "references/history.md": {
+      "bytes": 3085,
+      "sha256": "0698c6a764cad328b47e73e63aec93a6e3172b3d4ee980220340985bb0ca4cfd"
+    },
+    "references/planning.md": {
+      "bytes": 7224,
+      "sha256": "b2ab267c623e9a28bab65c7f4eea7013f6af0fce2424393c31bdc61605ba39ae"
+    },
+    "references/production.md": {
+      "bytes": 10285,
+      "sha256": "3e415c501c5e9abd13498e85246667cb0dff0ada97f5326cc76deeacadbbefd9"
+    },
+    "references/quality-standard.md": {
+      "bytes": 7198,
+      "sha256": "6619e9f03a3f4f822f775091728ee80b98bd47e3189eb4744edd6115fbb83cdc"
+    },
+    "references/sharing.md": {
+      "bytes": 5462,
+      "sha256": "57adc0e6f69897bad5377d21dbd7bbeb95f7d7a83d2c9519f6a079e801a47eb2"
+    },
+    "references/visual-reference.md": {
+      "bytes": 4869,
+      "sha256": "9494ab078641a655d156df9cd1c418d34a482ac7fd10de369ac7808a60902ada"
+    },
+    "references/worked-example.md": {
+      "bytes": 8727,
+      "sha256": "91d480b5dcf1634cd2fd33f8179d99ae03d70b3306fad727455c9a579faf265d"
+    },
+    "scripts/check_pptx.py": {
+      "bytes": 8234,
+      "sha256": "1ac2a8b4d29f5a7c398a3211cf8044a5e90621a54f5f3051438682fc676bfa30"
+    },
+    "scripts/init_presentation.py": {
+      "bytes": 1469,
+      "sha256": "d2dd239da6d1dd2547a036f351aa46a2aa807a8c082389b20b50b8498018a720"
+    }
+  }
+}
