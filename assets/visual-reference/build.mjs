@@ -34,6 +34,9 @@ if (retained.length !== 3 || maxAll !== 1120 || maxKept !== 970 || aboveAll !== 
 }
 const font = 'Noto Sans JP';
 const key = '#9BBB59';
+const accent = '#38761D';
+const footerLine = process.env.FOOTER_LINE ?? 'on';
+if (!['on','off'].includes(footerLine)) throw new Error('FOOTER_LINE must be on or off.');
 const black = '#17202A';
 const gray = '#59636E';
 const pale = '#EFF5E4';
@@ -58,20 +61,29 @@ function logoAt(slide, x, y, width) {
 function base(page, divider=false) {
   const slide = pres.slides.add();
   slide.background.fill = '#FFFFFF';
-  if (divider) logoAt(slide, 808.128, 23.136, 116.256);
+  if (divider) logoAt(slide, 808.128, 52.8, 116.256);
   else {
-    rect(slide,'footer-line',0,484.32,960,5.664,key);
+    if (footerLine === 'on') rect(slide,'footer-line',0,484.32,960,5.664,key);
     logoAt(slide,30.816,504.288,85.92);
   }
   const pageNumber=txt(slide,'page',String(page),714.048,500.544,223.968,28.8,18.667,false,black,'right');
   pageNumber.text.style={typeface:'Arial',fontSize:18.667,color:black,alignment:'right',verticalAlignment:'middle',insets:{left:0,right:0,top:0,bottom:0}};
   txt(slide,'fictional-disclosure','架空作例・合成データ',150,501,500,28,14,false,gray);
-  slide.speakerNotes.textFrame.setText('架空研究の教材。全数値は assets/example-source.org の合成データであり、実測値ではない。CPS LABの視覚スタイルと編集可能性を示す8種類のレイアウト見本。表紙と目次の素材枠は配置見本であり、実証写真や実動画ではない。研究発表の推奨枚数・章配分ではない。');
+  slide.speakerNotes.textFrame.setText('架空研究の教材。全数値は assets/example-source.org の合成データであり、実測値ではない。CPS LABの視覚スタイルと編集可能性を示す9種類のレイアウト見本。表紙と目次の素材枠は配置見本であり、実証写真や実動画ではない。研究発表の推奨枚数・章配分ではない。');
+  if(page>=3) {
+    const chapter={3:'目次',4:'03 ここまでの結果',5:'02 しくみと評価方法',6:'03 ここまでの結果',7:'03 ここまでの結果',8:'まとめ',9:'サマリ'}[page];
+    txt(slide,`running-chapter-${page}`,chapter,48,11.52,268.8,32,16,false,accent);
+    txt(slide,`running-title-${page}`,'室内環境ログの記録間隔',336,11.52,576,32,16,false,accent,'right');
+  }
   return slide;
 }
+function references(slide) {
+  txt(slide,'page-reference','[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.',48,443.52,864,34.56,12,false,gray);
+  slide.speakerNotes.textFrame.setText('架空研究・合成データの教材。実測ではない。表紙・目次の素材枠は配置見本。\n[1] assets/example-source.org。番号は全ページ共通。この教材入力は実在論文ではない。');
+}
 function heading(slide, title, message) {
-  txt(slide,'title',title,48,11.52,864,42,36,true);
-  if (message) txt(slide,'message',message,48,65.28,864,72.96,30.667,true);
+  txt(slide,'title',title,48,49.92,864,42,36,true);
+  if (message) txt(slide,'message',message,48,96,864,57.6,30.667,true);
 }
 
 // 1. FIT cover: title band, two author bands, a clearly labelled photo slot.
@@ -92,7 +104,9 @@ function heading(slide, title, message) {
   txt(s,'affiliation','CPS LAB スタイル見本',90,300,780,44,24,false,'#FFFFFF','center');
   txt(s,'author','架空の発表者',90,361,780,42,24,false,'#FFFFFF','center');
   txt(s,'media-placeholder','全面を動画・静止ポスターに置換する配置見本',48,450,864,34,24,false,'#FFFFFF','center');
-  txt(s,'fictional-disclosure','架空作例／静止レイアウト／実動画は未同梱',48,495,864,26,16,false,'#DDE2E5','center');
+  txt(s,'fictional-disclosure','架空作例／静止レイアウト／実動画は未同梱',150,495,500,26,16,false,'#DDE2E5','center');
+  const pn=txt(s,'page','2',714.048,500.544,223.968,28.8,18.667,false,'#FFFFFF','right');
+  pn.text.style={typeface:'Arial',fontSize:18.667,color:'#FFFFFF',alignment:'right',verticalAlignment:'middle',insets:{left:0,right:0,top:0,bottom:0}};
   s.speakerNotes.textFrame.setText('中間発表型表紙の静止レイアウト見本。背景は素材枠で、動画も静止ポスターも未提供・未同梱。利用者の動画を指定された加工・無音・自動再生・ループ・次ページでの停止条件で埋め込む。対象アプリでの再生検証は別工程。本文のデザインはFIT型表紙を選んでも同じ。');
 }
 // 3. Four-chapter 2x2 contents. Slots show image placement, not fictional evidence.
@@ -100,14 +114,14 @@ function heading(slide, title, message) {
   const s=base(3);heading(s,'目次','研究のねらい、しくみ、ここまでの結果、今後の展望');
   const items=[['01 研究のねらい','利用場面の画像枠'],['02 しくみと評価方法','手法・実機の画像枠'],['03 ここまでの結果','評価・結果図の画像枠'],['04 今後の展望','構想図の画像枠（計画）']];
   for(let i=0;i<items.length;i++){
-    const x=48+(i%2)*456,y=157+Math.floor(i/2)*145;
-    txt(s,`toc-label-${i}`,items[i][0],x,y,408,37,28,true);
-    rect(s,`toc-image-slot-${i}`,x,y+44,408,88,'#F3F5F1','#B5BDB2',1);
-    txt(s,`toc-image-label-${i}`,items[i][1],x+10,y+58,388,50,24,false,gray,'center');
+    const x=48+(i%2)*456,y=169+Math.floor(i/2)*132;
+    txt(s,`toc-label-${i}`,items[i][0],x,y,408,32,24,true);
+    rect(s,`toc-image-slot-${i}`,x,y+38,408,74,'#F3F5F1','#B5BDB2',1);
+    txt(s,`toc-image-label-${i}`,items[i][1],x+10,y+43,388,64,24,false,gray,'center');
   }
   rect(s,'toc-rule-vertical',480,164,1,265,'#D7DCD5');
   rect(s,'toc-rule-horizontal',48,295,864,1,'#D7DCD5');
-  txt(s,'slot-disclosure','画像は各章の資料から選ぶ。ここでは配置枠のみを示す',48,444,864,28,24,false,gray);
+  txt(s,'slot-disclosure','画像は各章の資料から選ぶ。ここでは配置枠のみを示す',48,442,864,28,20,false,gray);
 }
 // 4. Midterm divider: chapter and guide at the top, upper-right logo, white space.
 {
@@ -119,7 +133,7 @@ function heading(slide, title, message) {
 // 5. Native editable diagram, showing an operation rather than a causal claim.
 {
   const s=base(5);
-  heading(s,'同じ入力の間引き','全13点から、0・5・10分の3点だけを保持する');
+  heading(s,'同じ入力の間引き','全13点から、0・5・10分の3点だけを保持する [1]');
   txt(s,'all-label','1分間隔の入力',48,180,280,36,24,true);
   txt(s,'kept-label','5分間隔で保持',48,325,280,36,24,true);
   const start=340, step=42;
@@ -128,24 +142,25 @@ function heading(slide, title, message) {
     const inputPoint=rect(s,`input-${i}`,x,198,18,18,'#666666','none',0,'ellipse');
     txt(s,`minute-${i}`,String(i),x-10,165,38,26,18.667,false,gray,'center');
     if(data[i].kept) {
-      const retainedPoint=rect(s,`retained-${i}`,x-2,342,22,22,key,black,1.2);
+      const retainedPoint=rect(s,`retained-${i}`,x-2,342,22,22,accent,black,1.2);
       s.shapes.connect(inputPoint,retainedPoint,
         {kind:'straight',fromSide:'bottom',toSide:'top',line:{fill:gray,width:1.2},tail:{type:'triangle',width:'sm',length:'sm'}});
     }
   }
   txt(s,'axis-unit','時刻 [分]',794,266,95,28,18.667,false,gray,'right');
-  txt(s,'arrow-meaning','矢印は「保持する点」の対応',340,403,510,30,21.333,false,gray);
-  txt(s,'source-note','合成系列1例／開始時刻0分／間引き処理だけを確認',48,440,864,32,24,false,gray);
+  txt(s,'arrow-meaning','矢印は「保持する点」の対応',340,377,510,26,18.667,false,gray);
+  txt(s,'source-note','合成系列1例／開始時刻0分／間引き処理だけを確認',48,410,864,28,20,false,gray);
+  references(s);
 }
 // 6. Native scatter chart with complete literal data and an embedded workbook.
 {
   const s=base(6);
-  heading(s,'この例では高い値が記録に残らない','5分間隔の保持点には、1000 ppmを超える値がない');
+  heading(s,'この例では高い値が記録に残らない','5分間隔の保持点には、1000 ppmを超える値がない [1]');
   const chart=s.charts.add('scatter',{
-    position:{left:46,top:155,width:652,height:277},
+    position:{left:46,top:165,width:652,height:242},
     series:[
       {name:'1分間隔 (小点)',xValues:data.map(d=>d.t),values:data.map(d=>d.v),fill:'#666666',line:{fill:'none',width:0},marker:{symbol:'circle',size:7}},
-      {name:'5分間隔 (大点)',xValues:retained.map(d=>d.t),values:retained.map(d=>d.v),fill:key,line:{fill:'none',width:0},marker:{symbol:'square',size:12}},
+      {name:'5分間隔 (大点)',xValues:retained.map(d=>d.t),values:retained.map(d=>d.v),fill:accent,line:{fill:'none',width:0},marker:{symbol:'square',size:12}},
       {name:'説明用の任意閾値',xValues:[0,12],values:[1000,1000],line:{fill:'#777777',width:1.4,style:'dashed'},marker:{symbol:'none'}},
     ],
     scatterOptions:{style:'lineWithMarkers'},
@@ -157,26 +172,28 @@ function heading(slide, title, message) {
   applyPresentationChartFont(chart,{fontFamily:font});
   txt(s,'maximum-label','保持最大値',724,187,190,30,24,true);
   txt(s,'all-max',`全13点\n${maxAll} ppm`,724,234,190,74,25.333,false);
-  txt(s,'kept-max',`保持3点\n${maxKept} ppm`,724,335,190,74,25.333,true);
-  txt(s,'condition','合成系列1例／開始時刻0分／閾値は安全基準を表さない',48,439.68,864,32.64,24,false,gray);
+  txt(s,'kept-max',`保持3点\n${maxKept} ppm`,724,335,190,74,25.333,true,accent);
+  txt(s,'condition','合成系列1例／開始時刻0分／閾値は安全基準を表さない',48,410,864,28,20,false,gray);
+  references(s);
 }
 // 7. Native table preserves units and scope without implying battery savings.
 {
   const s=base(7);
-  heading(s,'記録量と保持された値','点数の減少と、残った値を分けて見る');
-  const table=s.tables.add({rows:4,columns:3,left:48,top:184,width:864,height:238,
+  heading(s,'記録量と保持された値','点数の減少と、残った値を分けて見る [1]');
+  const table=s.tables.add({rows:4,columns:3,left:48,top:174,width:864,height:228,
     columnWidths:[412,226,226],values:[['比較項目','1分間隔','5分間隔'],['保持点数',String(data.length),String(retained.length)],['保持最大値 [ppm]',String(maxAll),String(maxKept)],['1000 ppm超の記録点数',String(aboveAll),String(aboveKept)]]});
   table.borders.assign({fill:'#CCCCCC',width:1,style:'solid'});
   table.cells.block({row:0,column:0,rowCount:4,columnCount:3}).assign({textStyle:{typeface:font,fontSize:24,color:black},margins:{left:16,right:16,top:8,bottom:8},anchor:'center'});
   for(let r=0;r<4;r++)for(let c=0;c<3;c++){
     const cell=table.getCell(r,c);cell.fill=r===0?pale:'#FFFFFF';
-    cell.text.style={typeface:font,fontSize:24,bold:r===0 || c===2,color:black,alignment:c===0?'left':'center',verticalAlignment:'middle'};
+    cell.text.style={typeface:font,fontSize:24,bold:r===0 || c===2,color:c===2?accent:black,alignment:c===0?'left':'center',verticalAlignment:'middle'};
   }
-  txt(s,'scope','合成データからの計算。電力・健康リスクは未評価',48,439.68,864,32.64,24,false,gray);
+  txt(s,'scope','合成データからの計算。電力・健康リスクは未評価',48,410,864,28,20,false,gray);
+  references(s);
 }
 // 8. Summary: four flat rows in the same chapter order as the contents.
 {
-  const s=base(8);heading(s,'まとめ','記録点数と、残る変化を併せて確かめる');
+  const s=base(8);heading(s,'まとめ','記録点数と、残る変化を併せて確かめる [1]');
   const rows=[
     ['01 研究のねらい','記録点を減らすとき、短い変化が残るかを問う'],
     ['02 しくみと評価方法','同じ合成系列を、全13点と保持3点で比較した'],
@@ -184,11 +201,24 @@ function heading(slide, title, message) {
     ['04 今後の展望','波形・開始時刻を変え、実機条件で確かめる計画'],
   ];
   rows.forEach(([label,body],i)=>{
-    const y=156+i*69;
-    txt(s,`summary-label-${i}`,label,48,y,279.75,62,24,true);
-    txt(s,`summary-body-${i}`,body,345.75,y,566.25,62,24,false);
-    if(i<3)rect(s,`summary-rule-${i}`,48,y+64.5,864,1,'#D7DCD5');
+    const y=170+i*64;
+    txt(s,`summary-label-${i}`,label,48,y,279.75,58,24,true,accent);
+    txt(s,`summary-body-${i}`,body,345.75,y,566.25,58,24,false);
+    if(i<3)rect(s,`summary-rule-${i}`,48,y+60.5,864,1,'#D7DCD5');
   });
+  references(s);
+}
+
+
+// 9. Physical final page: overview, authors and explicitly fictional contact.
+{
+  const s=base(9);
+  txt(s,'final-title','室内環境ログの記録間隔\n合成データを用いた予備検討',48,64,864,94,34.667,true);
+  txt(s,'final-author','架空の発表者 ／ CPS LAB スタイル見本',48,170,864,34,24);
+  const takeaways=['問い：記録点を減らすとき、短い変化が残るか', '確認：この合成例では、保持3点に1000 ppm超の値が残らない [1]', '次の計画：波形・開始時刻と実機条件を変えて確かめる'];
+  takeaways.forEach((t,i)=>txt(s,`takeaway-${i}`,t,48,225+i*55,864,48,24));
+  txt(s,'contact','連絡先（架空教材の例）：presenter@example.org',48,407,864,30,24,true,accent);
+  references(s);
 }
 
 const candidatePath=path.join(stage,'candidate.pptx');
@@ -198,7 +228,7 @@ await finalizePresentation({workspaceDir,candidatePath,finalPath,pythonExecutabl
   integrityValidatorPath:path.join(PRESENTATIONS_SKILL_DIR,'container_tools/inspect_presentation_package_integrity.py'),
   layoutValidatorPath:path.join(PRESENTATIONS_SKILL_DIR,'container_tools/inspect_presentation_layout_geometry.py'),
   layoutArgs:['--expected-slide-size-emu','9144000,5143500','--validate-bullet-geometry','--validate-heading-fit','--require-native-table-slide','7'],
-  explicitTotalSlideCount:8,requiredNativeTableOwnerSlides:[7],requiredNativeChartOwnerSlides:[6],materializeLiteralChartWorkbooks:true,
+  explicitTotalSlideCount:9,requiredNativeTableOwnerSlides:[7],requiredNativeChartOwnerSlides:[6],materializeLiteralChartWorkbooks:true,
   fontPolicy:{basis:'design',families:[font,'Arial']},verifyArtifactToolImport:true,
   receiptPath:path.join(stage,'validation.json')});
 
@@ -212,7 +242,7 @@ for(let i=0;i<slides.length;i++) {
   await fs.writeFile(path.join(out,`slide-${i+1}.png`),bytes);
   thumbs.push(await sharp(bytes).resize(480,270).png().toBuffer());
 }
-await sharp({create:{width:1970,height:590,channels:3,background:'#E5E5E5'}})
-  .composite(thumbs.map((input,i)=>({input,left:10+(i%4)*490,top:10+Math.floor(i/4)*290})))
+await sharp({create:{width:1480,height:880,channels:3,background:'#E5E5E5'}})
+  .composite(thumbs.map((input,i)=>({input,left:10+(i%3)*490,top:10+Math.floor(i/3)*290})))
   .png().toFile(path.join(out,'contact-sheet.png'));
 console.log(JSON.stringify({outputDirectory:out,slides:slides.length,validationReceipt:path.join(stage,'validation.json')},null,2));

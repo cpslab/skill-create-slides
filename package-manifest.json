@@ -1,10 +1,10 @@
 {
   "name": "research-presentation-slides",
-  "version": "1.2.0",
-  "packaged_on": "2026-09-29",
+  "version": "1.4.1",
+  "packaged_on": "2026-10-07",
   "visual_example": {
     "kind": "fictional research with synthetic data",
-    "slide_count": 8,
+    "slide_count": 9,
     "presentations_skill_version": "26.904.11930",
     "structural_check": "passed",
     "final_pptx_reimport_and_all_slide_visual_review": "performed",
@@ -19,12 +19,15 @@
     "known_preview_difference": "Renderer displays square markers as circles and dashed lines as solid; the PPTX retains the requested marker and dash properties.",
     "source_numeric_values_checked": "native chart and table match synthetic input",
     "cover_media": "layout placeholders only; no embedded video or research photographs",
-    "video_playback": "not_performed; sample contains no video"
+    "video_playback": "not_performed; sample contains no video",
+    "footer_line_variants": "on and off verified; logos and display-order numbers preserved",
+    "current_design_features": "running headers, independent Botanica accent, per-slide source numbers and references, final overview/contact summary",
+    "contact_sheet_kind": "verification render of final PPTX; not an ImageGen completed-image review"
   },
   "files": {
     "SKILL.md": {
-      "bytes": 12246,
-      "sha256": "56ae4ef2c064710c4b414890807fb1f96e1a0c8fb74194c87b44750fe5ab456c"
+      "bytes": 30333,
+      "sha256": "9ab3253eeb423c978e5e3f0c868c98ca09688da5af9ac8a58dcb4619de81ba72"
     },
     "agents/openai.yaml": {
       "bytes": 187,
@@ -35,96 +38,96 @@
       "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
     },
     "assets/example-source.org": {
-      "bytes": 3565,
-      "sha256": "988a585f5e3016a3b96c4d86122c8a1e60863703abd185dc5ca76d7c781e1871"
+      "bytes": 3933,
+      "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f"
     },
     "assets/input-brief.org": {
-      "bytes": 2575,
-      "sha256": "80032e5f6d36c6fac987ebb3b7387e20793ebbfd7424ce73dbec7512d6b8ad60"
+      "bytes": 3022,
+      "sha256": "8227037051691d634ed06637835a500bcb9e4ed7fb649386830c8623acb9895f"
     },
     "assets/quality-review.org": {
-      "bytes": 1548,
-      "sha256": "a5ae7361cfcd083aa2cdb122ee6b3189acbcbe9ab8be63c2af25af94d0886430"
+      "bytes": 2434,
+      "sha256": "84a452cfaa155bae233ad9f3ff661dd2761ac2d9251be6797f2592120bb9208c"
     },
     "assets/visual-reference/build.mjs": {
-      "bytes": 14706,
-      "sha256": "62d41b32d714423b80e65ac93b2310f04009e519309060d7c4779fac49565962"
+      "bytes": 16875,
+      "sha256": "ce6c2da492853dde7f0e7a3ba58f9b79acf1d78512b6503ce039f03488ecde47"
     },
     "assets/visual-reference/contact-sheet.png": {
-      "bytes": 293910,
-      "sha256": "e02cd1ccf6d8cd337ee69b853e799b99a06d31456be9c0db48ffe752ad594337"
+      "bytes": 358071,
+      "sha256": "6bf84ce16ba1eb3be2c9d42ce02a825d05fdfeeabcf0c6a658beb649775164f4"
     },
     "assets/visual-reference/cps-layout-reference.pptx": {
-      "bytes": 83077,
-      "sha256": "604bddd1272611911cab4a8eb9e2b86981dcc0579733c8009ebbe54ae7717f9c"
+      "bytes": 94082,
+      "sha256": "4e1d91c08d0f5f68964e1757ab2250ca0fdcab3d0be1cc9c3b9ac2d5eeaf25ba"
     },
     "assets/visual-reference/slide-1.png": {
       "bytes": 101531,
       "sha256": "e453d07ac9b3718a6a283c02fea697f469448a8e29d284020e67e61233cdf159"
     },
     "assets/visual-reference/slide-2.png": {
-      "bytes": 110304,
-      "sha256": "83619e1d7efc8a65d44b988b4080edcba41201d0636873514c088467b973500d"
+      "bytes": 110862,
+      "sha256": "1ea6c0cace977f5ffeaaf7812681fecb22931c346a7e49c18141ca01728efb9a"
     },
     "assets/visual-reference/slide-3.png": {
-      "bytes": 141047,
-      "sha256": "d942ef5c5ead3e0ad3edea29ce9e0f74c0bcb3edce50f2ba04409832a1e16c14"
+      "bytes": 141390,
+      "sha256": "4ff9fc8c342151dc1417a93d545e8a259ac016ac2857b6f71a417f7f96b3392f"
     },
     "assets/visual-reference/slide-4.png": {
-      "bytes": 61110,
-      "sha256": "7fd3fa8df758b3c7038eae12bb0c8955394739869b7e9e52f7933a3a65993e57"
+      "bytes": 75475,
+      "sha256": "c07c607e249db8bc37d62df2300ad0908cb587a25f67ce8765fb03d4ec77317f"
     },
     "assets/visual-reference/slide-5.png": {
-      "bytes": 118479,
-      "sha256": "757d001c63bd27aac1adbb200886c4841cbec3efa55c028e785a0ce7cfb61b05"
+      "bytes": 140456,
+      "sha256": "125c5006e679fb45da0c12e1a1ec4a1a39849c0d9e541b7eaa9d5a18f349e91e"
     },
     "assets/visual-reference/slide-6.png": {
-      "bytes": 168704,
-      "sha256": "e3fa078041aca985c154fc4063d1384c0000d06408fea57cbdcbf29c25866265"
+      "bytes": 190144,
+      "sha256": "ee393913b440742a7624e676b3d829358426db546010f35000058b49f4c02409"
     },
     "assets/visual-reference/slide-7.png": {
-      "bytes": 123095,
-      "sha256": "3bfcfc057528e04c05337c9af1d239abfef41522cb8a891366ea29be76ea9f64"
+      "bytes": 149756,
+      "sha256": "b13dc7a24409944e4b3b45d3b523b0ef980148784bab403b92d004094769abe0"
     },
     "assets/visual-reference/slide-8.png": {
-      "bytes": 184219,
-      "sha256": "9ac359de3417661b887042d1fffeb068da1eeb9e42daeffde484a55983003968"
+      "bytes": 210947,
+      "sha256": "f6d429d2842daa2ad388cf928329699f8e49a0451db0885c02dbce6eff9d6bd5"
     },
     "assets/workflow-template.org": {
-      "bytes": 3139,
-      "sha256": "3b1b36e4dc71b2e56f990731d579f048af7be30bd2bff68f6bdeb074bf7bcdc5"
+      "bytes": 6020,
+      "sha256": "d89074aed49001d9f8eda1a1250b3f9e96c0e9400e51cd15a5f7a007db76dd39"
     },
     "references/cps-lab-style.md": {
-      "bytes": 12766,
-      "sha256": "a4c9bbf2316b522d57144f03155f9aeae712e7af8cb399ea25eceb92ca8b6905"
+      "bytes": 20687,
+      "sha256": "182ed94eb943557d4e8ddf57b159727829c040abb73883175d35133113a3a2b0"
     },
     "references/history.md": {
-      "bytes": 3627,
-      "sha256": "2f7f458a34c9eaab27a682fd729338ea27fd19859af5686a49bd75eb6bd4c4cf"
+      "bytes": 3898,
+      "sha256": "5ead9a9b000379f98d0c6dfec6cc4b75b49da15c7137a538dc93f098f14ccf30"
     },
     "references/planning.md": {
-      "bytes": 8602,
-      "sha256": "ed5a0ae116c9339af69e23a4698b7912f09d38d18543f196b0dcd2d16a849711"
+      "bytes": 9184,
+      "sha256": "a38924b9e58d1a876e15082f071319c5ac659abc26bcb2b68f812d0a361f07df"
     },
     "references/production.md": {
-      "bytes": 10951,
-      "sha256": "cff988638a8e6d0fc9a2505096cd35c15f54740ee0c1c76480ceb416060dbcd4"
+      "bytes": 19944,
+      "sha256": "aaceb72a84303e8a88e5818c90e5e5bb06220f1777ec83b3040cbe8ffb9fd4f8"
     },
     "references/quality-standard.md": {
-      "bytes": 7802,
-      "sha256": "ac7e2c6a16f2f6d05e5887fcdd30b39497d373109d5ef067bb131bd742d02f91"
+      "bytes": 11255,
+      "sha256": "2c001184813920ea2ce169f404b09b7bf587edfe1d2a007c52c31259e8c2bf7d"
     },
     "references/sharing.md": {
-      "bytes": 5905,
-      "sha256": "9c8544bc35ee4b5de8015eadafd05fa6668f28fc38c23914f705463557c6b428"
+      "bytes": 6351,
+      "sha256": "e3b6c6e5dc217f4930e7f0c1f803308252e05b396161ed5b21b1a4be8bceced5"
     },
     "references/visual-reference.md": {
-      "bytes": 5332,
-      "sha256": "f498d091786e4b2e4b636cbc1762aad8f5d5bacb42555e80227ef9bdc05b3f48"
+      "bytes": 6380,
+      "sha256": "8ed555c88e075732c42326b7b56b7f3ed0354745394e2f8ef1ad9045bc1093c7"
     },
     "references/worked-example.md": {
-      "bytes": 9313,
-      "sha256": "ad88fb2bd131a0044e8f3410dacd708257021ced43df260a364f33a759e33891"
+      "bytes": 10386,
+      "sha256": "cac64c0166f103e0a4ae7f26a706537ff962b2774b2adb1d434d5743d7a5b2a3"
     },
     "scripts/check_pptx.py": {
       "bytes": 8234,
@@ -133,6 +136,10 @@
     "scripts/init_presentation.py": {
       "bytes": 1469,
       "sha256": "d2dd239da6d1dd2547a036f351aa46a2aa807a8c082389b20b50b8498018a720"
+    },
+    "assets/visual-reference/slide-9.png": {
+      "bytes": 200330,
+      "sha256": "91fda05eb2fe80dbe585f6f0c644f2dc71bb8cc1e88fbfb3622fd0edc753f446"
     }
   },
   "design_profile": "midterm composition and body design",
