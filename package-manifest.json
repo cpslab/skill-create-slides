@@ -1,6 +1,6 @@
 {
   "name": "research-presentation-slides",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "packaged_on": "2026-10-07",
   "visual_example": {
     "kind": "fictional research with synthetic data",
@@ -26,8 +26,8 @@
   },
   "files": {
     "SKILL.md": {
-      "bytes": 30333,
-      "sha256": "9ab3253eeb423c978e5e3f0c868c98ca09688da5af9ac8a58dcb4619de81ba72"
+      "bytes": 30351,
+      "sha256": "54909aa1159593aec645f507482af4d4c84c367c18014dc761eeff581bfaf685"
     },
     "agents/openai.yaml": {
       "bytes": 187,
@@ -42,24 +42,24 @@
       "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f"
     },
     "assets/input-brief.org": {
-      "bytes": 3022,
-      "sha256": "8227037051691d634ed06637835a500bcb9e4ed7fb649386830c8623acb9895f"
+      "bytes": 3029,
+      "sha256": "d7e61924b2e1ff039c9b889b6a9fe2dd867eae38aa06a795d426631185360963"
     },
     "assets/quality-review.org": {
       "bytes": 2434,
       "sha256": "84a452cfaa155bae233ad9f3ff661dd2761ac2d9251be6797f2592120bb9208c"
     },
     "assets/visual-reference/build.mjs": {
-      "bytes": 16875,
-      "sha256": "ce6c2da492853dde7f0e7a3ba58f9b79acf1d78512b6503ce039f03488ecde47"
+      "bytes": 16876,
+      "sha256": "f71287255165412d5e9d3470f3387091e00c753d67397a4538aa6d2eb7a48912"
     },
     "assets/visual-reference/contact-sheet.png": {
       "bytes": 358071,
       "sha256": "6bf84ce16ba1eb3be2c9d42ce02a825d05fdfeeabcf0c6a658beb649775164f4"
     },
     "assets/visual-reference/cps-layout-reference.pptx": {
-      "bytes": 94082,
-      "sha256": "4e1d91c08d0f5f68964e1757ab2250ca0fdcab3d0be1cc9c3b9ac2d5eeaf25ba"
+      "bytes": 94064,
+      "sha256": "a094066837ebda558bad3315f68a5354071b90546f03e6ac73f4915d06aa2174"
     },
     "assets/visual-reference/slide-1.png": {
       "bytes": 101531,
@@ -94,40 +94,40 @@
       "sha256": "f6d429d2842daa2ad388cf928329699f8e49a0451db0885c02dbce6eff9d6bd5"
     },
     "assets/workflow-template.org": {
-      "bytes": 6020,
-      "sha256": "d89074aed49001d9f8eda1a1250b3f9e96c0e9400e51cd15a5f7a007db76dd39"
+      "bytes": 6027,
+      "sha256": "6e9f022a0c55c8ef3ca3e76400337c127387296f723e372af9aab4a3a78a3d60"
     },
     "references/cps-lab-style.md": {
-      "bytes": 20687,
-      "sha256": "182ed94eb943557d4e8ddf57b159727829c040abb73883175d35133113a3a2b0"
+      "bytes": 21016,
+      "sha256": "dabaf4ba91f6b573d7e862ee475595158d77c643d93999c67924e653bcfcf610"
     },
     "references/history.md": {
-      "bytes": 3898,
-      "sha256": "5ead9a9b000379f98d0c6dfec6cc4b75b49da15c7137a538dc93f098f14ccf30"
+      "bytes": 3905,
+      "sha256": "0b182f168b9acb09adfe73317d70ef27748ec43a34b2da5936fbbff582cddbe3"
     },
     "references/planning.md": {
-      "bytes": 9184,
-      "sha256": "a38924b9e58d1a876e15082f071319c5ac659abc26bcb2b68f812d0a361f07df"
+      "bytes": 9203,
+      "sha256": "9e5653a030f28994fb699523684eea9916b83c38c7ff89e8a0a50d9abc6c766c"
     },
     "references/production.md": {
-      "bytes": 19944,
-      "sha256": "aaceb72a84303e8a88e5818c90e5e5bb06220f1777ec83b3040cbe8ffb9fd4f8"
+      "bytes": 19954,
+      "sha256": "b4fc51c03929028d04d8d05f0a0a417e02de1b6ae807fc716d6ce32909ac4c21"
     },
     "references/quality-standard.md": {
-      "bytes": 11255,
-      "sha256": "2c001184813920ea2ce169f404b09b7bf587edfe1d2a007c52c31259e8c2bf7d"
+      "bytes": 11264,
+      "sha256": "877222dd0f12e3a5280beebc54fb156ae5eed49e67b1482d1c7a94b39fe578c2"
     },
     "references/sharing.md": {
-      "bytes": 6351,
-      "sha256": "e3b6c6e5dc217f4930e7f0c1f803308252e05b396161ed5b21b1a4be8bceced5"
+      "bytes": 6357,
+      "sha256": "b69f627fdb993d9a8edac07e52a14504a1f6652d5ad101097bc1b126460a31a9"
     },
     "references/visual-reference.md": {
-      "bytes": 6380,
-      "sha256": "8ed555c88e075732c42326b7b56b7f3ed0354745394e2f8ef1ad9045bc1093c7"
+      "bytes": 6370,
+      "sha256": "1a098c38455f2a037208893ba2c3be6a5486f3730941b9885b42d0c5b7761db8"
     },
     "references/worked-example.md": {
       "bytes": 10386,
-      "sha256": "cac64c0166f103e0a4ae7f26a706537ff962b2774b2adb1d434d5743d7a5b2a3"
+      "sha256": "e3c1eb0e0d9c6d7ed186a01caf7ac541ee981590881b7f60dd55a4d80d9f58b2"
     },
     "scripts/check_pptx.py": {
       "bytes": 8234,
@@ -144,7 +144,11 @@
   },
   "design_profile": "midterm composition and body design",
   "cover_options": [
-    "fit",
-    "midterm"
-  ]
+    "type-a",
+    "type-b"
+  ],
+  "cover_display_names": {
+    "type-a": "表紙タイプA",
+    "type-b": "表紙タイプB"
+  }
 }

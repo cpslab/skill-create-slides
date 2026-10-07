@@ -86,7 +86,7 @@ function heading(slide, title, message) {
   if (message) txt(slide,'message',message,48,96,864,57.6,30.667,true);
 }
 
-// 1. FIT cover: title band, two author bands, a clearly labelled photo slot.
+// 1. Type A cover: title band, two author bands, a clearly labelled photo slot.
 {
   const s=base(1);
   txt(s,'venue','研究発表の視覚作例',48,32,850,40,24);
@@ -96,7 +96,7 @@ function heading(slide, title, message) {
   rect(s,'research-photo-slot',630,294,258,160,'#F3F5F1','#9AA09A',1);
   txt(s,'photo-slot-label','研究対象の写真枠\n写真は未同梱',640,337,238,74,24,false,gray,'center');
 }
-// 2. Midterm cover: a static layout sample; no fabricated video is embedded.
+// 2. Type B cover: a static layout sample; no fabricated video is embedded.
 {
   const s=pres.slides.add();s.background.fill='#37424A';
   txt(s,'venue','研究発表の視覚作例',48,29,864,38,24,false,'#FFFFFF','center');
@@ -107,7 +107,7 @@ function heading(slide, title, message) {
   txt(s,'fictional-disclosure','架空作例／静止レイアウト／実動画は未同梱',150,495,500,26,16,false,'#DDE2E5','center');
   const pn=txt(s,'page','2',714.048,500.544,223.968,28.8,18.667,false,'#FFFFFF','right');
   pn.text.style={typeface:'Arial',fontSize:18.667,color:'#FFFFFF',alignment:'right',verticalAlignment:'middle',insets:{left:0,right:0,top:0,bottom:0}};
-  s.speakerNotes.textFrame.setText('中間発表型表紙の静止レイアウト見本。背景は素材枠で、動画も静止ポスターも未提供・未同梱。利用者の動画を指定された加工・無音・自動再生・ループ・次ページでの停止条件で埋め込む。対象アプリでの再生検証は別工程。本文のデザインはFIT型表紙を選んでも同じ。');
+  s.speakerNotes.textFrame.setText('表紙タイプBの静止レイアウト見本。背景は素材枠で、動画も静止ポスターも未提供・未同梱。利用者の動画を指定された加工・無音・自動再生・ループ・次ページでの停止条件で埋め込む。対象アプリでの再生検証は別工程。本文のデザインは表紙タイプAを選んでも同じ。');
 }
 // 3. Four-chapter 2x2 contents. Slots show image placement, not fictional evidence.
 {
