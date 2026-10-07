@@ -84,12 +84,51 @@
 
 実際の成果物は利用者の研究プロジェクトへ保存します。このリポジトリには、再利用するスキル・素材・ひな形と、明示した架空作例を収録しています。
 
+## 選べる配色（6種類）
+
+ベースカラーはすべて白 `#FFFFFF`。同じレイアウトで、メイン色と独立したアクセント色の使い分けを比較できます。各画像は編集可能な[配色見本PPTX](assets/palette-reference/cps-color-reference.pptx)の表示確認用レンダーです。
+
+| 配色 | メイン | アクセント |
+|---|---|---|
+| アイリス | `#8064A2` | `#543477` |
+| kiMera | `#FACADF` | `#A61C60` |
+| オレンジ | `#F79646` | `#B45F06` |
+| シチリア | `#4BACC6` | `#165F73` |
+| ボタニカ | `#9BBB59` | `#38761D` |
+| ボルドー | `#C0504D` | `#8B2523` |
+
+### アイリス
+
+![アイリスの配色サンプル](assets/palette-reference/iris.png)
+
+### kiMera
+
+![kiMeraの配色サンプル](assets/palette-reference/kimera.png)
+
+### オレンジ
+
+![オレンジの配色サンプル](assets/palette-reference/orange.png)
+
+### シチリア
+
+![シチリアの配色サンプル](assets/palette-reference/sicilia.png)
+
+### ボタニカ
+
+![ボタニカの配色サンプル](assets/palette-reference/botanica.png)
+
+### ボルドー
+
+![ボルドーの配色サンプル](assets/palette-reference/bordeaux.png)
+
+色の用途・文字色・指定方法は[スタイル仕様](references/cps-lab-style.md)、再生成は[配色見本の説明](references/palette-reference.md)を参照してください。
+
 ## 導入
 
 Codexが使える環境で、次を実行します。既に同名のスキルを導入している場合は、[更新について](#更新について)を確認してください。
 
 ```sh
-git clone https://github.com/gomadoufu/research-presentation-slides.git \
+git clone https://github.com/cpslab/skill-create-slides.git \
   "$HOME/.agents/skills/research-presentation-slides"
 ```
 
@@ -190,6 +229,6 @@ Gitで導入し、ローカルでファイルを変更していない場合は�
 
 ## 同梱ファイルの管理
 
-現在のスキル版は **1.4.2** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。リポジトリ運用用のREADME・Git設定等はこの一覧の対象外です。
+現在のスキル版は **1.4.3** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。リポジトリ運用用のREADME・Git設定等はこの一覧の対象外です。
 
 PNG・PPTXは、メンバーが制作環境なしでも見本を確認できるよう同梱しています。合成入力は [example-source.org](assets/example-source.org)、生成コードは [build.mjs](assets/visual-reference/build.mjs)、再生成手順は[視覚作例の説明](references/visual-reference.md)にあります。フォントや制作エンジンは同梱していません。

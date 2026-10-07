@@ -1,6 +1,6 @@
 {
   "name": "research-presentation-slides",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "packaged_on": "2026-10-07",
   "visual_example": {
     "kind": "fictional research with synthetic data",
@@ -27,7 +27,7 @@
   "files": {
     "SKILL.md": {
       "bytes": 30351,
-      "sha256": "54909aa1159593aec645f507482af4d4c84c367c18014dc761eeff581bfaf685"
+      "sha256": "d2ae5afa63f0c3b5cc2b7399a2293ecc5326aa2ad2a432febd1bbacc332cc9ce"
     },
     "agents/openai.yaml": {
       "bytes": 187,
@@ -98,8 +98,8 @@
       "sha256": "6e9f022a0c55c8ef3ca3e76400337c127387296f723e372af9aab4a3a78a3d60"
     },
     "references/cps-lab-style.md": {
-      "bytes": 21016,
-      "sha256": "dabaf4ba91f6b573d7e862ee475595158d77c643d93999c67924e653bcfcf610"
+      "bytes": 21129,
+      "sha256": "ee72933fd3eca52de6df09191cf23746d98d36693c03721f8395ba029e95676d"
     },
     "references/history.md": {
       "bytes": 3905,
@@ -122,8 +122,8 @@
       "sha256": "b69f627fdb993d9a8edac07e52a14504a1f6652d5ad101097bc1b126460a31a9"
     },
     "references/visual-reference.md": {
-      "bytes": 6370,
-      "sha256": "1a098c38455f2a037208893ba2c3be6a5486f3730941b9885b42d0c5b7761db8"
+      "bytes": 6499,
+      "sha256": "d719014ebfdd29d25689983b440ed09b43b38bd74baae46c00ce74960ce5c42f"
     },
     "references/worked-example.md": {
       "bytes": 10386,
@@ -140,6 +140,42 @@
     "assets/visual-reference/slide-9.png": {
       "bytes": 200330,
       "sha256": "91fda05eb2fe80dbe585f6f0c644f2dc71bb8cc1e88fbfb3622fd0edc753f446"
+    },
+    "assets/palette-reference/botanica.png": {
+      "bytes": 134027,
+      "sha256": "aec77253c4a55901099d08da7998a4c02c216e3312e48f005391779696085e79"
+    },
+    "assets/palette-reference/sicilia.png": {
+      "bytes": 133115,
+      "sha256": "920cb4a2fbec1a8a2a9cc88f03082bceb936ec01b8755ad8a80d5c0044fc2060"
+    },
+    "assets/palette-reference/iris.png": {
+      "bytes": 132386,
+      "sha256": "a70630670fe13976f6514a41a1959b838f8ae1b3b6c83068f535b5e3f68ec7a0"
+    },
+    "assets/palette-reference/kimera.png": {
+      "bytes": 131633,
+      "sha256": "38a762148588efb39a98ab5d114928b4d72fddcaba3ff92c2541319b01c762ad"
+    },
+    "assets/palette-reference/orange.png": {
+      "bytes": 132441,
+      "sha256": "cd1077445486a589584f68d0af9f801e6b441d0ec64d59d6972d49403ab7d9f3"
+    },
+    "assets/palette-reference/bordeaux.png": {
+      "bytes": 133658,
+      "sha256": "fd799a9076d264d05ccd7d978700e74dcd9da7d6d2279cc41f700a84f5db5968"
+    },
+    "assets/palette-reference/build.mjs": {
+      "bytes": 5574,
+      "sha256": "f1beec228f9a20fcd0badd9ed98301daa89a61efa27756408077391343cb2f4e"
+    },
+    "assets/palette-reference/cps-color-reference.pptx": {
+      "bytes": 68596,
+      "sha256": "1ac56f3d5d3904071cb574d00acb26996463e5f5d665a026737d79baaec65da7"
+    },
+    "references/palette-reference.md": {
+      "bytes": 1282,
+      "sha256": "cac8f51074ec428662ca365dc9669f19cf1e789ab4e685ae44175db7fdf3763c"
     }
   },
   "design_profile": "midterm composition and body design",
@@ -150,5 +186,18 @@
   "cover_display_names": {
     "type-a": "表紙タイプA",
     "type-b": "表紙タイプB"
+  },
+  "palette_example": {
+    "slide_count": 6,
+    "source": "references/cps-lab-style.md",
+    "structural_check": "passed",
+    "final_pptx_reimport_and_all_slide_visual_review": "performed",
+    "rendered_swatch_rgb_checked": "matches all six canonical main and accent HEX values",
+    "native_elements": [
+      "text",
+      "shapes"
+    ],
+    "powerpoint_application_editing": "not_performed",
+    "image_kind": "verification render of editable PPTX; not an ImageGen completed-image review"
   }
 }
