@@ -20,7 +20,7 @@
 
 ![中間発表型と2種類の表紙のレイアウト見本9枚](assets/visual-reference/contact-sheet.png)
 
-[編集可能な見本PPTX](assets/visual-reference/cps-layout-reference.pptx) · [作例の説明と検証範囲](references/visual-reference.md) · [企画から図までの通し作例](references/worked-example.md)
+[編集可能な見本PPTX](assets/visual-reference/cps-layout-reference.pptx) · [発表メモ](assets/visual-reference/cps-layout-reference-発表メモ.txt) · [作例の説明と検証範囲](references/visual-reference.md) · [企画から図までの通し作例](references/worked-example.md)
 
 <details>
 <summary>作例を1枚ずつ見る（全9枚）</summary>
@@ -58,7 +58,7 @@
 
 ### 6. 定量図
 
-軸・単位・系列・条件注記を示す散布図です。PPTXには編集可能なチャートとデータを収録しています。
+軸・単位・系列と短い正確な主張を示す散布図です。詳しい条件は同梱の発表メモに記録しています。PPTXには編集可能なチャートとデータを収録しています。
 
 ![定量図の作例](assets/visual-reference/slide-6.png)
 
@@ -227,8 +227,14 @@ Gitで導入し、ローカルでファイルを変更していない場合は�
 
 同名の旧スキルが `.codex/skills/` などにある場合は、必要な旧版を検索対象外へ保存し、使用する版を1つにします。既存ファイルを無条件で上書きしないでください。
 
+## 発表用メモ
+
+主張を補足・限定して説明したい箇所は、スライド上の細かな注意書きを増やさず、出力PPTXと同じディレクトリの `発表資料-発表メモ.txt` に記録します。ページ番号・スライドIDごとに、発表時に口頭で伝える補足、適用範囲・条件・未確認事項、根拠をまとめます。必要な箇所があればメモも納品され、PPTXの修正・並べ替えに合わせて更新します。[メモひな形](assets/presentation-memo-template.txt)を使えます。
+
+誤解防止のために必要と思われる表示も追加しません。主張や図のラベル自体を、誤解されにくい短い表現へ直します。詳しい条件・補足・限定は必要に応じてメモへ書き、注記を増やして解決しません。長い発表原稿・想定質問集とは別の、発表者が該当ページを話すときに参照するメモです。
+
 ## 同梱ファイルの管理
 
-現在のスキル版は **1.4.3** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。リポジトリ運用用のREADME・Git設定等はこの一覧の対象外です。
+現在のスキル版は **1.4.5** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。リポジトリ運用用のREADME・Git設定等はこの一覧の対象外です。
 
 PNG・PPTXは、メンバーが制作環境なしでも見本を確認できるよう同梱しています。合成入力は [example-source.org](assets/example-source.org)、生成コードは [build.mjs](assets/visual-reference/build.mjs)、再生成手順は[視覚作例の説明](references/visual-reference.md)にあります。フォントや制作エンジンは同梱していません。
