@@ -1,6 +1,6 @@
 {
   "name": "research-presentation-slides",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "packaged_on": "2026-10-08",
   "visual_example": {
     "kind": "fictional research with synthetic data",
@@ -27,8 +27,8 @@
   },
   "files": {
     "SKILL.md": {
-      "bytes": 32259,
-      "sha256": "35965a18b5dfdf43fae681542deb178d58c09dfeb28c1c0752cfed75fdc8924e"
+      "bytes": 33377,
+      "sha256": "12ab0908950e16f1d05aad6c8c74f400782695e589862fd99a46ddbdaad334aa"
     },
     "agents/openai.yaml": {
       "bytes": 187,
@@ -99,24 +99,24 @@
       "sha256": "307a875c84ba43059fe0a14e37fdd25935c59f3b93f7458b7d0b824797f35b81"
     },
     "references/cps-lab-style.md": {
-      "bytes": 21832,
-      "sha256": "3c97d8cfb34a2496ba3fad20fb941fb60653ec2f9303df0d794dfda372af6e57"
+      "bytes": 22276,
+      "sha256": "62ea306d7bc0110a178ab73e8409d5233617e45db7ce7a96deee7bbf10a00ddc"
     },
     "references/history.md": {
       "bytes": 3905,
       "sha256": "0b182f168b9acb09adfe73317d70ef27748ec43a34b2da5936fbbff582cddbe3"
     },
     "references/planning.md": {
-      "bytes": 9203,
-      "sha256": "9e5653a030f28994fb699523684eea9916b83c38c7ff89e8a0a50d9abc6c766c"
+      "bytes": 10869,
+      "sha256": "2e22b488f86496eb2d2a6a71299a00d3ecab8e8ab8bef5893ff7d557d8ab4684"
     },
     "references/production.md": {
-      "bytes": 22802,
-      "sha256": "1d1851679d4bf809406ab4bfe3ab8b738c720cb20872554ecf1dc0e160c6cd30"
+      "bytes": 27283,
+      "sha256": "5709b60f726a86694d42c3826e38f24e8f2c6fa451bd3a51e4f702dbd671dc81"
     },
     "references/quality-standard.md": {
-      "bytes": 12340,
-      "sha256": "16ce5890be85d8d482be4490bfb9e33810b40bef6e740ac291c664c31d2dd61e"
+      "bytes": 13180,
+      "sha256": "dbcc44b2ce3f1271258b16c110fe7e9302a6fd281d133fddc6e3af270ce78d0d"
     },
     "references/sharing.md": {
       "bytes": 6357,
