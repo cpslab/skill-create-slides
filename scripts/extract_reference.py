@@ -198,7 +198,10 @@ def extract(path):
                     data = {'shape_id': nv.get('id') if nv is not None else None, 'id': id_match.group(1) if id_match else None,
                             'name': name, 'role': role_match.group(1) if role_match else None, 'kind': kind,
                             'bounds_in': bounds, 'transform': properties(xfrm), 'grouped': grouped,
-                            'transform_resolved': not grouped and kind != 'grpSp' and not (xfrm is not None and any(xfrm.get(k) not in (None, '0', 'false') for k in ('rot', 'flipH', 'flipV'))),
+                            # Flipping an unrotated connector preserves its axis-aligned bounds.
+                            # Endpoint IDs/arrowheads are checked separately; text/image flips
+                            # and all group/rotation transforms still require visual resolution.
+                            'transform_resolved': not grouped and kind != 'grpSp' and not (xfrm is not None and any(xfrm.get(k) not in (None, '0', 'false') for k in (('rot',) if kind == 'cxnSp' else ('rot', 'flipH', 'flipV')))),
                             'colours': sorted({n.get('val') for n in node.findall('.//a:srgbClr', NS)}),
                             **parse_text(node.find('p:txBody', NS))}
                     data['placeholder'] = properties(node.find('.//p:ph', NS)) or None

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "profile": "cps-midterm",
+  "metadata": {
+    "title": "地域図書館の静けさを\n利用者はどう説明するか",
+    "short_title": "静けさの説明を調べる研究計画",
+    "authors": "架空 花子・架空研究グループ",
+    "contact": "hanako@example.org",
+    "language": "ja-JP",
+    "fictional_label": "架空の研究計画・実測結果なし"
+  },
+  "structure": {
+    "sections": [
+      {
+        "id": "question",
+        "title": "研究のねらい",
+        "description": "問いと先行する考え方を整理する"
+      },
+      {
+        "id": "method",
+        "title": "しくみと評価方法",
+        "description": "比較する記述と分析の計画"
+      },
+      {
+        "id": "progress",
+        "title": "ここまでの整理",
+        "description": "実施前の判断と残る課題"
+      },
+      {
+        "id": "next",
+        "title": "今後の展望",
+        "description": "収集と分析の手順を確認する"
+      }
+    ],
+    "section_dividers": "all",
+    "summary_placement": "end_of_deck"
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "cover_type": "type-a"
+    },
+    {
+      "id": "toc",
+      "type": "toc",
+      "title": "目次",
+      "section_label": "目次"
+    },
+    {
+      "id": "question-divider",
+      "type": "divider",
+      "section": "question",
+      "title": "研究のねらい"
+    },
+    {
+      "id": "question-page",
+      "type": "question",
+      "title": "静けさの意味は場面で変わる",
+      "premise": "静けさを一つの音量値だけで説明できるとは限らない。",
+      "question": "利用者はどのような場面を\n「静か」と説明するのか？",
+      "section": "question",
+      "notes": "架空の計画段階の研究。資料収集・参加者調査・分析は未実施。"
+    },
+    {
+      "id": "method-divider",
+      "type": "divider",
+      "section": "method",
+      "title": "しくみと評価方法"
+    },
+    {
+      "id": "method-page",
+      "type": "table",
+      "title": "利用者の説明と場面を対応付ける",
+      "table": {
+        "rows": [
+          [
+            "資料",
+            "確認する内容",
+            "実施状況"
+          ],
+          [
+            "任意の聞き取り",
+            "静かと感じた場面",
+            "計画"
+          ],
+          [
+            "館内の利用案内",
+            "推奨する過ごし方",
+            "収集予定"
+          ],
+          [
+            "記述の比較",
+            "共通点と相違点",
+            "未実施"
+          ]
+        ]
+      },
+      "section": "method",
+      "notes": "架空の計画段階の研究。資料収集・参加者調査・分析は未実施。"
+    },
+    {
+      "id": "progress-divider",
+      "type": "divider",
+      "section": "progress",
+      "title": "ここまでの整理"
+    },
+    {
+      "id": "progress-page",
+      "type": "concept",
+      "title": "現在は問いと方法を整理している",
+      "blocks": [
+        "装置やアプリの実装は、この研究の前提ではない。",
+        "参加者の発言や分析結果は、まだ得られていない。",
+        "公開する引用には、本人の同意を得る計画である。"
+      ],
+      "section": "progress",
+      "notes": "架空の計画段階の研究。資料収集・参加者調査・分析は未実施。"
+    },
+    {
+      "id": "next-divider",
+      "type": "divider",
+      "section": "next",
+      "title": "今後の展望"
+    },
+    {
+      "id": "next-page",
+      "type": "concept",
+      "title": "資料収集の前に手順を確定する",
+      "blocks": [
+        "参加の案内と同意の手順を検討する。",
+        "少数の試行を通じて聞き方を見直す。",
+        "異なる説明を残せる分析方法を検討する。"
+      ],
+      "section": "next",
+      "notes": "架空の計画段階の研究。資料収集・参加者調査・分析は未実施。"
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "title": "まとめ",
+      "section_label": "まとめ",
+      "takeaways": [
+        "問い：静けさをどう説明するかを調べる。",
+        "方法：聞き取りと利用案内を比較する計画。",
+        "現在地：データ収集・分析は未実施。",
+        "次の作業：同意と調査手順を検討する。"
+      ]
+    }
+  ]
+}

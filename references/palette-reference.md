@@ -5,9 +5,9 @@
 - [編集可能な配色見本PPTX](../assets/palette-reference/cps-color-reference.pptx)
 - [生成コード](../assets/palette-reference/build.mjs)
 
-画像はネイティブな文字・図形で制作したPPTXを再読み込みして生成した表示確認用レンダー。ImageGenの完成イメージではなく、実案件の完成イメージレビューを代替しない。画像生成・編集は引き続きImageGen限定とする。
+画像はネイティブな文字・図形で制作したPPTXを再読み込みした表示確認用レンダー。今回の研究の完成イメージレビューを代替しない。実案件の画像生成・編集手段は用途と利用可能な能力から判断する。
 
-再生成は [視覚作例](visual-reference.md) と同じランタイム変数を設定し、空の `VISUAL_BUILD_DIR` を指定して実行する。
+この教材の専用生成コードはCodex経路を使う。再生成は [視覚作例](visual-reference.md) と同じランタイム変数を設定し、空の `VISUAL_BUILD_DIR` を指定して実行する。
 
 ```sh
 "$RUNTIME_NODE" "$RESEARCH_SLIDE_SKILL_DIR/assets/palette-reference/build.mjs"

@@ -5,7 +5,15 @@ import os from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
-import {CPS,loadProfile,resolveStructure} from '../assets/layouts/cps.mjs';
+import {CPS,loadProfile,resolveStructure,wrapTitle} from '../assets/layouts/cps.mjs';
+
+test('automatic English heading wrap avoids a stranded final word and preserves explicit breaks',()=>{
+ const title='Separate permission to discuss and to publish';
+ const wrapped=wrapTitle(title,7.55,24);
+ assert.equal(wrapped.replaceAll('\n',' '),title);
+ assert.ok(wrapped.split('\n').at(-1).split(' ').length>1);
+ assert.equal(wrapTitle('First line\nSecond line',7.55,24),'First line\nSecond line');
+});
 
 const metadata={title:'Understanding decisions in community research',short_title:'Community research',authors:'Example Researcher · Example Group',contact:'researcher@example.org'};
 function harness(profile) {

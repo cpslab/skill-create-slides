@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Render the saved final file; this is verification, never an ImageGen review substitute.
+// Render the saved final file; this is verification, never a substitute for the user’s completed-image review.
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';

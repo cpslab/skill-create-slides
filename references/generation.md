@@ -12,7 +12,7 @@
 | 共通の視覚仕様 | [cps-midterm.json](../assets/profiles/cps-midterm.json)、[cps-workshop.json](../assets/profiles/cps-workshop.json)、[配色正本](cps-lab-style.md) |
 | レイアウト部品 | [cps.mjs](../assets/layouts/cps.mjs)。研究固有の既定値を持たない |
 | 生成 | [build_deck.mjs](../scripts/build_deck.mjs)。入力JSONからPPTX・配置対応表・発表メモを出力 |
-| 描画 | [render_deck.mjs](../scripts/render_deck.mjs)。保存済みPPTXを再読み込みして全ページPNGと一覧を作る |
+| 描画 | 公開依存の [render_portable.py](../scripts/render_portable.py)、またはCodex用 [render_deck.mjs](../scripts/render_deck.mjs)。最終PPTXから全ページPNGと一覧を作る |
 | 検査 | 構造・配置・目視記録を別に持ち、[quality_gate.py](../scripts/quality_gate.py) で最終ファイルへ結び付ける |
 
 JSONは `schema_version: 1`、`profile`、`metadata`、`structure`、`slides` を持つ。`metadata` の `title`、`short_title`、`authors` は必須。`contact`、`venue` 等は今回の入力にある場合だけ記入する。架空教材なら `fictional_label` で明示する。
@@ -31,7 +31,45 @@ JSONは `schema_version: 1`、`profile`、`metadata`、`structure`、`slides` �
 
 動画は既に利用者が準備したMP4を使い、生成器は変換・切り抜き・速度変更を行わない。バイト列とSHA-256を保持し、ネイティブのメディア関係、自動開始または動画クリック開始、ループ、消音の設定を保存する。対応は新規候補の役割ID付きポスターに限定し、既存の再生タイミングがあるページへの合成は受け付けない。MP4のヘッダー確認だけではコーデック互換性を証明しない。H.264等の形式、白文字の読みやすさ、再生・ページ遷移時の停止・操作バーの動作は対象アプリで検証するまで `unverified` とする。候補ごとの `media.json` に埋込結果とこの未検証状態を記録する。
 
-## 環境を確認する
+## 公開ツールで生成・検証する（標準）
+
+OpenCode・Claude Code・Codexで同じ `--backend portable` を利用できる。クライアントのモデル・推論設定・画像制作手段をこのコマンドが変更することはない。導入は [README](../README.md) に従い、Node.js 20以上、Python 3.10以上、LibreOffice、Noto Sans JPを準備する。`npm ci` と `uv sync --frozen` は配布物のlockファイルを使用する。uvを使わない環境では仮想環境を作り、`pyproject.toml` のPython依存を利用中の管理ツールで導入する。依存の解決版がlockと同じとは限らないため実際の版を記録する。
+
+スキルのルートで実行する例。出力は利用者の作業先へ置く。
+
+```sh
+uv run --frozen python scripts/doctor.py --backend portable --strict \
+  --report /path/to/work/environment.json
+
+uv run --frozen node scripts/build_deck.mjs --backend portable \
+  --input /path/to/work/deck.json --work-dir /path/to/work \
+  --output /path/to/work/output/deck-v1.pptx
+
+uv run --frozen python scripts/render_portable.py \
+  --input /path/to/work/output/deck-v1.pptx \
+  --output-dir /path/to/work/render-v1 --renderer libreoffice
+
+uv run --frozen python scripts/check_pptx.py /path/to/work/output/deck-v1.pptx \
+  --report /path/to/work/structure-v1.json
+
+uv run --frozen python scripts/check_layout.py /path/to/work/output/deck-v1.pptx \
+  --profile assets/profiles/cps-workshop.json --deck-spec /path/to/work/deck.json \
+  --report /path/to/work/layout-v1.json
+```
+
+WindowsでもPythonから同じスクリプトを使える。生成器へ `--python <実行ファイル>` を指定でき、未指定なら `RUNTIME_PYTHON`、最後にWindowsの `python`／他OSの `python3` を使う。`uv run` は仮想環境をPATHへ追加する。環境変数 `SOFFICE` でLibreOffice実行ファイルを指定できる。macOSとWindowsの通常のインストール先も探索する。macOSでPowerPointを利用する場合は描画とdoctorの両方に `--renderer powerpoint` を指定する。
+
+公開バックエンドは [portable.mjs](../assets/layouts/portable.mjs) でPptxGenJSへ要素を渡し、[cps.mjs](../assets/layouts/cps.mjs) のページ構成を共用する。本文・表・チャート・接続図はネイティブ要素で、チャートには編集用ワークブックを含む。[finalize_portable.py](../scripts/finalize_portable.py) は生成候補の線を接続先付きのネイティブ接続線にし、構造を検査する。既存の手修正PPTXには適用しない。
+
+現在の共通チャート部品は棒・折れ線に対応する。散布図や系列ごとのマーカー／線種指定など未実装の指定は、無視せずエラーにする。必要な場合は選択モデルがネイティブ要素による実装を加え、入力値・単位・集約・軸・意味と表示を検証する。画像化して回避しない。直線以外の接続線も同様に、意味を保つ実装と検証が必要。
+
+画像の直接埋込みはPNG・JPEGに対応し、元のバイト列を保持する。表紙タイプBではOfficeのトリミング設定で枠を満たす。SVGなど他形式は不正な代替画像を出力しないよう明示的に拒否する。元資料を保持した上で、用途に合うPNG・JPEGの派生素材を作り、文字・線・切り抜き・解像度を確認して使う。編集可能な正確な図が必要なら、画像への変換で代用しない。
+
+レンダーはPPTXのSHA-256、PDFと全ページ画像のhash、描画エンジン・版を記録する。専用のLibreOfficeプロファイルで実行し、利用者の起動中セッションや設定に合流しない。既存の描画出力は上書きしない。ページ数が一致しない、処理が失敗した、期限を超えた場合はエラーとする。画像生成・画像閲覧の能力はエージェント側で確認し、doctorだけで「完走確認済み」としない。
+
+構造・配置検査の成功後も、以下の「個別目視と最終判定」を実施する。生成とレンダーは利用可能な能力であり、使用者レビューや最終画像の実際の確認の代替にはならない。
+
+## Codexの既存制作基盤を使う場合
 
 Pythonの構造・配置検査は標準ライブラリを基本とする。生成・描画はNode.js、利用可能な `@oai/artifact-tool` と `sharp`、生成の最終処理には現行PresentationsのhelperとPythonを使う。パッケージが一般公開のnpmから必ず取得できるとは仮定しない。
 
@@ -47,17 +85,17 @@ Pythonの構造・配置検査は標準ライブラリを基本とする。生�
 `runtime.mjs` は `RUNTIME_NODE_MODULES` の代わりに `CODEX_PRIMARY_RUNTIME_NODE_MODULES` も読める。検証のため明示的な値へ揃えてよい。uv、ni、Nix等は各利用者の環境管理方針に従う。これらを全メンバーの必須設定にはしない。
 
 ```sh
-python3 scripts/doctor.py --report /path/to/work/environment.json
+python3 scripts/doctor.py --backend codex --report /path/to/work/environment.json
 ```
 
 uv運用の環境なら `python3` の代わりに `uv run --no-project` を使える。doctorの依存importとフォントファイルの存在は、実際に使用されたフォントや対象アプリでの表示・再生を証明しない。生成に必要な能力がなければ依存しない入力整理・検査を進め、不足を記録する。
 
-## 生成、描画、検査
+## Codex経路の生成、描画、検査
 
 リポジトリのルートで実行する例。`/path/to/work` は利用者の作業先へ置き換える。実研究の出力・素材・分析は配布元へ置かない。
 
 ```sh
-"$RUNTIME_NODE" scripts/build_deck.mjs \
+"$RUNTIME_NODE" scripts/build_deck.mjs --backend codex \
   --input /path/to/work/deck.json \
   --work-dir /path/to/work \
   --output /path/to/work/output/deck-v1.pptx
@@ -79,9 +117,9 @@ python3 scripts/check_layout.py /path/to/work/output/deck-v1.pptx \
 
 既存PPTXは上書きしない。新しい版名で生成し、最終処理が失敗した場合は `.build/` 内の候補を調べる。成功時はPPTXと同じディレクトリに `.layout.json`、`-発表メモ.txt` ができる。発表メモの自動生成範囲外の利用者追記は保つ。既存メモを別版へ引き継ぐ場合も内容を照合して保持する。
 
-レンダーは全ページ画像、`contact-sheet.png`、PPTXと画像のhashを持つ `render-record.json` を出力する。各ページの初期状態は `unverified`。一覧生成だけで目視合格へ書き換えない。ImageGenの完成イメージと、この検証用レンダーは別の成果物。
+レンダーは全ページ画像、`contact-sheet.png`、PPTXと画像のhashを持つ `render-record.json` を出力する。各ページの初期状態は `unverified`。一覧生成だけで目視合格へ書き換えない。使用者レビュー用の完成イメージと、この最終ファイル検証用レンダーは役割を区別する。
 
-`--renderer` を省略すると `artifact-tool` を使う。macOSでPowerPointとPopplerの `pdftocairo` を利用できる場合は、次の経路で保存済みPPTXをPDFへ書き出して描画できる。新しい出力ディレクトリを使い、`pdftocairo` がPATHにない場合は `PDFTOCAIRO` に実行ファイルを指定する。
+Codex用 `render_deck.mjs` では `--renderer` を省略すると `artifact-tool` を使う。macOSでPowerPointとPopplerの `pdftocairo` を利用できる場合は、次の経路で保存済みPPTXをPDFへ書き出して描画できる。新しい出力ディレクトリを使い、`pdftocairo` がPATHにない場合は `PDFTOCAIRO` に実行ファイルを指定する。
 
 ```sh
 "$RUNTIME_NODE" scripts/render_deck.mjs \
@@ -138,12 +176,12 @@ python3 -m unittest discover -s tests
 以下は固定した架空教材の内部試験。新しい実研究の承認記録には使わない。既存の配布PPTXを上書きせず、作業先の新しい版名へ生成する。
 
 ```sh
-"$RUNTIME_NODE" scripts/build_deck.mjs \
+"$RUNTIME_NODE" scripts/build_deck.mjs --backend codex \
   --input assets/workshop-reference/input.json \
   --work-dir /path/to/work \
   --output /path/to/work/output/workshop-reference-v1.pptx
 
-"$RUNTIME_NODE" scripts/build_deck.mjs \
+"$RUNTIME_NODE" scripts/build_deck.mjs --backend codex \
   --input assets/plan-reference/input.json \
   --work-dir /path/to/work \
   --output /path/to/work/output/plan-reference-v1.pptx

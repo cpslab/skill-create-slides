@@ -38,7 +38,7 @@
 
 ## 作例を再生成するとき
 
-通常の利用に再生成は不要。現行 `Presentations` スキルと `load_workspace_dependencies` で必要な環境を確認し、実際の絶対パスを設定する。
+通常の利用にこの旧来の教材の再生成は不要。この教材の専用生成コードはCodex経路を使うため、現行 `Presentations` スキルと `load_workspace_dependencies` で環境を確認し、実際の絶対パスを設定する。OpenCode・Claude Codeの公開依存による作例再生成は [再生成と検査](generation.md#公開ツールで生成検証する標準) に従う。
 
 | 変数 | 内容 |
 |---|---|
@@ -72,4 +72,4 @@ python3 scripts/check_layout.py "$VISUAL_BUILD_DIR/output/cps-layout-reference.p
 
 再生成時は `FOOTER_LINE=on` または `off` で下端線を切り替える（教材の既定値は `on`）。章扉と表紙タイプBには線を置かず、`off` でもロゴとページ番号は残す。実案件では利用者の選択を記録する。
 
-この一覧PNGは最終PPTXの検証用レンダーをまとめた画像であり、ImageGenによる完成イメージではない。実案件の完成イメージは必ずImageGenで全ページを1枚に生成し、使用者のレビューを受ける。
+この一覧PNGは教材PPTXの検証用レンダーをまとめた画像であり、今回の研究の完成イメージではない。実案件では今回の構成に対応する全ページを1枚の完成イメージに収め、使用者のレビューを受ける。制作手段は用途と利用可能な能力から判断する。

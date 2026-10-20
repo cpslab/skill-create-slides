@@ -58,7 +58,20 @@ export function wrapTitle(text,widthIn,sizePt){
  return String(text).split('\n').flatMap(line=>{
   if(measure(line)<=width)return [line];
   const words=line.includes(' ')?line.split(' '):Array.from(line),sep=line.includes(' ')?' ':'';let rows=[],row='';
-  for(const word of words){const next=row?row+sep+word:word;if(measure(next)>width&&row){rows.push(row);row=word;}else row=next;}if(row)rows.push(row);return rows;
+  for(const word of words){const next=row?row+sep+word:word;if(measure(next)>width&&row){rows.push(row);row=word;}else row=next;}if(row)rows.push(row);
+  // Avoid a single stranded word in automatically wrapped English headings.
+  // Explicit source line breaks remain untouched.
+  if(sep&&rows.length>1){
+   const tail=rows.length-1,previous=rows[tail-1].split(' '),last=rows[tail].split(' ');
+   if(last.length===1&&previous.length>3){
+    while(previous.length>2&&measure(last.join(' '))<measure(previous.join(' '))*.6){
+     if(measure(previous.at(-1)+' '+last.join(' '))>width)break;
+     last.unshift(previous.pop());
+    }
+    rows[tail-1]=previous.join(' ');rows[tail]=last.join(' ');
+   }
+  }
+  return rows;
  }).join('\n');
 }
 export class CPS {

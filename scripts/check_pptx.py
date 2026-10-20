@@ -158,6 +158,10 @@ def inspect(path, expected=None):
                 if name in seen:
                     errors.append(f"Repeated slide in presentation order: {name}")
                 seen.add(name)
+                object_ids = [node.get("id") for node in slide.findall(".//p:cNvPr", NS)]
+                duplicates = [key for key, count in Counter(object_ids).items() if count > 1]
+                if duplicates:
+                    errors.append(f"Duplicate object IDs on slide {number}: {', '.join(str(x) for x in duplicates)}")
                 texts = [node.text for node in slide.findall(".//a:t", NS) if node.text]
                 counts = {
                     "text_runs": len(texts),

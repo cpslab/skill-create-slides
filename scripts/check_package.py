@@ -12,9 +12,10 @@ import zipfile
 
 
 ROOT_FILES = {"AGENTS.md", "README.md", "SKILL.md"}
+DEPENDENCY_FILES = {"package.json", "package-lock.json", "pyproject.toml", "uv.lock"}
 PACKAGE_DIRS = {"agents", "assets", "references", "scripts", "tests"}
 EXTENSIONS = {
-    ".md", ".org", ".txt", ".json", ".yaml", ".yml", ".py", ".mjs", ".js", ".sh", ".applescript",
+    ".md", ".org", ".txt", ".json", ".yaml", ".yml", ".toml", ".lock", ".py", ".mjs", ".js", ".sh", ".applescript",
     ".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".pptx", ".mp4", ".csv", ".tsv",
 }
 TEXT_EXTENSIONS = EXTENSIONS - {".png", ".jpg", ".jpeg", ".webp", ".gif", ".pptx", ".mp4"}
@@ -38,7 +39,7 @@ def digest(path):
 def inventory(root):
     """Only intentionally supported files enter the distribution; never follow symlinks."""
     files, issues = {}, []
-    for name in sorted(ROOT_FILES):
+    for name in sorted(ROOT_FILES | {n for n in DEPENDENCY_FILES if (root / n).exists()}):
         path = root / name
         if path.is_symlink() or not path.is_file():
             issues.append({"code": "required_file", "path": name, "message": "Required regular file missing."})
@@ -186,6 +187,14 @@ def check(root, refresh=False):
     skill_version, readme_version = versions(root)
     if not skill_version or not readme_version or skill_version != readme_version:
         issues.append({"code": "version_sources", "message": "SKILL frontmatter and README current version must exist and match."})
+    for name in ("package.json", "pyproject.toml"):
+        if (root / name).is_file():
+            source = (root / name).read_text()
+            match = re.search(r'^version\s*=\s*"([^"]+)"', source, re.M)
+            version = (json.loads(source).get("version") if name.endswith(".json")
+                       else match.group(1) if match else None)
+            if version != skill_version:
+                issues.append({"code": "dependency_version", "path": name, "message": "Dependency manifest version differs from SKILL.md."})
     content_issues, checked_links, scanned_parts = inspect_content(root, files)
     issues.extend(content_issues)
     if refresh:
@@ -216,7 +225,7 @@ def check(root, refresh=False):
         "schema_version": 1, "status": "pass" if not issues else "error",
         "refreshed": bool(refresh and not issues), "version": skill_version,
         "file_count": len(files), "checked_links": checked_links, "scanned_text_parts": scanned_parts,
-        "distribution": {"root_files": sorted(ROOT_FILES), "directories": sorted(PACKAGE_DIRS),
+        "distribution": {"root_files": sorted(ROOT_FILES | DEPENDENCY_FILES), "directories": sorted(PACKAGE_DIRS),
                          "extensions": sorted(EXTENSIONS), "exclude": ["dotfiles/directories", "__pycache__", "node_modules", MANIFEST]},
         "issues": issues,
         "scope": "Checks file consistency and user-home paths in UTF-8 sources and PPTX XML/rels. It does not inspect image pixels or establish research provenance, visual quality, or application behaviour.",
@@ -233,7 +242,7 @@ def main():
         resolved = args.report.resolve()
         try:
             relative = resolved.relative_to(args.root.resolve())
-            if relative.as_posix() in ROOT_FILES | {MANIFEST} or relative.parts[0] in PACKAGE_DIRS:
+            if relative.as_posix() in ROOT_FILES | DEPENDENCY_FILES | {MANIFEST} or relative.parts[0] in PACKAGE_DIRS:
                 parser.error("--report must not modify a distribution file or directory")
         except ValueError:
             pass
