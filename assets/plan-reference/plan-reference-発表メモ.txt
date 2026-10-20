@@ -1,0 +1,46 @@
+=== GENERATED CONTENT START ===
+表示ページ番号：1
+スライドID：cover
+題名：How community archives decide
+what remains undocumented
+口頭補足：追加の口頭補足なし
+根拠：今回の入力資料
+
+表示ページ番号：2
+スライドID：contents
+題名：Contents
+口頭補足：追加の口頭補足なし
+根拠：今回の入力資料
+
+表示ページ番号：3
+スライドID：research-question
+題名：An empty record has several explanations
+口頭補足：Open research question; no observed participant accounts.
+根拠：今回の入力資料
+
+表示ページ番号：4
+スライドID：conceptual-distinction
+題名：Distinguish possible explanations
+口頭補足：Sensitising concepts for a planned study, not established categories derived from data.
+根拠：今回の入力資料
+
+表示ページ番号：5
+スライドID：study-plan
+題名：A qualitative study is planned
+口頭補足：Recruitment, consent and analysis have not occurred. No device, application or quantitative outcome is required.
+根拠：今回の入力資料
+
+表示ページ番号：6
+スライドID：consent
+題名：Separate permission to discuss and to publish
+口頭補足：Proposed procedures; local review and participant agreement remain necessary.
+根拠：今回の入力資料
+
+表示ページ番号：7
+スライドID：closing
+題名：Study the decision behind an absent account
+口頭補足：Fictional author/contact. No empirical participant data or citations to real studies.
+根拠：今回の入力資料
+=== GENERATED CONTENT END ===
+
+利用者の追記（再生成時も保持）：

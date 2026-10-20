@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "file": "workshop-reference.pptx",
+  "pptx_sha256": "2d79647672bb046851531610ad9ec1854b922f0beb20021312ea443f80bc935b",
+  "slide_count": 10,
+  "findings": [
+    {
+      "id": "notes_meaning:1:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 1,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:1:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 1,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:2:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 2,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:2:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 2,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:3:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 3,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:3:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 3,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:4:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 4,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:4:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 4,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "raster_content:5:photo-0",
+      "status": "review_required",
+      "code": "raster_content",
+      "slide": 5,
+      "element": "photo-0",
+      "message": "Confirm raster labels, cropping and truthful content in the final render against the input."
+    },
+    {
+      "id": "raster_content:5:photo-1",
+      "status": "review_required",
+      "code": "raster_content",
+      "slide": 5,
+      "element": "photo-1",
+      "message": "Confirm raster labels, cropping and truthful content in the final render against the input."
+    },
+    {
+      "id": "notes_meaning:5:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 5,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:5:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 5,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "raster_content:6:ui",
+      "status": "review_required",
+      "code": "raster_content",
+      "slide": 6,
+      "element": "ui",
+      "message": "Confirm raster labels, cropping and truthful content in the final render against the input."
+    },
+    {
+      "id": "notes_meaning:6:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 6,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:6:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 6,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "transform_unsupported:7:to-regular",
+      "status": "unverified",
+      "code": "transform_unsupported",
+      "slide": 7,
+      "element": "to-regular",
+      "message": "Group, rotation or flip transform is not resolved by this checker."
+    },
+    {
+      "id": "notes_meaning:7:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 7,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:7:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 7,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "chart_meaning:8:main-chart",
+      "status": "review_required",
+      "code": "chart_meaning",
+      "slide": 8,
+      "element": "main-chart",
+      "message": "Confirm units, population, aggregation, axis and interpretation against the source."
+    },
+    {
+      "id": "notes_meaning:8:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 8,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:8:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 8,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:9:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 9,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:9:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 9,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:10:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 10,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:10:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 10,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    }
+  ],
+  "checks": [
+    {
+      "slide": 1,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 0
+    },
+    {
+      "slide": 2,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 0
+    },
+    {
+      "slide": 3,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 0
+    },
+    {
+      "slide": 4,
+      "native_tables": 1,
+      "native_charts": 0,
+      "native_connectors": 0
+    },
+    {
+      "slide": 5,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 0
+    },
+    {
+      "slide": 6,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 0
+    },
+    {
+      "slide": 7,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 3
+    },
+    {
+      "slide": 8,
+      "native_tables": 0,
+      "native_charts": 1,
+      "native_connectors": 0
+    },
+    {
+      "slide": 9,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 0
+    },
+    {
+      "slide": 10,
+      "native_tables": 0,
+      "native_charts": 0,
+      "native_connectors": 0
+    }
+  ],
+  "scope": "Generated roles and explicit OOXML properties; visual and source judgement remain separate.",
+  "errors": [],
+  "review_items": [
+    {
+      "id": "notes_meaning:1:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 1,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:1:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 1,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:2:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 2,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:2:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 2,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:3:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 3,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:3:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 3,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:4:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 4,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:4:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 4,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "raster_content:5:photo-0",
+      "status": "review_required",
+      "code": "raster_content",
+      "slide": 5,
+      "element": "photo-0",
+      "message": "Confirm raster labels, cropping and truthful content in the final render against the input."
+    },
+    {
+      "id": "raster_content:5:photo-1",
+      "status": "review_required",
+      "code": "raster_content",
+      "slide": 5,
+      "element": "photo-1",
+      "message": "Confirm raster labels, cropping and truthful content in the final render against the input."
+    },
+    {
+      "id": "notes_meaning:5:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 5,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:5:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 5,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "raster_content:6:ui",
+      "status": "review_required",
+      "code": "raster_content",
+      "slide": 6,
+      "element": "ui",
+      "message": "Confirm raster labels, cropping and truthful content in the final render against the input."
+    },
+    {
+      "id": "notes_meaning:6:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 6,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:6:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 6,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:7:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 7,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:7:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 7,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "chart_meaning:8:main-chart",
+      "status": "review_required",
+      "code": "chart_meaning",
+      "slide": 8,
+      "element": "main-chart",
+      "message": "Confirm units, population, aggregation, axis and interpretation against the source."
+    },
+    {
+      "id": "notes_meaning:8:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 8,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:8:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 8,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:9:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 9,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:9:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 9,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    },
+    {
+      "id": "notes_meaning:10:slide",
+      "status": "review_required",
+      "code": "notes_meaning",
+      "slide": 10,
+      "element": null,
+      "message": "Confirm notes against source and final page mapping; presence alone is not semantic validation."
+    },
+    {
+      "id": "source_meaning:10:slide",
+      "status": "review_required",
+      "code": "source_meaning",
+      "slide": 10,
+      "element": null,
+      "message": "Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning."
+    }
+  ],
+  "unverified": [
+    {
+      "id": "transform_unsupported:7:to-regular",
+      "status": "unverified",
+      "code": "transform_unsupported",
+      "slide": 7,
+      "element": "to-regular",
+      "message": "Group, rotation or flip transform is not resolved by this checker."
+    }
+  ],
+  "status": "review_required"
+}

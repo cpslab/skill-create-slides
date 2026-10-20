@@ -1,0 +1,2060 @@
+{
+  "schema_version": 1,
+  "pptx_sha256": "2d79647672bb046851531610ad9ec1854b922f0beb20021312ea443f80bc935b",
+  "source_sha256": "8bf601015955fb817801e03d4636a338ca9b3f7ebb520c124403a4a6fcc8f85d",
+  "profile_id": "cps-workshop",
+  "slides": [
+    {
+      "number": 1,
+      "id": "cover",
+      "required_text": [
+        "Recording brief changes\nin classroom air",
+        "Alex Morgan · Fictional methods laboratory",
+        "Short research talk · synthetic teaching example",
+        "Fictional study · synthetic data · concept images",
+        "1"
+      ],
+      "expected_elements": [
+        {
+          "id": "cover-band",
+          "role": "background",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.45,
+            9,
+            1.45
+          ]
+        },
+        {
+          "id": "cover-title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.75,
+            1.6,
+            8.5,
+            1.1
+          ],
+          "text": "Recording brief changes\nin classroom air",
+          "font_pt": 28
+        },
+        {
+          "id": "cover-author",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            3.35,
+            8.6,
+            0.65
+          ],
+          "text": "Alex Morgan · Fictional methods laboratory",
+          "font_pt": 16
+        },
+        {
+          "id": "venue",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            0.6,
+            8.6,
+            0.65
+          ],
+          "text": "Short research talk · synthetic teaching example",
+          "font_pt": 16
+        },
+        {
+          "id": "fictional",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            4.5,
+            8.6,
+            0.4
+          ],
+          "text": "Fictional study · synthetic data · concept images",
+          "font_pt": 14
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "frame_bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 489.3854748603352,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "cover-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "1",
+          "font_pt": 9
+        }
+      ],
+      "allowed_overlaps": [
+        [
+          "cover-media",
+          "cover-title"
+        ],
+        [
+          "cover-band",
+          "cover-title"
+        ],
+        [
+          "cover-media",
+          "cover-author"
+        ],
+        [
+          "cover-band",
+          "cover-author"
+        ],
+        [
+          "cover-media",
+          "venue"
+        ],
+        [
+          "cover-band",
+          "venue"
+        ],
+        [
+          "cover-media",
+          "fictional"
+        ],
+        [
+          "cover-band",
+          "fictional"
+        ],
+        [
+          "cover-media",
+          "cover-rule"
+        ],
+        [
+          "cover-band",
+          "cover-rule"
+        ],
+        [
+          "cover-media",
+          "page"
+        ],
+        [
+          "cover-band",
+          "page"
+        ]
+      ],
+      "semantic_claims": []
+    },
+    {
+      "number": 2,
+      "id": "contents",
+      "required_text": [
+        "Contents",
+        "Recording brief changes",
+        "Contents",
+        "2",
+        "01  Question and alternatives",
+        "What a sparse log can miss",
+        "3–4",
+        "02  Proposed workflow",
+        "Concept device, interface and selection",
+        "5–7",
+        "03  Synthetic evidence and next study",
+        "One trace, followed by a planned test",
+        "8–9"
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Contents",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Contents",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "2",
+          "font_pt": 9
+        },
+        {
+          "id": "section-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            7.7,
+            0.4
+          ],
+          "text": "01  Question and alternatives",
+          "font_pt": 16
+        },
+        {
+          "id": "section-desc-0",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.95,
+            1.91,
+            7.25,
+            0.45
+          ],
+          "text": "What a sparse log can miss",
+          "font_pt": 14
+        },
+        {
+          "id": "range-0",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            8.5,
+            1.48,
+            1,
+            0.35
+          ],
+          "text": "3–4",
+          "font_pt": 14
+        },
+        {
+          "id": "section-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.5300000000000002,
+            7.7,
+            0.4
+          ],
+          "text": "02  Proposed workflow",
+          "font_pt": 16
+        },
+        {
+          "id": "section-desc-1",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.95,
+            2.9600000000000004,
+            7.25,
+            0.45
+          ],
+          "text": "Concept device, interface and selection",
+          "font_pt": 14
+        },
+        {
+          "id": "range-1",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            8.5,
+            2.5300000000000002,
+            1,
+            0.35
+          ],
+          "text": "5–7",
+          "font_pt": 14
+        },
+        {
+          "id": "section-2",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.58,
+            7.7,
+            0.4
+          ],
+          "text": "03  Synthetic evidence and next study",
+          "font_pt": 16
+        },
+        {
+          "id": "section-desc-2",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.95,
+            4.01,
+            7.25,
+            0.45
+          ],
+          "text": "One trace, followed by a planned test",
+          "font_pt": 14
+        },
+        {
+          "id": "range-2",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            8.5,
+            3.58,
+            1,
+            0.35
+          ],
+          "text": "8–9",
+          "font_pt": 14
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 3,
+      "id": "question",
+      "required_text": [
+        "Question and alternatives",
+        "Recording brief changes",
+        "A short change can fall between samples",
+        "3",
+        "[1] Synthetic classroom trace, supplied teaching input (2026).",
+        "Fewer stored readings reduce the size of a log.",
+        "Which brief changes remain\nwhen we keep fewer readings?"
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Question and alternatives",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "A short change can fall between samples",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "3",
+          "font_pt": 9
+        },
+        {
+          "id": "sources",
+          "role": "source",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5,
+            9,
+            0.17
+          ],
+          "text": "[1] Synthetic classroom trace, supplied teaching input (2026).",
+          "font_pt": 8.5
+        },
+        {
+          "id": "premise",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            1.58,
+            8.6,
+            0.65
+          ],
+          "text": "Fewer stored readings reduce the size of a log.",
+          "font_pt": 16
+        },
+        {
+          "id": "question",
+          "role": "question",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            2.4299999999999997,
+            8.5,
+            2.4
+          ],
+          "text": "Which brief changes remain\nwhen we keep fewer readings?",
+          "font_pt": 28
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 4,
+      "id": "alternatives",
+      "required_text": [
+        "Question and alternatives",
+        "Recording brief changes",
+        "Choose what the recording rule preserves",
+        "4",
+        "[1] Synthetic teaching specification; alternatives are design options."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Question and alternatives",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Choose what the recording rule preserves",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "4",
+          "font_pt": 9
+        },
+        {
+          "id": "sources",
+          "role": "source",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5,
+            9,
+            0.17
+          ],
+          "text": "[1] Synthetic teaching specification; alternatives are design options.",
+          "font_pt": 8.5
+        },
+        {
+          "id": "main-table",
+          "role": "table",
+          "kind": "table",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            3.4
+          ],
+          "table": {
+            "rows": [
+              [
+                "Rule",
+                "Keeps",
+                "May omit",
+                "Evidence needed"
+              ],
+              [
+                "Fixed interval",
+                "Regular samples",
+                "Changes between samples",
+                "Duration and phase"
+              ],
+              [
+                "Threshold crossing",
+                "A crossing event",
+                "Context below threshold",
+                "Noise sensitivity"
+              ],
+              [
+                "Change-triggered",
+                "Large differences",
+                "Slow changes",
+                "Choice of threshold"
+              ],
+              [
+                "Combined rule",
+                "Events and context",
+                "Unobserved detail",
+                "Storage and fidelity"
+              ]
+            ]
+          },
+          "font_pt": 14
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 5,
+      "id": "concept-materials",
+      "required_text": [
+        "Proposed workflow",
+        "Recording brief changes",
+        "Two concept components",
+        "5",
+        "Generated concepts illustrate roles; neither is a tested prototype.",
+        "Sense the room",
+        "Collect a time series.",
+        "Review the log",
+        "Inspect what was retained."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Proposed workflow",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Two concept components",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "5",
+          "font_pt": 9
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            0.6
+          ],
+          "text": "Generated concepts illustrate roles; neither is a tested prototype.",
+          "font_pt": 16
+        },
+        {
+          "id": "photo-0",
+          "role": "image",
+          "kind": "image",
+          "bounds_in": [
+            1.5004999999999997,
+            2.1799999999999997,
+            2.349,
+            1.566
+          ],
+          "frame_bounds_in": [
+            0.5,
+            2.1799999999999997,
+            4.35,
+            1.566
+          ],
+          "asset": {
+            "path": "media/concept-device.png",
+            "sha256": "95719aa3ca6780702c463169d4232609fbb8fcaecb6651cb1a3f3075d7f07464",
+            "width_px": 1536,
+            "height_px": 1024,
+            "effective_ppi": 653.8952745849297,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "photo-title-0",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.854,
+            4.35,
+            0.36
+          ],
+          "text": "Sense the room",
+          "font_pt": 14
+        },
+        {
+          "id": "photo-description-0",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            4.286,
+            4.35,
+            0.5940000000000001
+          ],
+          "text": "Collect a time series.",
+          "font_pt": 14
+        },
+        {
+          "id": "photo-1",
+          "role": "image",
+          "kind": "image",
+          "bounds_in": [
+            6.150499999999999,
+            2.1799999999999997,
+            2.349,
+            1.566
+          ],
+          "frame_bounds_in": [
+            5.1499999999999995,
+            2.1799999999999997,
+            4.35,
+            1.566
+          ],
+          "asset": {
+            "path": "media/concept-logger.png",
+            "sha256": "d09165431b73eac22826c99793886468ed378ca78705a019d00fb3495d3b88c0",
+            "width_px": 1536,
+            "height_px": 1024,
+            "effective_ppi": 653.8952745849297,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "photo-title-1",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            5.1499999999999995,
+            3.854,
+            4.35,
+            0.36
+          ],
+          "text": "Review the log",
+          "font_pt": 14
+        },
+        {
+          "id": "photo-description-1",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            5.1499999999999995,
+            4.286,
+            4.35,
+            0.5940000000000001
+          ],
+          "text": "Inspect what was retained.",
+          "font_pt": 14
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 6,
+      "id": "interface",
+      "required_text": [
+        "Proposed workflow",
+        "Recording brief changes",
+        "Choose the recording interval",
+        "6",
+        "Concept interface; no working application is claimed.",
+        "Select an interval before recording.",
+        "Export the retained log for inspection.",
+        "Keep the interval with the data so comparisons use the same conditions."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Proposed workflow",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Choose the recording interval",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "6",
+          "font_pt": 9
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            0.6
+          ],
+          "text": "Concept interface; no working application is claimed.",
+          "font_pt": 16
+        },
+        {
+          "id": "ui",
+          "role": "image",
+          "kind": "image",
+          "bounds_in": [
+            1.4,
+            2.1799999999999997,
+            1.8,
+            2.7
+          ],
+          "frame_bounds_in": [
+            0.6,
+            2.1799999999999997,
+            3.4,
+            2.7
+          ],
+          "asset": {
+            "path": "media/concept-ui.png",
+            "sha256": "57e9c4505cbcbb1ee61600d27f755ca00f311ba7fb745671aaee005fbbf5c159",
+            "width_px": 1024,
+            "height_px": 1536,
+            "effective_ppi": 568.8888888888888,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "step-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            4.5,
+            2.1799999999999997,
+            5,
+            0.7
+          ],
+          "text": "Select an interval before recording.",
+          "font_pt": 16
+        },
+        {
+          "id": "step-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            4.5,
+            3.0799999999999996,
+            5,
+            0.7
+          ],
+          "text": "Export the retained log for inspection.",
+          "font_pt": 16
+        },
+        {
+          "id": "step-2",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            4.5,
+            3.9799999999999995,
+            5,
+            0.7
+          ],
+          "text": "Keep the interval with the data so comparisons use the same conditions.",
+          "font_pt": 16
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 7,
+      "id": "selection",
+      "required_text": [
+        "Proposed workflow",
+        "Recording brief changes",
+        "Select a rule before retaining data",
+        "7",
+        "Input trace",
+        "Choose rule",
+        "Regular samples",
+        "Event samples",
+        "Arrows show processing choices, not a causal effect."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Proposed workflow",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Select a rule before retaining data",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "7",
+          "font_pt": 9
+        },
+        {
+          "id": "input",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.25,
+            1.8,
+            0.75
+          ],
+          "text": "Input trace",
+          "font_pt": 14
+        },
+        {
+          "id": "decision",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            3.05,
+            2.25,
+            1.8,
+            0.75
+          ],
+          "text": "Choose rule",
+          "font_pt": 14
+        },
+        {
+          "id": "regular",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            6,
+            1.65,
+            3,
+            0.75
+          ],
+          "text": "Regular samples",
+          "font_pt": 14
+        },
+        {
+          "id": "event",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            6,
+            3.15,
+            3,
+            0.75
+          ],
+          "text": "Event samples",
+          "font_pt": 14
+        },
+        {
+          "id": "to-choice",
+          "role": "diagram-edge",
+          "kind": "connector",
+          "edge": {
+            "from": "input",
+            "to": "decision",
+            "direction": "forward",
+            "meaning": "processing order"
+          }
+        },
+        {
+          "id": "to-regular",
+          "role": "diagram-edge",
+          "kind": "connector",
+          "edge": {
+            "from": "decision",
+            "to": "regular",
+            "direction": "forward",
+            "meaning": "alternative rule"
+          }
+        },
+        {
+          "id": "to-event",
+          "role": "diagram-edge",
+          "kind": "connector",
+          "edge": {
+            "from": "decision",
+            "to": "event",
+            "direction": "forward",
+            "meaning": "alternative rule"
+          }
+        },
+        {
+          "id": "caption",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            4.2299999999999995,
+            9,
+            0.6
+          ],
+          "text": "Arrows show processing choices, not a causal effect.",
+          "font_pt": 16
+        }
+      ],
+      "allowed_overlaps": [
+        [
+          "to-choice",
+          "input"
+        ],
+        [
+          "to-choice",
+          "decision"
+        ],
+        [
+          "to-regular",
+          "decision"
+        ],
+        [
+          "to-regular",
+          "regular"
+        ],
+        [
+          "to-event",
+          "decision"
+        ],
+        [
+          "to-event",
+          "event"
+        ]
+      ],
+      "semantic_claims": []
+    },
+    {
+      "number": 8,
+      "id": "synthetic-result",
+      "required_text": [
+        "Synthetic evidence and next study",
+        "Recording brief changes",
+        "Sparse samples miss one peak in this trace",
+        "8",
+        "[1] Synthetic values in input.json; retained values use the last recorded sample.",
+        "One synthetic trace · last retained value at each time · ppm",
+        "The retained representation never reaches the synthetic peak of 1140 ppm."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Synthetic evidence and next study",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Sparse samples miss one peak in this trace",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "8",
+          "font_pt": 9
+        },
+        {
+          "id": "sources",
+          "role": "source",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5,
+            9,
+            0.17
+          ],
+          "text": "[1] Synthetic values in input.json; retained values use the last recorded sample.",
+          "font_pt": 8.5
+        },
+        {
+          "id": "chart-scope",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            0.38
+          ],
+          "text": "One synthetic trace · last retained value at each time · ppm",
+          "font_pt": 14
+        },
+        {
+          "id": "main-chart",
+          "role": "chart",
+          "kind": "chart",
+          "bounds_in": [
+            0.5,
+            2.1799999999999997,
+            9,
+            2
+          ],
+          "chart": {
+            "categories": [
+              "0 min",
+              "1 min",
+              "2 min",
+              "3 min",
+              "4 min"
+            ],
+            "series": [
+              {
+                "name": "All samples",
+                "values": [
+                  630,
+                  720,
+                  1140,
+                  760,
+                  650
+                ]
+              },
+              {
+                "name": "Retained representation",
+                "values": [
+                  630,
+                  630,
+                  630,
+                  760,
+                  760
+                ]
+              }
+            ],
+            "unit": "Synthetic concentration [ppm]",
+            "subject": "one synthetic trace",
+            "aggregation": "individual trace; no participant average",
+            "status": "illustrative"
+          }
+        },
+        {
+          "id": "interpretation",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            4.2299999999999995,
+            9,
+            0.6
+          ],
+          "text": "The retained representation never reaches the synthetic peak of 1140 ppm.",
+          "font_pt": 16
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 9,
+      "id": "planned-comparison",
+      "required_text": [
+        "Synthetic evidence and next study",
+        "Recording brief changes",
+        "Planned comparison across varied traces",
+        "9",
+        "Planned evaluation; no results are available.",
+        "Fixed intervals",
+        "Apply the same intervals to each trace.\n\nRecord storage size and omitted peaks.",
+        "Change-triggered retention",
+        "Apply a predefined difference threshold.\n\nUse the same traces and measures."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Synthetic evidence and next study",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Planned comparison across varied traces",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "9",
+          "font_pt": 9
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            0.6
+          ],
+          "text": "Planned evaluation; no results are available.",
+          "font_pt": 16
+        },
+        {
+          "id": "condition-title-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.1799999999999997,
+            4.35,
+            0.5
+          ],
+          "text": "Fixed intervals",
+          "font_pt": 16
+        },
+        {
+          "id": "condition-body-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.8299999999999996,
+            4.35,
+            2.0500000000000003
+          ],
+          "text": "Apply the same intervals to each trace.\n\nRecord storage size and omitted peaks.",
+          "font_pt": 16
+        },
+        {
+          "id": "condition-title-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            5.15,
+            2.1799999999999997,
+            4.35,
+            0.5
+          ],
+          "text": "Change-triggered retention",
+          "font_pt": 16
+        },
+        {
+          "id": "condition-body-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            5.15,
+            2.8299999999999996,
+            4.35,
+            2.0500000000000003
+          ],
+          "text": "Apply a predefined difference threshold.\n\nUse the same traces and measures.",
+          "font_pt": 16
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 10,
+      "id": "closing",
+      "required_text": [
+        "Summary",
+        "Recording brief changes",
+        "A recording rule determines what can be seen",
+        "10",
+        "[1] Synthetic teaching input; no empirical effectiveness claim.",
+        "Recording brief changes\nin classroom air",
+        "Alex Morgan · Fictional methods laboratory",
+        "Question: which short changes survive sparse recording?",
+        "Synthetic example: one peak is absent from the retained representation.",
+        "Next: compare rules across traces before building a prototype.",
+        "alex.morgan@example.org"
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Summary",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Recording brief changes",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "A recording rule determines what can be seen",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "10",
+          "font_pt": 9
+        },
+        {
+          "id": "sources",
+          "role": "source",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5,
+            9,
+            0.17
+          ],
+          "text": "[1] Synthetic teaching input; no empirical effectiveness claim.",
+          "font_pt": 8.5
+        },
+        {
+          "id": "summary-title",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            0.4866666666666667
+          ],
+          "text": "Recording brief changes\nin classroom air",
+          "font_pt": 14
+        },
+        {
+          "id": "summary-author",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.006666666666667,
+            9,
+            0.25333333333333335
+          ],
+          "text": "Alex Morgan · Fictional methods laboratory",
+          "font_pt": 14
+        },
+        {
+          "id": "takeaway-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.3400000000000003,
+            9,
+            0.2866666666666667
+          ],
+          "text": "Question: which short changes survive sparse recording?",
+          "font_pt": 16
+        },
+        {
+          "id": "takeaway-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.806666666666667,
+            9,
+            0.2866666666666667
+          ],
+          "text": "Synthetic example: one peak is absent from the retained representation.",
+          "font_pt": 16
+        },
+        {
+          "id": "takeaway-2",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.273333333333334,
+            9,
+            0.2866666666666667
+          ],
+          "text": "Next: compare rules across traces before building a prototype.",
+          "font_pt": 16
+        },
+        {
+          "id": "contact",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            4.626666666666667,
+            9,
+            0.25333333333333335
+          ],
+          "text": "alex.morgan@example.org",
+          "font_pt": 14
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    }
+  ],
+  "structure": {
+    "toc_style": "vertical",
+    "section_dividers": "none",
+    "summary_placement": "end_of_main",
+    "appendix_after_main": true,
+    "sections": [
+      {
+        "id": "problem",
+        "title": "Question and alternatives",
+        "description": "What a sparse log can miss"
+      },
+      {
+        "id": "method",
+        "title": "Proposed workflow",
+        "description": "Concept device, interface and selection"
+      },
+      {
+        "id": "evidence",
+        "title": "Synthetic evidence and next study",
+        "description": "One trace, followed by a planned test"
+      }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "problem",
+      "title": "Question and alternatives",
+      "description": "What a sparse log can miss",
+      "start": 3,
+      "end": 4
+    },
+    {
+      "id": "method",
+      "title": "Proposed workflow",
+      "description": "Concept device, interface and selection",
+      "start": 5,
+      "end": 7
+    },
+    {
+      "id": "evidence",
+      "title": "Synthetic evidence and next study",
+      "description": "One trace, followed by a planned test",
+      "start": 8,
+      "end": 9
+    }
+  ]
+}

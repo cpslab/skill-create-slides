@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "pptx": "plan-reference.pptx",
+  "pptx_sha256": "eb71e9cb047d9106b8f4679ef4a23e23b32d0d1c4583fe0326b4c03f0d15ecf4",
+  "input": "input.json",
+  "input_sha256": "a9cae37d70fd045b0f83c8e7a27526df983dc0d7a3b7284dd61939d47ea13856",
+  "renderer": "Microsoft PowerPoint 16.111 → PDF → Poppler Cairo",
+  "pdf": {
+    "path": "powerpoint-export.pdf",
+    "sha256": "260d673dc9836952e2b7fec4d08df64d2c35f75ba18ce9eb053398938f03143b",
+    "source_binding": "exported directly from requested PPTX"
+  },
+  "reviewed_at": "2026-10-20T10:41:36.606Z",
+  "reviewer": "Codex subagent /root/baseline",
+  "method": "All pages individually opened at original 1440×810 resolution from the exact PowerPoint-exported PDF/Cairo PNGs. Suspected header visibility in the image tool checked with source-PNG crops and exact RGB-region comparisons.",
+  "status": "pass",
+  "pages": [
+    {
+      "number": 1,
+      "image": "slide-01.png",
+      "image_sha256": "13fb378fff475473539d082e872ed7fdde00cb5d62b79af02a045444940c2325",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "正式題目2行、著者、架空計画・実測結果なしの区分、連番1が明瞭。"
+    },
+    {
+      "number": 2,
+      "image": "slide-02.png",
+      "image_sha256": "6ef6efd7e6dbecd518d816830a65594850a86cfd9c6286836d9415e5f3b747c7",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "2章の正式名・説明と範囲3–4/5–6が入力の章割当と一致。画像なしでも欠落スロットはない。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 3,
+      "image": "slide-03.png",
+      "image_sha256": "23c2c4cde15f960f8535606cbeaa3b6a43f7475adc0f6d7a1f0c3b931176d332",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "欠落だけでは理由は判明しない前提と2行の問いが読める。観察済み参加者の結果へ変えていない。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 4,
+      "image": "slide-04.png",
+      "image_sha256": "6babb82d787e3e0a46235d462b08be83f6ee7af2532f67a67e80200d27f586d6",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "4行×3列の全セルが読め、Absence/Withholding/Exclusionの可能な意味と求める証拠が正しく対応。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 5,
+      "image": "slide-05.png",
+      "image_sha256": "82bbec12553049a98fa5506c11022e1faff7ad4e14e99cfeaebeac5171eedecb",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "3つの計画を表示。募集・同意・分析を実施済みとは表現せず、機器や数量的結果を追加していない。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 6,
+      "image": "slide-06.png",
+      "image_sha256": "59da229232dc6ef695e080cadb5031b1ba23d200a639bf0b0918b90cca7b7728",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "PowerPoint版で24ptの2行見出し「publish」の下端と罫線に明確な空きがある。本文開始位置も連動し、両列の許可・拒否・匿名性の説明が省略なく読める。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 7,
+      "image": "slide-07.png",
+      "image_sha256": "22ad4d19bf8e730148c47fbf3d4cfe68ee5e0dc86a86f356b8300a24151cfad4",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "正式題目2行、著者、3点の要約、連絡先、連番7が収まる。結果未取得と概念見直し可能性を明示。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    }
+  ],
+  "input_semantics": {
+    "status": "pass",
+    "comparison_failures": [],
+    "report": "input-audit.json",
+    "checks": [
+      "Display-order slide mapping",
+      "Raw text including formal title, author and specified contact",
+      "Native table cell matrix",
+      "Native chart categories, series names, caches and embedded workbook where present",
+      "Input image byte hashes",
+      "All displayed page numbers",
+      "Per-slide notes including evidence scope",
+      "Core metadata title and author"
+    ]
+  },
+  "scope": "Native PowerPoint PDF display, exact-file OOXML/input meaning and structure; not an interactive edit-and-resave test.",
+  "resolved_findings": [
+    {
+      "id": "notes_meaning:1:slide",
+      "status": "pass",
+      "reason": "架空の計画、架空著者、実測結果なしを表示。入力にノートはなく空ノートが生成されている。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[0]",
+        "slide-01.png"
+      ]
+    },
+    {
+      "id": "source_meaning:1:slide",
+      "status": "pass",
+      "reason": "架空の計画、架空著者、実測結果なしを表示。入力にノートはなく空ノートが生成されている。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[0]",
+        "slide-01.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:2:slide",
+      "status": "pass",
+      "reason": "目次は章割当と一致。入力にノートはなく空ノートが生成されている。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[1]",
+        "slide-02.png"
+      ]
+    },
+    {
+      "id": "source_meaning:2:slide",
+      "status": "pass",
+      "reason": "目次は章割当と一致。入力にノートはなく空ノートが生成されている。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[1]",
+        "slide-02.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:3:slide",
+      "status": "pass",
+      "reason": "記録の欠落は理由の証拠にならないという問いの意味と、観察済み参加者の記録なしというノートを保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[2]",
+        "slide-03.png"
+      ]
+    },
+    {
+      "id": "source_meaning:3:slide",
+      "status": "pass",
+      "reason": "記録の欠落は理由の証拠にならないという問いの意味と、観察済み参加者の記録なしというノートを保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[2]",
+        "slide-03.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:4:slide",
+      "status": "pass",
+      "reason": "感受概念としての区別であってデータから得た分類ではないというノートを同ページに保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[3]",
+        "slide-04.png"
+      ]
+    },
+    {
+      "id": "source_meaning:4:slide",
+      "status": "pass",
+      "reason": "感受概念としての区別であってデータから得た分類ではないというノートを同ページに保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[3]",
+        "slide-04.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:5:slide",
+      "status": "pass",
+      "reason": "募集・同意・分析は未実施というノートを保持。装置・アプリ・定量的成果を不要とする研究入力が成立。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[4]",
+        "slide-05.png"
+      ]
+    },
+    {
+      "id": "source_meaning:5:slide",
+      "status": "pass",
+      "reason": "募集・同意・分析は未実施というノートを保持。装置・アプリ・定量的成果を不要とする研究入力が成立。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[4]",
+        "slide-05.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:6:slide",
+      "status": "pass",
+      "reason": "話すことと公開することの許可を別にする予定手続。地域側のレビューと本人同意がまだ必要というノートを保持。描画の線接触は本releaseで解消。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[5]",
+        "slide-06.png"
+      ]
+    },
+    {
+      "id": "source_meaning:6:slide",
+      "status": "pass",
+      "reason": "話すことと公開することの許可を別にする予定手続。地域側のレビューと本人同意がまだ必要というノートを保持。描画の線接触は本releaseで解消。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[5]",
+        "slide-06.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:7:slide",
+      "status": "pass",
+      "reason": "研究疑問、計画した方法、未取得の結果と概念変更可能性を3点で保持。架空連絡先で実参加者データなしというノートも保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[6]",
+        "slide-07.png"
+      ]
+    },
+    {
+      "id": "source_meaning:7:slide",
+      "status": "pass",
+      "reason": "研究疑問、計画した方法、未取得の結果と概念変更可能性を3点で保持。架空連絡先で実参加者データなしというノートも保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[6]",
+        "slide-07.png"
+      ]
+    }
+  ],
+  "closed_previous_findings": [
+    {
+      "id": "two-line-title-rule-contact",
+      "severity": "P2",
+      "slide": 6,
+      "status": "resolved",
+      "description": "両列の参加者選択・話題拒否・別途公開許可・匿名性の意味は保持。ただし2行見出しのpublishのp下端をtitle-ruleが横切る/接触する。Artifact表示を要修正として記録。",
+      "evidence": "slide-06.png",
+      "native_application_reproduction": "The corrected native PowerPoint output has no overlap.",
+      "reason": "PowerPoint版で24ptの2行見出し「publish」の下端と罫線に明確な空きがある。本文開始位置も連動し、両列の許可・拒否・匿名性の説明が省略なく読める。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。",
+      "previous_pptx_sha256": "14c0bb75944dfa25091e0fbe4c8d53b142e1d3e165c2e934a52e5cf409ff2221"
+    }
+  ],
+  "visual_findings": [],
+  "application_checks": {
+    "required": true,
+    "status": "pass",
+    "application": "Microsoft PowerPoint",
+    "version": "16.111",
+    "platform": "macOS",
+    "operator": "Root agent /root",
+    "reviewer": "Codex subagent /root/baseline",
+    "operations": [
+      "Requested final PPTX opened normally by exact file identity.",
+      "Exported the presentation to PDF.",
+      "Closed the presentation without saving.",
+      "Rendered exported PDF using Poppler Cairo.",
+      "All native PDF/Cairo pages visually reviewed at original resolution."
+    ],
+    "evidence": [
+      "render-record.json"
+    ],
+    "operation_report": "Root agent reported normal completion with exit 0 for B1 10 pages and B2 7 pages on 2026-10-20; render_powerpoint.applescript rejects repaired/unrelated presentations by exact-file identity.",
+    "source_pptx_unchanged": true,
+    "not_tested": [
+      "Native chart data-editor GUI",
+      "Graphical slide-show controls"
+    ],
+    "pdf_evidence": "PDF hash is recorded in render-record.json; the export itself is retained in the external development audit.",
+    "text_table_edit_round_trip": {
+      "status": "pass",
+      "evidence": "native-edit-check.json",
+      "scope": "Separate test copy edited, saved and reopened; delivery PPTX unchanged."
+    }
+  },
+  "gate": {
+    "status": "pass",
+    "pptx_sha256": "eb71e9cb047d9106b8f4679ef4a23e23b32d0d1c4583fe0326b4c03f0d15ecf4",
+    "scope": "All-page visual, native-data and layout/source checks. Other research types and other computers are not certified."
+  }
+}

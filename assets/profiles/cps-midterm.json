@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "cps-midterm",
+  "slide_size_in": [
+    10,
+    5.625
+  ],
+  "font": "Noto Sans JP",
+  "palette": "botanica",
+  "colour_roles": {
+    "background": "#FFFFFF",
+    "body": "#17202A",
+    "muted": "#59636E",
+    "table_header": "#EFF5E4",
+    "highlight": "#EDF4E8",
+    "series": [
+      "#666666",
+      "#38761D"
+    ]
+  },
+  "structure": {
+    "toc_style": "grid",
+    "section_dividers": "all",
+    "summary_placement": "end_of_deck",
+    "appendix_after_main": true
+  },
+  "frame": {
+    "margin_in": 0.5,
+    "logo_position": "bottom_left",
+    "title_rule": false,
+    "FOOTER_LINE": "on",
+    "body_top_in": 1.7,
+    "body_bottom_in": 4.56,
+    "source_y_in": 4.65,
+    "footer_y_in": 5.045
+  },
+  "typography_pt": {
+    "title": 27,
+    "body": 18,
+    "question": 28,
+    "header": 12,
+    "table": 16,
+    "label": 16,
+    "source": 9,
+    "page": 14,
+    "caption": 12
+  },
+  "minimum_font_pt": {
+    "title": 26,
+    "body": 18,
+    "question": 24,
+    "header": 10,
+    "table": 14,
+    "label": 14,
+    "source": 8.5,
+    "page": 9,
+    "caption": 12
+  },
+  "geometry_tolerance_in": 0.02
+}

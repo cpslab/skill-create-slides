@@ -1,0 +1,3489 @@
+{
+  "schema_version": 1,
+  "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+  "source_sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+  "profile_id": "cps-midterm",
+  "source_origin": {
+    "path": "assets/example-source.org",
+    "kind": "fictional Org source",
+    "verification": "requires independent source and visual review"
+  },
+  "mapping_origin": "Author-assigned roles, geometry, text and data recorded at creation calls; not extracted from exported PPTX.",
+  "scope": "Nine layout teaching examples, including two alternative covers and one chapter-divider example; not a complete four-chapter talk.",
+  "slides": [
+    {
+      "number": 1,
+      "id": "SAMPLE-01",
+      "expected_elements": [
+        {
+          "id": "footer-line",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0,
+            5.045,
+            10,
+            0.059
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "1",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "venue",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.3333333333333333,
+            8.854166666666666,
+            0.4166666666666667
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "研究発表の視覚作例",
+          "font_pt": 18
+        },
+        {
+          "id": "topic",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.75,
+            1.547,
+            8.5,
+            1.206
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "室内環境ログの記録間隔\n合成データを用いた予備検討",
+          "font_pt": 29.000250000000005
+        },
+        {
+          "id": "affiliation",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.75,
+            3.2708333333333335,
+            5.3125,
+            0.5
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "CPS LAB スタイル見本",
+          "font_pt": 18
+        },
+        {
+          "id": "author",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.75,
+            4,
+            5.3125,
+            0.5
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "架空の発表者",
+          "font_pt": 18
+        },
+        {
+          "id": "research-photo-slot",
+          "role": "shape",
+          "kind": "shape",
+          "bounds_in": [
+            6.5625,
+            3.0625,
+            2.6875,
+            1.6666666666666667
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ]
+        },
+        {
+          "id": "photo-slot-label",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            6.666666666666667,
+            3.5104166666666665,
+            2.4791666666666665,
+            0.7708333333333334
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "研究対象の写真枠\n写真は未同梱",
+          "font_pt": 18
+        }
+      ],
+      "allowed_overlaps": [
+        [
+          "research-photo-slot",
+          "photo-slot-label"
+        ]
+      ],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "発表条件（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "教材の発表者と連絡先"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review",
+      "overlap_reasons": [
+        {
+          "elements": [
+            "research-photo-slot",
+            "photo-slot-label"
+          ],
+          "reason": "写真未同梱を明示する枠内ラベル。"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "SAMPLE-02",
+      "expected_elements": [
+        {
+          "id": "venue",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.3020833333333333,
+            9,
+            0.3958333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "研究発表の視覚作例",
+          "font_pt": 18
+        },
+        {
+          "id": "topic",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.625,
+            1.4791666666666667,
+            8.75,
+            1.25
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "室内環境ログの記録間隔\n合成データを用いた予備検討",
+          "font_pt": 30
+        },
+        {
+          "id": "affiliation",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.9375,
+            3.125,
+            8.125,
+            0.4583333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "CPS LAB スタイル見本",
+          "font_pt": 18
+        },
+        {
+          "id": "author",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.9375,
+            3.7604166666666665,
+            8.125,
+            0.4375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "架空の発表者",
+          "font_pt": 18
+        },
+        {
+          "id": "media-placeholder",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            4.6875,
+            9,
+            0.3541666666666667
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "発表条件（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "全面を動画・静止ポスターに置換する配置見本",
+          "font_pt": 18
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "2",
+          "font_pt": 14.000250000000001
+        }
+      ],
+      "allowed_overlaps": [],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "発表条件（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "教材の発表者と連絡先"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review"
+    },
+    {
+      "number": 3,
+      "id": "SAMPLE-03",
+      "expected_elements": [
+        {
+          "id": "footer-line",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0,
+            5.045,
+            10,
+            0.059
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "3",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "running-chapter-3",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.12,
+            2.8000000000000003,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "目次",
+          "font_pt": 12
+        },
+        {
+          "id": "running-title-3",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            3.5,
+            0.12,
+            6,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "室内環境ログの記録間隔",
+          "font_pt": 12
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.52,
+            9,
+            0.4375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "目次",
+          "font_pt": 27
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1,
+            9,
+            0.6
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "研究のねらい、しくみ、ここまでの結果、今後の展望",
+          "font_pt": 23.000250000000005
+        },
+        {
+          "id": "toc-label-0",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1.7604166666666667,
+            4.25,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "01 研究のねらい",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-image-slot-0",
+          "role": "shape",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.15625,
+            4.25,
+            0.7708333333333334
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ]
+        },
+        {
+          "id": "toc-image-label-0",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.6041666666666666,
+            2.2083333333333335,
+            4.041666666666667,
+            0.6666666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "利用場面の画像枠",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-label-1",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            5.25,
+            1.7604166666666667,
+            4.25,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "02 しくみと評価方法",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-image-slot-1",
+          "role": "shape",
+          "kind": "shape",
+          "bounds_in": [
+            5.25,
+            2.15625,
+            4.25,
+            0.7708333333333334
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ]
+        },
+        {
+          "id": "toc-image-label-1",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            5.354166666666667,
+            2.2083333333333335,
+            4.041666666666667,
+            0.6666666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "手法・実機の画像枠",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-label-2",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            3.1354166666666665,
+            4.25,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "03 ここまでの結果",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-image-slot-2",
+          "role": "shape",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.53125,
+            4.25,
+            0.7708333333333334
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ]
+        },
+        {
+          "id": "toc-image-label-2",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.6041666666666666,
+            3.5833333333333335,
+            4.041666666666667,
+            0.6666666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "評価・結果図の画像枠",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-label-3",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            5.25,
+            3.1354166666666665,
+            4.25,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "04 今後の展望",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-image-slot-3",
+          "role": "shape",
+          "kind": "shape",
+          "bounds_in": [
+            5.25,
+            3.53125,
+            4.25,
+            0.7708333333333334
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ]
+        },
+        {
+          "id": "toc-image-label-3",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            5.354166666666667,
+            3.5833333333333335,
+            4.041666666666667,
+            0.6666666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "構想図の画像枠（計画）",
+          "font_pt": 18
+        },
+        {
+          "id": "toc-rule-vertical",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            5,
+            1.7083333333333333,
+            0.010416666666666666,
+            2.7604166666666665
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "toc-rule-horizontal",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.0729166666666665,
+            9,
+            0.010416666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        }
+      ],
+      "allowed_overlaps": [
+        [
+          "toc-image-slot-0",
+          "toc-image-label-0"
+        ],
+        [
+          "toc-image-slot-1",
+          "toc-image-label-1"
+        ],
+        [
+          "toc-image-slot-2",
+          "toc-image-label-2"
+        ],
+        [
+          "toc-image-slot-3",
+          "toc-image-label-3"
+        ]
+      ],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "問いと処理（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "根拠ラベル"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review",
+      "overlap_reasons": [
+        {
+          "elements": [
+            "toc-image-slot-0",
+            "toc-image-label-0"
+          ],
+          "reason": "未提供素材の位置を説明する枠内ラベル。"
+        },
+        {
+          "elements": [
+            "toc-image-slot-1",
+            "toc-image-label-1"
+          ],
+          "reason": "未提供素材の位置を説明する枠内ラベル。"
+        },
+        {
+          "elements": [
+            "toc-image-slot-2",
+            "toc-image-label-2"
+          ],
+          "reason": "未提供素材の位置を説明する枠内ラベル。"
+        },
+        {
+          "elements": [
+            "toc-image-slot-3",
+            "toc-image-label-3"
+          ],
+          "reason": "未提供素材の位置を説明する枠内ラベル。"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "SAMPLE-04",
+      "expected_elements": [
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.418000000000001,
+            0.5499999999999999,
+            1.211,
+            0.34007534246575344
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "4",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "running-chapter-4",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.12,
+            2.8000000000000003,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "03 ここまでの結果",
+          "font_pt": 12
+        },
+        {
+          "id": "running-title-4",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            3.5,
+            0.12,
+            6,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "室内環境ログの記録間隔",
+          "font_pt": 12
+        },
+        {
+          "id": "upper-chapter-band",
+          "role": "shape",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.0625,
+            8.5,
+            0.8984375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ]
+        },
+        {
+          "id": "chapter",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.734375,
+            1.1328125,
+            8.046875,
+            0.7109375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "03  ここまでの結果",
+          "font_pt": 37.6875
+        },
+        {
+          "id": "chapter-guide",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.75,
+            2.3125,
+            8.4375,
+            0.859375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "合成データで確認したことと、残る課題",
+          "font_pt": 21.999749999999995
+        }
+      ],
+      "allowed_overlaps": [
+        [
+          "upper-chapter-band",
+          "chapter"
+        ]
+      ],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "この入力から計算できる結果（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "根拠ラベル"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review",
+      "overlap_reasons": [
+        {
+          "elements": [
+            "upper-chapter-band",
+            "chapter"
+          ],
+          "reason": "章タイトルを色帯の内側に置く章扉。"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "SAMPLE-05",
+      "expected_elements": [
+        {
+          "id": "footer-line",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0,
+            5.045,
+            10,
+            0.059
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "5",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "running-chapter-5",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.12,
+            2.8000000000000003,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "02 しくみと評価方法",
+          "font_pt": 12
+        },
+        {
+          "id": "running-title-5",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            3.5,
+            0.12,
+            6,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "室内環境ログの記録間隔",
+          "font_pt": 12
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.52,
+            9,
+            0.4375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "同じ入力の間引き",
+          "font_pt": 27
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1,
+            9,
+            0.6
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "合成13点から、0・5・10分の3点を保持する [1]",
+          "font_pt": 23.000250000000005
+        },
+        {
+          "id": "all-label",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1.875,
+            2.9166666666666665,
+            0.375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "1分間隔の入力",
+          "font_pt": 18
+        },
+        {
+          "id": "kept-label",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            3.3854166666666665,
+            2.9166666666666665,
+            0.375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "5分間隔で保持",
+          "font_pt": 18
+        },
+        {
+          "id": "input-0",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            3.5416666666666665,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-0",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            3.4375,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "0",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "retained-0",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            3.5208333333333335,
+            3.5625,
+            0.22916666666666666,
+            0.22916666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "keep-0",
+          "role": "diagram-edge",
+          "kind": "connector",
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "edge": {
+            "from": "input-0",
+            "to": "retained-0",
+            "direction": "forward",
+            "meaning": "0分の入力点を保持する対応"
+          },
+          "source_ref": {
+            "path": "assets/example-source.org",
+            "section": "入力表（全行が合成データ）",
+            "time_minutes": 0
+          }
+        },
+        {
+          "id": "input-1",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            3.9791666666666665,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-1",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            3.875,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "1",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-2",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            4.416666666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-2",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            4.3125,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "2",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-3",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            4.854166666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-3",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            4.75,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "3",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-4",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            5.291666666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-4",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            5.1875,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "4",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-5",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            5.729166666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-5",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            5.625,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "5",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "retained-5",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            5.708333333333333,
+            3.5625,
+            0.22916666666666666,
+            0.22916666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "keep-5",
+          "role": "diagram-edge",
+          "kind": "connector",
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "edge": {
+            "from": "input-5",
+            "to": "retained-5",
+            "direction": "forward",
+            "meaning": "5分の入力点を保持する対応"
+          },
+          "source_ref": {
+            "path": "assets/example-source.org",
+            "section": "入力表（全行が合成データ）",
+            "time_minutes": 5
+          }
+        },
+        {
+          "id": "input-6",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            6.166666666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-6",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            6.0625,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "6",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-7",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            6.604166666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-7",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            6.5,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "7",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-8",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            7.041666666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-8",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            6.9375,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "8",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-9",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            7.479166666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-9",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            7.375,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "9",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-10",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            7.916666666666667,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-10",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            7.8125,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "10",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "retained-10",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            7.895833333333333,
+            3.5625,
+            0.22916666666666666,
+            0.22916666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "keep-10",
+          "role": "diagram-edge",
+          "kind": "connector",
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "edge": {
+            "from": "input-10",
+            "to": "retained-10",
+            "direction": "forward",
+            "meaning": "10分の入力点を保持する対応"
+          },
+          "source_ref": {
+            "path": "assets/example-source.org",
+            "section": "入力表（全行が合成データ）",
+            "time_minutes": 10
+          }
+        },
+        {
+          "id": "input-11",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            8.354166666666666,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-11",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            8.25,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "11",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "input-12",
+          "role": "diagram-node",
+          "kind": "shape",
+          "bounds_in": [
+            8.791666666666666,
+            2.0625,
+            0.1875,
+            0.1875
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ]
+        },
+        {
+          "id": "minute-12",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            8.6875,
+            1.71875,
+            0.3958333333333333,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "12",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "axis-unit",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            8.270833333333334,
+            2.7708333333333335,
+            0.9895833333333334,
+            0.2916666666666667
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "時刻 [分]",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "arrow-meaning",
+          "role": "label",
+          "kind": "text",
+          "bounds_in": [
+            3.5416666666666665,
+            3.9270833333333335,
+            5.3125,
+            0.2708333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "矢印は「保持する点」の対応",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "page-reference",
+          "role": "source",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            4.62,
+            9,
+            0.36000000000000004
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            }
+          ],
+          "text": "[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.",
+          "font_pt": 9
+        }
+      ],
+      "allowed_overlaps": [],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "問いと処理（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "入力表（全行が合成データ）"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review"
+    },
+    {
+      "number": 6,
+      "id": "SAMPLE-06",
+      "expected_elements": [
+        {
+          "id": "footer-line",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0,
+            5.045,
+            10,
+            0.059
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "6",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "running-chapter-6",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.12,
+            2.8000000000000003,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "03 ここまでの結果",
+          "font_pt": 12
+        },
+        {
+          "id": "running-title-6",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            3.5,
+            0.12,
+            6,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "室内環境ログの記録間隔",
+          "font_pt": 12
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.52,
+            9,
+            0.4375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "この合成例では高い値が記録に残らない",
+          "font_pt": 27
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1,
+            9,
+            0.6
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "5分間隔の保持点には、1000 ppmを超える値がない [1]",
+          "font_pt": 23.000250000000005
+        },
+        {
+          "id": "synthetic-comparison",
+          "role": "chart",
+          "kind": "chart",
+          "bounds_in": [
+            0.4791666666666667,
+            1.71875,
+            6.791666666666667,
+            2.5208333333333335
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "chart": {
+            "series": [
+              {
+                "name": "1分間隔 (小点)",
+                "categories": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "values": [
+                  700,
+                  720,
+                  760,
+                  820,
+                  930,
+                  970,
+                  1120,
+                  1080,
+                  920,
+                  870,
+                  820,
+                  780,
+                  760
+                ]
+              },
+              {
+                "name": "5分間隔 (大点)",
+                "categories": [
+                  0,
+                  5,
+                  10
+                ],
+                "values": [
+                  700,
+                  970,
+                  820
+                ]
+              },
+              {
+                "name": "1000 ppm",
+                "categories": [
+                  0,
+                  12
+                ],
+                "values": [
+                  1000,
+                  1000
+                ]
+              }
+            ]
+          },
+          "source_ref": {
+            "path": "assets/example-source.org",
+            "section": "入力表（全行が合成データ）"
+          },
+          "evidence_status": "illustrative"
+        },
+        {
+          "id": "maximum-label",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            7.541666666666667,
+            1.9479166666666667,
+            1.9791666666666667,
+            0.3125
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "保持最大値",
+          "font_pt": 18
+        },
+        {
+          "id": "all-max",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            7.541666666666667,
+            2.4375,
+            1.9791666666666667,
+            0.7708333333333334
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "全13点\n1120 ppm",
+          "font_pt": 18.99975
+        },
+        {
+          "id": "kept-max",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            7.541666666666667,
+            3.4895833333333335,
+            1.9791666666666667,
+            0.7708333333333334
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "保持3点\n970 ppm",
+          "font_pt": 18.99975
+        },
+        {
+          "id": "page-reference",
+          "role": "source",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            4.62,
+            9,
+            0.36000000000000004
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "入力表（全行が合成データ）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.",
+          "font_pt": 9
+        }
+      ],
+      "allowed_overlaps": [],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "入力表（全行が合成データ）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "この入力から計算できる結果（架空）"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review"
+    },
+    {
+      "number": 7,
+      "id": "SAMPLE-07",
+      "expected_elements": [
+        {
+          "id": "footer-line",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0,
+            5.045,
+            10,
+            0.059
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "7",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "running-chapter-7",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.12,
+            2.8000000000000003,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "03 ここまでの結果",
+          "font_pt": 12
+        },
+        {
+          "id": "running-title-7",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            3.5,
+            0.12,
+            6,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "室内環境ログの記録間隔",
+          "font_pt": 12
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.52,
+            9,
+            0.4375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "記録量と保持された値",
+          "font_pt": 27
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1,
+            9,
+            0.6
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "保持点は13点から3点に減る [1]",
+          "font_pt": 23.000250000000005
+        },
+        {
+          "id": "comparison-table",
+          "role": "table",
+          "kind": "table",
+          "bounds_in": [
+            0.5,
+            1.8125,
+            9,
+            2.375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "table": {
+            "rows": [
+              [
+                "比較項目",
+                "1分間隔",
+                "5分間隔"
+              ],
+              [
+                "保持点数",
+                "13",
+                "3"
+              ],
+              [
+                "保持最大値 [ppm]",
+                "1120",
+                "970"
+              ],
+              [
+                "1000 ppm超の記録点数",
+                "2",
+                "0"
+              ]
+            ]
+          },
+          "source_ref": {
+            "path": "assets/example-source.org",
+            "section": "この入力から計算できる結果（架空）"
+          },
+          "evidence_status": "illustrative"
+        },
+        {
+          "id": "page-reference",
+          "role": "source",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            4.62,
+            9,
+            0.36000000000000004
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            }
+          ],
+          "text": "[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.",
+          "font_pt": 9
+        }
+      ],
+      "allowed_overlaps": [],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "この入力から計算できる結果（架空）"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review"
+    },
+    {
+      "number": 8,
+      "id": "SAMPLE-08",
+      "expected_elements": [
+        {
+          "id": "footer-line",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0,
+            5.045,
+            10,
+            0.059
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "8",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "running-chapter-8",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.12,
+            2.8000000000000003,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "まとめ",
+          "font_pt": 12
+        },
+        {
+          "id": "running-title-8",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            3.5,
+            0.12,
+            6,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "室内環境ログの記録間隔",
+          "font_pt": 12
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.52,
+            9,
+            0.4375
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "まとめ",
+          "font_pt": 27
+        },
+        {
+          "id": "message",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1,
+            9,
+            0.6
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "記録点数と、残る変化を併せて確かめる [1]",
+          "font_pt": 23.000250000000005
+        },
+        {
+          "id": "summary-label-0",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1.7708333333333333,
+            2.9140625,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "01 研究のねらい",
+          "font_pt": 18
+        },
+        {
+          "id": "summary-body-0",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            3.6015625,
+            1.7708333333333333,
+            5.8984375,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "記録点を減らすとき、短い変化が残るかを問う",
+          "font_pt": 18
+        },
+        {
+          "id": "summary-rule-0",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.4010416666666665,
+            9,
+            0.010416666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "summary-label-1",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            2.4375,
+            2.9140625,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "02 しくみと評価方法",
+          "font_pt": 18
+        },
+        {
+          "id": "summary-body-1",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            3.6015625,
+            2.4375,
+            5.8984375,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "同じ合成系列を、全13点と保持3点で比較した",
+          "font_pt": 18
+        },
+        {
+          "id": "summary-rule-1",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.0677083333333335,
+            9,
+            0.010416666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "summary-label-2",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            3.1041666666666665,
+            2.9140625,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "03 ここまでの結果",
+          "font_pt": 18
+        },
+        {
+          "id": "summary-body-2",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            3.6015625,
+            3.1041666666666665,
+            5.8984375,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "この例では、5分間隔の保持点に\n1000 ppmを超える値が残らなかった",
+          "font_pt": 18
+        },
+        {
+          "id": "summary-rule-2",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.734375,
+            9,
+            0.010416666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "summary-label-3",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            3.7708333333333335,
+            2.9140625,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "04 今後の展望",
+          "font_pt": 18
+        },
+        {
+          "id": "summary-body-3",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            3.6015625,
+            3.7708333333333335,
+            5.8984375,
+            0.6041666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "波形・開始時刻を変え、実機条件で確かめる計画",
+          "font_pt": 18
+        },
+        {
+          "id": "page-reference",
+          "role": "source",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            4.62,
+            9,
+            0.36000000000000004
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            }
+          ],
+          "text": "[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.",
+          "font_pt": 9
+        }
+      ],
+      "allowed_overlaps": [],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "問いと処理（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "この入力から計算できる結果（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "根拠ラベル"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review"
+    },
+    {
+      "number": 9,
+      "id": "SAMPLE-09",
+      "expected_elements": [
+        {
+          "id": "footer-line",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0,
+            5.045,
+            10,
+            0.059
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "asset": {
+            "path": "assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+          }
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "text",
+          "bounds_in": [
+            7.438,
+            5.2139999999999995,
+            2.3329999999999997,
+            0.3
+          ],
+          "source_refs": [
+            {
+              "path": "references/cps-lab-style.md",
+              "purpose": "共通書式"
+            }
+          ],
+          "text": "9",
+          "font_pt": 14.000250000000001
+        },
+        {
+          "id": "running-chapter-9",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.12,
+            2.8000000000000003,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "サマリ",
+          "font_pt": 12
+        },
+        {
+          "id": "running-title-9",
+          "role": "header",
+          "kind": "text",
+          "bounds_in": [
+            3.5,
+            0.12,
+            6,
+            0.3333333333333333
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "室内環境ログの記録間隔",
+          "font_pt": 12
+        },
+        {
+          "id": "final-title",
+          "role": "title",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            0.6666666666666666,
+            9,
+            0.9791666666666666
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "室内環境ログの記録間隔\n合成データを用いた予備検討",
+          "font_pt": 26.000250000000005
+        },
+        {
+          "id": "final-author",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            1.7708333333333333,
+            9,
+            0.3541666666666667
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "架空の発表者 ／ CPS LAB スタイル見本",
+          "font_pt": 18
+        },
+        {
+          "id": "takeaway-0",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            2.34375,
+            9,
+            0.5
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "問い：記録点を減らすとき、短い変化が残るか",
+          "font_pt": 18
+        },
+        {
+          "id": "takeaway-1",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            2.9166666666666665,
+            9,
+            0.5
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "確認：この合成例では、保持3点に1000 ppm超の値が残らない [1]",
+          "font_pt": 18
+        },
+        {
+          "id": "takeaway-2",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            3.4895833333333335,
+            9,
+            0.5
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "次の計画：波形・開始時刻と実機条件を変えて確かめる",
+          "font_pt": 18
+        },
+        {
+          "id": "contact",
+          "role": "body",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            4.239583333333333,
+            9,
+            0.3125
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "連絡先（架空教材の例）：presenter@example.org",
+          "font_pt": 18
+        },
+        {
+          "id": "page-reference",
+          "role": "source",
+          "kind": "text",
+          "bounds_in": [
+            0.5,
+            4.62,
+            9,
+            0.36000000000000004
+          ],
+          "source_refs": [
+            {
+              "path": "assets/example-source.org",
+              "section": "問いと処理（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "この入力から計算できる結果（架空）"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "根拠ラベル"
+            },
+            {
+              "path": "assets/example-source.org",
+              "section": "教材の発表者と連絡先"
+            }
+          ],
+          "text": "[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.",
+          "font_pt": 9
+        }
+      ],
+      "allowed_overlaps": [],
+      "source_refs": [
+        {
+          "path": "assets/example-source.org",
+          "section": "問いと処理（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "この入力から計算できる結果（架空）"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "根拠ラベル"
+        },
+        {
+          "path": "assets/example-source.org",
+          "section": "教材の発表者と連絡先"
+        }
+      ],
+      "source_review": "unverified — generated mapping is not an independent semantic review"
+    }
+  ]
+}

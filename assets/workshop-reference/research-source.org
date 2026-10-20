@@ -1,0 +1,127 @@
+#+title: 架空研究資料：Recording brief changes in classroom air
+#+startup: overview
+
+* この資料の位置づけ
+このファイルは2026-10-20に、既存の固定した [[file:input.json][構成・レイアウト入力]] と相互照合して整理した教材用の研究資料である。過去の元論文、実験記録、入力JSONより前に存在した原資料ではない。新しい主張・値・実施結果は追加していない。研究上の文言は既存入力の英語を保持する。
+
+研究内容・実施状況・根拠を本資料で確認し、発表のページ順・章・レイアウト・座標は input.json で扱う。現在の生成器はJSONを読み、このOrgから自動変換しない。変更時は両者を照合し、一方だけ更新し続けない。
+
+- 対応する固定入力のSHA-256 :: 8bf601015955fb817801e03d4636a338ca9b3f7ebb520c124403a4a6fcc8f85d
+- 教材表示 :: Fictional study · synthetic data · concept images
+- 研究題目 :: Recording brief changes in classroom air
+- 短縮題目 :: Recording brief changes
+- 架空発表者・所属 :: Alex Morgan · Fictional methods laboratory
+- 架空連絡先 :: alex.morgan@example.org
+- 発表条件の表示 :: Short research talk · synthetic teaching example
+
+All study data and the presenter are fictional. Images are generated concepts, not working devices.
+
+* 問いと前提
+- 焦点 :: A short change can fall between samples
+- 前提 :: Fewer stored readings reduce the size of a log.
+- 問い :: Which brief changes remain when we keep fewer readings?
+- 限定 :: This question does not assert an effect on health or battery life.
+
+* 記録規則の候補
+Choose what the recording rule preserves
+
+| Rule               | Keeps              | May omit                 | Evidence needed     |
+|--------------------+--------------------+--------------------------+---------------------|
+| Fixed interval     | Regular samples    | Changes between samples  | Duration and phase  |
+| Threshold crossing | A crossing event   | Context below threshold  | Noise sensitivity   |
+| Change-triggered   | Large differences  | Slow changes             | Choice of threshold |
+| Combined rule      | Events and context | Unobserved detail        | Storage and fidelity |
+
+Candidate rules, not results of a comparative trial.
+
+* 提案する構成要素と素材区分
+Two concept components
+
+Generated concepts illustrate roles; neither is a tested prototype.
+
+| 役割           | 説明                       | 素材                         | 入力の代替テキスト |
+|----------------+----------------------------+------------------------------+--------------------|
+| Sense the room | Collect a time series.     | media/concept-device.png     | Generated concept sensor and logger |
+| Review the log | Inspect what was retained. | media/concept-logger.png     | Generated concept logger with laptop |
+
+Both images were created with ImageGen for this fictional example.
+
+** 概念インターフェース
+Choose the recording interval
+
+Concept interface; no working application is claimed.
+
+- 素材 :: media/concept-ui.png
+- 入力の代替テキスト :: Synthetic logging setup interface
+- 手順 :: Select an interval before recording.
+- 手順 :: Export the retained log for inspection.
+- 手順 :: Keep the interval with the data so comparisons use the same conditions.
+- 素材の限定 :: The screen is illustrative. Its key labels are repeated in editable text outside the image.
+
+3点は実機・稼働アプリ・測定結果の証拠ではない。素材の来歴は [[file:media/provenance.md][生成素材の来歴]] に分けて保持する。
+
+* 記録規則を選ぶ処理
+Select a rule before retaining data
+
+| 入力側       | 出力側          | 接続の意味       |
+|--------------+-----------------+------------------|
+| Input trace  | Choose rule     | processing order |
+| Choose rule  | Regular samples | alternative rule |
+| Choose rule  | Event samples   | alternative rule |
+
+Arrows show processing choices, not a causal effect.
+
+The paths are operator-selected alternatives, not randomised experimental arms.
+
+* 全合成値と集約単位
+Sparse samples miss one peak in this trace
+
+- 証拠状態 :: illustrative
+- 対象 :: one synthetic trace
+- 集約単位 :: individual trace; no participant average
+- 単位 :: Synthetic concentration [ppm]
+- 画面で保持する条件 :: One synthetic trace · last retained value at each time · ppm
+
+| 時刻  | All samples | Retained representation |
+|-------+-------------+-------------------------|
+| 0 min |         630 |                     630 |
+| 1 min |         720 |                     630 |
+| 2 min |        1140 |                     630 |
+| 3 min |         760 |                     760 |
+| 4 min |         650 |                     760 |
+
+The retained representation never reaches the synthetic peak of 1140 ppm.
+
+The retained representation repeats the last retained reading for display; these repeats are not additional measurements. The synthetic peak is not a safety threshold. No real-world detection claim.
+
+* 評価計画と未実施の範囲
+Planned comparison across varied traces
+
+Planned evaluation; no results are available.
+
+| 条件                       | 計画 |
+|----------------------------+------|
+| Fixed intervals            | Apply the same intervals to each trace. Record storage size and omitted peaks. |
+| Change-triggered retention | Apply a predefined difference threshold. Use the same traces and measures. |
+
+Planned study. Trace selection and thresholds must be fixed before evaluation.
+
+* 現時点の説明と次の計画
+A recording rule determines what can be seen
+
+- Question: which short changes survive sparse recording?
+- Synthetic example: one peak is absent from the retained representation.
+- Next: compare rules across traces before building a prototype.
+
+No hardware, application or energy saving has been validated. Contact details are fictional.
+
+* 出典表記
+以下は既存input.jsonの出典表記をそのまま保持したもの。同じ教材入力の用途別の説明であり、実在研究への引用ではない。
+
+- [1] Synthetic classroom trace, supplied teaching input (2026).
+- [1] Synthetic teaching specification; alternatives are design options.
+- [1] Synthetic values in input.json; retained values use the last recorded sample.
+- [1] Synthetic teaching input; no empirical effectiveness claim.
+
+* 構成入力との対応
+研究資料はページの枚数・順序・章数・部品型を規定しない。今回の固定教材では、問いを ~question~、候補を ~alternatives~、素材を ~concept-materials~ と ~interface~、処理を ~selection~、合成値を ~synthetic-result~、計画を ~planned-comparison~、説明の結びを ~closing~ に対応させている。これは照合先のIDであり、別研究へ同じ構成を要求する規則ではない。

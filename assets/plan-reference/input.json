@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "profile": "cps-workshop",
+  "metadata": {
+    "title": "How community archives decide\nwhat remains undocumented",
+    "short_title": "Undocumented community knowledge",
+    "authors": "Jamie Patel · Fictional social research group",
+    "contact": "jamie.patel@example.org",
+    "venue": "Research plan · fictional teaching example",
+    "fictional_label": "Fictional research plan · no empirical results"
+  },
+  "structure": {
+    "toc_style": "vertical",
+    "section_dividers": "none",
+    "summary_placement": "end_of_main",
+    "sections": [
+      {
+        "id": "question",
+        "title": "Question and concepts",
+        "description": "Distinguish absence from exclusion"
+      },
+      {
+        "id": "plan",
+        "title": "Study plan and limits",
+        "description": "Interviews, interpretation and consent"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "cover_type": "type-a"
+    },
+    {
+      "id": "contents",
+      "type": "toc",
+      "title": "Contents",
+      "section_label": "Contents"
+    },
+    {
+      "id": "research-question",
+      "type": "question",
+      "section": "question",
+      "title": "An empty record has several explanations",
+      "premise": "A missing account does not, by itself, show why it is missing.",
+      "question": "How do contributors decide\nwhat to leave unrecorded?",
+      "notes": "Open research question; no observed participant accounts."
+    },
+    {
+      "id": "conceptual-distinction",
+      "type": "table",
+      "section": "question",
+      "title": "Distinguish possible explanations",
+      "table": {
+        "widths": [
+          2.1,
+          3.8,
+          3.1
+        ],
+        "rows": [
+          [
+            "Concept",
+            "Possible meaning",
+            "Evidence to seek"
+          ],
+          [
+            "Absence",
+            "No account was collected",
+            "Collection history"
+          ],
+          [
+            "Withholding",
+            "A contributor chose not to record it",
+            "Contributor explanation"
+          ],
+          [
+            "Exclusion",
+            "A rule prevented its inclusion",
+            "Rule and decision record"
+          ]
+        ]
+      },
+      "notes": "Sensitising concepts for a planned study, not established categories derived from data."
+    },
+    {
+      "id": "study-plan",
+      "type": "concept",
+      "section": "plan",
+      "title": "A qualitative study is planned",
+      "blocks": [
+        "Invite archive contributors to discuss a decision they are willing to share.",
+        "Compare their explanations with the relevant collection policies.",
+        "Develop interpretations collaboratively and retain disagreements."
+      ],
+      "notes": "Recruitment, consent and analysis have not occurred. No device, application or quantitative outcome is required."
+    },
+    {
+      "id": "consent",
+      "type": "comparison",
+      "section": "plan",
+      "title": "Separate permission to discuss and to publish",
+      "conditions": [
+        {
+          "title": "Research conversation",
+          "text": "Participants choose which decisions to discuss.\n\nThey may decline a topic."
+        },
+        {
+          "title": "Publication decision",
+          "text": "Seek separate permission for any quoted account.\n\nRetain anonymity preferences."
+        }
+      ],
+      "notes": "Proposed procedures; local review and participant agreement remain necessary."
+    },
+    {
+      "id": "closing",
+      "type": "summary",
+      "section_label": "Summary",
+      "title": "Study the decision behind an absent account",
+      "takeaways": [
+        "Question: what makes contributors leave an account unrecorded?",
+        "Method: planned interviews and policy comparison.",
+        "Limit: no findings exist yet; the concepts may change."
+      ],
+      "notes": "Fictional author/contact. No empirical participant data or citations to real studies."
+    }
+  ]
+}

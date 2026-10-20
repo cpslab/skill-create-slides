@@ -1,0 +1,72 @@
+#+title: 架空研究資料：How community archives decide what remains undocumented
+#+startup: overview
+
+* この資料の位置づけ
+このファイルは2026-10-20に、既存の固定した [[file:input.json][構成・レイアウト入力]] と相互照合して整理した教材用の研究資料である。過去の元論文、調査記録、入力JSONより前に存在した原資料ではない。新しい主張・観察・値は追加していない。研究上の文言は既存入力の英語を保持する。
+
+研究上の問い・概念・計画・実施状況を本資料で確認し、発表のページ順・章・レイアウトは input.json で扱う。現在の生成器はJSONを読み、このOrgから自動変換しない。変更時は両者を照合し、一方だけ更新し続けない。
+
+- 対応する固定入力のSHA-256 :: a9cae37d70fd045b0f83c8e7a27526df983dc0d7a3b7284dd61939d47ea13856
+- 教材表示 :: Fictional research plan · no empirical results
+- 研究題目 :: How community archives decide what remains undocumented
+- 短縮題目 :: Undocumented community knowledge
+- 架空発表者・所属 :: Jamie Patel · Fictional social research group
+- 架空連絡先 :: jamie.patel@example.org
+- 発表条件の表示 :: Research plan · fictional teaching example
+
+* 問いと前提
+- 焦点 :: An empty record has several explanations
+- 前提 :: A missing account does not, by itself, show why it is missing.
+- 問い :: How do contributors decide what to leave unrecorded?
+- 実施状況 :: Open research question; no observed participant accounts.
+
+* 検討する概念と必要な根拠
+Distinguish possible explanations
+
+| Concept     | Possible meaning                         | Evidence to seek         |
+|-------------+------------------------------------------+--------------------------|
+| Absence     | No account was collected                 | Collection history       |
+| Withholding | A contributor chose not to record it      | Contributor explanation  |
+| Exclusion   | A rule prevented its inclusion           | Rule and decision record |
+
+Sensitising concepts for a planned study, not established categories derived from data.
+
+* 質的研究の計画
+A qualitative study is planned
+
+- Invite archive contributors to discuss a decision they are willing to share.
+- Compare their explanations with the relevant collection policies.
+- Develop interpretations collaboratively and retain disagreements.
+
+Recruitment, consent and analysis have not occurred. No device, application or quantitative outcome is required.
+
+* 同意の扱い
+Separate permission to discuss and to publish
+
+** Research conversation
+Participants choose which decisions to discuss.
+
+They may decline a topic.
+
+** Publication decision
+Seek separate permission for any quoted account.
+
+Retain anonymity preferences.
+
+** 実施前の確認
+Proposed procedures; local review and participant agreement remain necessary.
+
+* 現時点の説明と限界
+Study the decision behind an absent account
+
+- Question: what makes contributors leave an account unrecorded?
+- Method: planned interviews and policy comparison.
+- Limit: no findings exist yet; the concepts may change.
+
+Fictional author/contact. No empirical participant data or citations to real studies.
+
+* 素材区分
+この入力に研究用の写真・装置・UI素材や定量結果は指定されていない。文章と概念表、計画の比較によって説明する。これらの欠如を未提供の実験結果として埋めず、未実施の研究計画として扱う。CPS LABの共通ロゴは研究上の証拠とは別の視覚仕様である。
+
+* 構成入力との対応
+研究資料はページの枚数・順序・章数・部品型を規定しない。今回の固定教材では、問いを ~research-question~、概念を ~conceptual-distinction~、研究計画を ~study-plan~、同意を ~consent~、現時点の結びを ~closing~ に対応させている。これは照合先のIDであり、別研究へ同じ構成を要求する規則ではない。

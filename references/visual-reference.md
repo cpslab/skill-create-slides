@@ -20,7 +20,6 @@
 | [6](../assets/visual-reference/slide-6.png) | 定量図 | 共通軸、単位、系列、短い正確な結果表示。詳しい条件は発表メモへ。データを持つネイティブ散布図 |
 | [7](../assets/visual-reference/slide-7.png) | 比較表 | 読めるセル、単位、控えめな罫線。ネイティブ表 |
 | [8](../assets/visual-reference/slide-8.png) | 縦4行まとめ | 目次と同じ章名・順序。左に章名、右に要約。大きな結論帯や角丸ボックスなし |
-
 | [9](../assets/visual-reference/slide-9.png) | 最終サマリ | 正式題目、発表者・所属、概要と要点、架空教材と明示した連絡先。物理的な最終ページ |
 
 写真・動画・目次画像の配置枠は、レイアウトを説明する教材の一部。実際の納品物には未置換のまま残さない。研究内容の不足を実証写真や実動画の生成で埋めない。
@@ -57,6 +56,17 @@
 ```
 
 出力は `VISUAL_BUILD_DIR/output/`、候補と検証記録は同ディレクトリ内の `.build/`。既存納品名がある作業先へ上書きしない。コードはスキル内の合成入力表を読むためフォルダ構成を維持する。実案件用にする場合は、固定された9種類の見本・合成値の検査・素材枠を意図的に置き換える。
+
+生成時に各要素の役割・ID・配置・文字・図表値・接続先を記録し、PPTXと同じ場所へ `cps-layout-reference.layout.json` を出力する。元Orgのhashと節への対応も残す。この対応表は生成処理の忠実性を調べるためのもので、出力から復元した入力や独立した意味検証ではない。
+
+```sh
+python3 scripts/check_pptx.py "$VISUAL_BUILD_DIR/output/cps-layout-reference.pptx" \
+  --expect-slides 9 --report "$VISUAL_BUILD_DIR/structure-check.json"
+python3 scripts/check_layout.py "$VISUAL_BUILD_DIR/output/cps-layout-reference.pptx" \
+  --profile assets/profiles/cps-midterm.json --report "$VISUAL_BUILD_DIR/layout-check.json"
+```
+
+この教材の研究正本はOrgであり、独立したJSON入力を渡していないため、配置検査の `source_missing` はそのまま残る。原資料・発表メモ・ネイティブの図表値と最終レンダーを実際に照合し、`source_missing`、`source_meaning`、`notes_meaning` 等へ判断根拠を記録する。未確認の項目を生成コードで `pass` にしない。全9枚は [最終ファイルの描画・個別目視手順](generation.md#個別目視と最終判定) に従う。
 
 見本はボタニカのメイン色 `#9BBB59` と独立アクセント `#38761D` を使う。表紙以外には左右の小さなヘッダー、入力資料を使用するページには `[1]` と同じページ下部の出典を表示する。全9枚に表示順のページ番号を付ける。
 

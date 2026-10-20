@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "profile": "cps-workshop",
+  "metadata": {
+    "title": "Recording brief changes\nin classroom air",
+    "short_title": "Recording brief changes",
+    "authors": "Alex Morgan · Fictional methods laboratory",
+    "contact": "alex.morgan@example.org",
+    "venue": "Short research talk · synthetic teaching example",
+    "fictional_label": "Fictional study · synthetic data · concept images"
+  },
+  "structure": {
+    "toc_style": "vertical",
+    "section_dividers": "none",
+    "summary_placement": "end_of_main",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "Question and alternatives",
+        "description": "What a sparse log can miss"
+      },
+      {
+        "id": "method",
+        "title": "Proposed workflow",
+        "description": "Concept device, interface and selection"
+      },
+      {
+        "id": "evidence",
+        "title": "Synthetic evidence and next study",
+        "description": "One trace, followed by a planned test"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "cover_type": "type-a",
+      "notes": "All study data and the presenter are fictional. Images are generated concepts, not working devices."
+    },
+    {
+      "id": "contents",
+      "type": "toc",
+      "title": "Contents",
+      "section_label": "Contents"
+    },
+    {
+      "id": "question",
+      "type": "question",
+      "section": "problem",
+      "title": "A short change can fall between samples",
+      "premise": "Fewer stored readings reduce the size of a log.",
+      "question": "Which brief changes remain\nwhen we keep fewer readings?",
+      "sources": [
+        "[1] Synthetic classroom trace, supplied teaching input (2026)."
+      ],
+      "notes": "This question does not assert an effect on health or battery life."
+    },
+    {
+      "id": "alternatives",
+      "type": "table",
+      "section": "problem",
+      "title": "Choose what the recording rule preserves",
+      "table": {
+        "widths": [
+          2.05,
+          2.1,
+          2.3,
+          2.55
+        ],
+        "rows": [
+          [
+            "Rule",
+            "Keeps",
+            "May omit",
+            "Evidence needed"
+          ],
+          [
+            "Fixed interval",
+            "Regular samples",
+            "Changes between samples",
+            "Duration and phase"
+          ],
+          [
+            "Threshold crossing",
+            "A crossing event",
+            "Context below threshold",
+            "Noise sensitivity"
+          ],
+          [
+            "Change-triggered",
+            "Large differences",
+            "Slow changes",
+            "Choice of threshold"
+          ],
+          [
+            "Combined rule",
+            "Events and context",
+            "Unobserved detail",
+            "Storage and fidelity"
+          ]
+        ],
+        "highlight_row": 4
+      },
+      "sources": [
+        "[1] Synthetic teaching specification; alternatives are design options."
+      ],
+      "notes": "Candidate rules, not results of a comparative trial."
+    },
+    {
+      "id": "concept-materials",
+      "type": "photos",
+      "section": "method",
+      "title": "Two concept components",
+      "message": "Generated concepts illustrate roles; neither is a tested prototype.",
+      "items": [
+        {
+          "asset": {
+            "path": "media/concept-device.png",
+            "alt": "Generated concept sensor and logger"
+          },
+          "title": "Sense the room",
+          "description": "Collect a time series."
+        },
+        {
+          "asset": {
+            "path": "media/concept-logger.png",
+            "alt": "Generated concept logger with laptop"
+          },
+          "title": "Review the log",
+          "description": "Inspect what was retained."
+        }
+      ],
+      "notes": "Both images were created with ImageGen for this fictional example."
+    },
+    {
+      "id": "interface",
+      "type": "ui",
+      "section": "method",
+      "title": "Choose the recording interval",
+      "message": "Concept interface; no working application is claimed.",
+      "image": {
+        "path": "media/concept-ui.png",
+        "alt": "Synthetic logging setup interface"
+      },
+      "steps": [
+        "Select an interval before recording.",
+        "Export the retained log for inspection.",
+        "Keep the interval with the data so comparisons use the same conditions."
+      ],
+      "notes": "The screen is illustrative. Its key labels are repeated in editable text outside the image."
+    },
+    {
+      "id": "selection",
+      "type": "diagram",
+      "section": "method",
+      "title": "Select a rule before retaining data",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "input",
+            "text": "Input trace",
+            "bounds_in": [
+              0.5,
+              2.25,
+              1.8,
+              0.75
+            ]
+          },
+          {
+            "id": "decision",
+            "text": "Choose rule",
+            "bounds_in": [
+              3.05,
+              2.25,
+              1.8,
+              0.75
+            ]
+          },
+          {
+            "id": "regular",
+            "text": "Regular samples",
+            "bounds_in": [
+              6,
+              1.65,
+              3,
+              0.75
+            ]
+          },
+          {
+            "id": "event",
+            "text": "Event samples",
+            "bounds_in": [
+              6,
+              3.15,
+              3,
+              0.75
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "id": "to-choice",
+            "from": "input",
+            "to": "decision",
+            "meaning": "processing order"
+          },
+          {
+            "id": "to-regular",
+            "from": "decision",
+            "to": "regular",
+            "meaning": "alternative rule"
+          },
+          {
+            "id": "to-event",
+            "from": "decision",
+            "to": "event",
+            "meaning": "alternative rule"
+          }
+        ]
+      },
+      "caption": "Arrows show processing choices, not a causal effect.",
+      "notes": "The paths are operator-selected alternatives, not randomised experimental arms."
+    },
+    {
+      "id": "synthetic-result",
+      "type": "chart",
+      "section": "evidence",
+      "title": "Sparse samples miss one peak in this trace",
+      "chart": {
+        "categories": [
+          "0 min",
+          "1 min",
+          "2 min",
+          "3 min",
+          "4 min"
+        ],
+        "series": [
+          {
+            "name": "All samples",
+            "values": [
+              630,
+              720,
+              1140,
+              760,
+              650
+            ]
+          },
+          {
+            "name": "Retained representation",
+            "values": [
+              630,
+              630,
+              630,
+              760,
+              760
+            ]
+          }
+        ],
+        "unit": "Synthetic concentration [ppm]",
+        "subject": "one synthetic trace",
+        "aggregation": "individual trace; no participant average",
+        "status": "illustrative",
+        "scope_label": "One synthetic trace · last retained value at each time · ppm",
+        "max": 1200
+      },
+      "interpretation": "The retained representation never reaches the synthetic peak of 1140 ppm.",
+      "sources": [
+        "[1] Synthetic values in input.json; retained values use the last recorded sample."
+      ],
+      "notes": "The retained representation repeats the last retained reading for display; these repeats are not additional measurements. The synthetic peak is not a safety threshold. No real-world detection claim."
+    },
+    {
+      "id": "planned-comparison",
+      "type": "comparison",
+      "section": "evidence",
+      "title": "Planned comparison across varied traces",
+      "message": "Planned evaluation; no results are available.",
+      "conditions": [
+        {
+          "title": "Fixed intervals",
+          "text": "Apply the same intervals to each trace.\n\nRecord storage size and omitted peaks."
+        },
+        {
+          "title": "Change-triggered retention",
+          "text": "Apply a predefined difference threshold.\n\nUse the same traces and measures."
+        }
+      ],
+      "notes": "Planned study. Trace selection and thresholds must be fixed before evaluation."
+    },
+    {
+      "id": "closing",
+      "type": "summary",
+      "section_label": "Summary",
+      "title": "A recording rule determines what can be seen",
+      "takeaways": [
+        "Question: which short changes survive sparse recording?",
+        "Synthetic example: one peak is absent from the retained representation.",
+        "Next: compare rules across traces before building a prototype."
+      ],
+      "sources": [
+        "[1] Synthetic teaching input; no empirical effectiveness claim."
+      ],
+      "notes": "No hardware, application or energy saving has been validated. Contact details are fictional."
+    }
+  ]
+}

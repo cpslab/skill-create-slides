@@ -3,6 +3,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
+import { execFileSync } from 'node:child_process';
+import crypto from 'node:crypto';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const { RUNTIME_NODE_MODULES, RUNTIME_PYTHON, PRESENTATIONS_SKILL_DIR, VISUAL_BUILD_DIR } = process.env;
@@ -16,6 +18,9 @@ const { finalizePresentation, applyPresentationChartFont } = await import(pathTo
 const workspaceDir = VISUAL_BUILD_DIR;
 const stage = path.join(workspaceDir, '.build');
 const out = path.join(workspaceDir, 'output');
+const finalPath = path.join(out, 'cps-layout-reference.pptx');
+try { await fs.access(finalPath); throw new Error('Output already exists; choose a new VISUAL_BUILD_DIR.'); }
+catch (error) { if (error.code !== 'ENOENT') throw error; }
 await fs.mkdir(stage, { recursive: true });
 await fs.mkdir(out, { recursive: true });
 
@@ -42,46 +47,78 @@ const gray = '#59636E';
 const pale = '#EFF5E4';
 const logo = await fs.readFile(path.join(here, '../NewmajimeModeLogoSmall.png'));
 const pres = Presentation.create({ slideSize: { width: 960, height: 540 } });
+const records = [];
+const pageRecords = new WeakMap();
+const sourceSections = {
+  1:['発表条件（架空）','教材の発表者と連絡先'], 2:['発表条件（架空）','教材の発表者と連絡先'],
+  3:['問いと処理（架空）','根拠ラベル'], 4:['この入力から計算できる結果（架空）','根拠ラベル'],
+  5:['問いと処理（架空）','入力表（全行が合成データ）'],
+  6:['入力表（全行が合成データ）','この入力から計算できる結果（架空）'],
+  7:['この入力から計算できる結果（架空）'],
+  8:['問いと処理（架空）','この入力から計算できる結果（架空）','根拠ラベル'],
+  9:['問いと処理（架空）','この入力から計算できる結果（架空）','根拠ラベル','教材の発表者と連絡先'],
+};
+function registerPage(slide, number) {
+  const rec = {number,id:`SAMPLE-${String(number).padStart(2,'0')}`,expected_elements:[],allowed_overlaps:[],
+    source_refs:sourceSections[number].map(section=>({path:'assets/example-source.org',section})),
+    source_review:'unverified — generated mapping is not an independent semantic review'};
+  records.push(rec);pageRecords.set(slide,rec);return slide;
+}
+function record(slide, id, role, kind, bounds, extra={}) {
+  const rec=pageRecords.get(slide);
+  if(!rec || rec.expected_elements.some(e=>e.id===id))throw new Error(`Missing page or duplicate element ${id}`);
+  const item={id,role,kind,...(bounds?{bounds_in:bounds.map(v=>v/96)}:{}),
+    source_refs:['logo','rule','page'].includes(role)?[{path:'references/cps-lab-style.md',purpose:'共通書式'}]:rec.source_refs,
+    ...extra};
+  rec.expected_elements.push(item);return item;
+}
+function allowedOverlap(slide, first, second, reason) {
+  const rec=pageRecords.get(slide);rec.allowed_overlaps.push([first,second]);
+  (rec.overlap_reasons??=[]).push({elements:[first,second],reason});
+}
 
-function rect(slide, name, x, y, w, h, fill, lineFill = 'none', lineWidth = 0, geometry = 'rect') {
-  return slide.shapes.add({ geometry, name, position: { left:x, top:y, width:w, height:h }, fill,
+function rect(slide, name, x, y, w, h, fill, lineFill = 'none', lineWidth = 0, geometry = 'rect', role='shape') {
+  record(slide,name,role,'shape',[x,y,w,h]);
+  return slide.shapes.add({ geometry, name:`role:${role}|id:${name}`, position: { left:x, top:y, width:w, height:h }, fill,
     line: { fill:lineFill, width:lineWidth, style:'solid' } });
 }
-function txt(slide, name, text, x, y, w, h, size=24, bold=false, color=black, alignment='left', fill='none') {
-  const s = rect(slide, name, x, y, w, h, fill, 'none');
+function txt(slide, name, text, x, y, w, h, size=24, bold=false, color=black, alignment='left', fill='none', role='body') {
+  const s = rect(slide, name, x, y, w, h, fill, 'none',0,'rect',role);
+  Object.assign(pageRecords.get(slide).expected_elements.at(-1),{kind:'text',text,font_pt:size*72/96});
   s.text = text;
   s.text.style = { typeface:font, fontSize:size, bold, color, alignment, verticalAlignment:'middle',
     autoFit:'none', wrap:true, insets:{ left:0, right:0, top:0, bottom:0 } };
   return s;
 }
 function logoAt(slide, x, y, width) {
+  record(slide,'logo','logo','image',[x,y,width,width*123/438],{asset:{path:'assets/NewmajimeModeLogoSmall.png',sha256:crypto.createHash('sha256').update(logo).digest('hex')}});
   slide.images.add({ blob:logo, contentType:'image/png', alt:'CPS LAB ロゴ', fit:'contain',
     position:{ left:x, top:y, width, height:width*123/438 } });
 }
 function base(page, divider=false) {
-  const slide = pres.slides.add();
+  const slide = registerPage(pres.slides.add(),page);
   slide.background.fill = '#FFFFFF';
   if (divider) logoAt(slide, 808.128, 52.8, 116.256);
   else {
-    if (footerLine === 'on') rect(slide,'footer-line',0,484.32,960,5.664,key);
+    if (footerLine === 'on') rect(slide,'footer-line',0,484.32,960,5.664,key,'none',0,'rect','rule');
     logoAt(slide,30.816,504.288,85.92);
   }
-  const pageNumber=txt(slide,'page',String(page),714.048,500.544,223.968,28.8,18.667,false,black,'right');
+  const pageNumber=txt(slide,'page',String(page),714.048,500.544,223.968,28.8,18.667,false,black,'right','none','page');
   pageNumber.text.style={typeface:'Arial',fontSize:18.667,color:black,alignment:'right',verticalAlignment:'middle',insets:{left:0,right:0,top:0,bottom:0}};
   slide.speakerNotes.textFrame.setText('架空研究の教材。全数値は assets/example-source.org の合成データであり、実測値ではない。CPS LABの視覚スタイルと編集可能性を示す9種類のレイアウト見本。表紙と目次の素材枠は配置見本であり、実証写真や実動画ではない。研究発表の推奨枚数・章配分ではない。');
   if(page>=3) {
     const chapter={3:'目次',4:'03 ここまでの結果',5:'02 しくみと評価方法',6:'03 ここまでの結果',7:'03 ここまでの結果',8:'まとめ',9:'サマリ'}[page];
-    txt(slide,`running-chapter-${page}`,chapter,48,11.52,268.8,32,16,false,accent);
-    txt(slide,`running-title-${page}`,'室内環境ログの記録間隔',336,11.52,576,32,16,false,accent,'right');
+    txt(slide,`running-chapter-${page}`,chapter,48,11.52,268.8,32,16,false,accent,'left','none','header');
+    txt(slide,`running-title-${page}`,'室内環境ログの記録間隔',336,11.52,576,32,16,false,accent,'right','none','header');
   }
   return slide;
 }
 function references(slide) {
-  txt(slide,'page-reference','[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.',48,443.52,864,34.56,12,false,gray);
+  txt(slide,'page-reference','[1] 室内環境ログ研究の入力資料（同梱教材・合成データ）, 2026.',48,443.52,864,34.56,12,false,gray,'left','none','source');
   slide.speakerNotes.textFrame.setText('架空研究・合成データの教材。実測ではない。表紙・目次の素材枠は配置見本。\n[1] assets/example-source.org。番号は全ページ共通。この教材入力は実在論文ではない。');
 }
 function heading(slide, title, message) {
-  txt(slide,'title',title,48,49.92,864,42,36,true);
+  txt(slide,'title',title,48,49.92,864,42,36,true,black,'left','none','title');
   if (message) txt(slide,'message',message,48,96,864,57.6,30.667,true);
 }
 
@@ -89,21 +126,22 @@ function heading(slide, title, message) {
 {
   const s=base(1);
   txt(s,'venue','研究発表の視覚作例',48,32,850,40,24);
-  txt(s,'topic','室内環境ログの記録間隔\n合成データを用いた予備検討',72,148.512,816,115.776,38.667,true,black,'center',key);
+  txt(s,'topic','室内環境ログの記録間隔\n合成データを用いた予備検討',72,148.512,816,115.776,38.667,true,black,'center',key,'title');
   txt(s,'affiliation','CPS LAB スタイル見本',72,314,510,48,24,false,black,'center','#999999');
   txt(s,'author','架空の発表者',72,384,510,48,24,false,black,'center','#999999');
   rect(s,'research-photo-slot',630,294,258,160,'#F3F5F1','#9AA09A',1);
   txt(s,'photo-slot-label','研究対象の写真枠\n写真は未同梱',640,337,238,74,24,false,gray,'center');
+  allowedOverlap(s,'research-photo-slot','photo-slot-label','写真未同梱を明示する枠内ラベル。');
 }
 // 2. Type B cover: a static layout sample; no fabricated video is embedded.
 {
-  const s=pres.slides.add();s.background.fill='#37424A';
+  const s=registerPage(pres.slides.add(),2);s.background.fill='#37424A';
   txt(s,'venue','研究発表の視覚作例',48,29,864,38,24,false,'#FFFFFF','center');
-  txt(s,'topic','室内環境ログの記録間隔\n合成データを用いた予備検討',60,142,840,120,40,true,'#FFFFFF','center');
+  txt(s,'topic','室内環境ログの記録間隔\n合成データを用いた予備検討',60,142,840,120,40,true,'#FFFFFF','center','none','title');
   txt(s,'affiliation','CPS LAB スタイル見本',90,300,780,44,24,false,'#FFFFFF','center');
   txt(s,'author','架空の発表者',90,361,780,42,24,false,'#FFFFFF','center');
   txt(s,'media-placeholder','全面を動画・静止ポスターに置換する配置見本',48,450,864,34,24,false,'#FFFFFF','center');
-  const pn=txt(s,'page','2',714.048,500.544,223.968,28.8,18.667,false,'#FFFFFF','right');
+  const pn=txt(s,'page','2',714.048,500.544,223.968,28.8,18.667,false,'#FFFFFF','right','none','page');
   pn.text.style={typeface:'Arial',fontSize:18.667,color:'#FFFFFF',alignment:'right',verticalAlignment:'middle',insets:{left:0,right:0,top:0,bottom:0}};
   s.speakerNotes.textFrame.setText('表紙タイプBの静止レイアウト見本。背景は素材枠で、動画も静止ポスターも未提供・未同梱。利用者の動画を指定された加工・無音・自動再生・ループ・次ページでの停止条件で埋め込む。対象アプリでの再生検証は別工程。本文のデザインは表紙タイプAを選んでも同じ。');
 }
@@ -116,16 +154,18 @@ function heading(slide, title, message) {
     txt(s,`toc-label-${i}`,items[i][0],x,y,408,32,24,true);
     rect(s,`toc-image-slot-${i}`,x,y+38,408,74,'#F3F5F1','#B5BDB2',1);
     txt(s,`toc-image-label-${i}`,items[i][1],x+10,y+43,388,64,24,false,gray,'center');
+    allowedOverlap(s,`toc-image-slot-${i}`,`toc-image-label-${i}`,'未提供素材の位置を説明する枠内ラベル。');
   }
-  rect(s,'toc-rule-vertical',480,164,1,265,'#D7DCD5');
-  rect(s,'toc-rule-horizontal',48,295,864,1,'#D7DCD5');
+  rect(s,'toc-rule-vertical',480,164,1,265,'#D7DCD5','none',0,'rect','rule');
+  rect(s,'toc-rule-horizontal',48,295,864,1,'#D7DCD5','none',0,'rect','rule');
 }
 // 4. Midterm divider: chapter and guide at the top, upper-right logo, white space.
 {
   const s=base(4,true);
   rect(s,'upper-chapter-band',48,102,816,86.25,key);
-  txt(s,'chapter','03  ここまでの結果',70.5,108.75,772.5,68.25,50.25,true);
+  txt(s,'chapter','03  ここまでの結果',70.5,108.75,772.5,68.25,50.25,true,black,'left','none','title');
   txt(s,'chapter-guide','合成データで確認したことと、残る課題',72,222,810,82.5,29.333);
+  allowedOverlap(s,'upper-chapter-band','chapter','章タイトルを色帯の内側に置く章扉。');
 }
 // 5. Native editable diagram, showing an operation rather than a causal claim.
 {
@@ -136,16 +176,18 @@ function heading(slide, title, message) {
   const start=340, step=42;
   for (let i=0;i<13;i++) {
     const x=start+i*step;
-    const inputPoint=rect(s,`input-${i}`,x,198,18,18,'#666666','none',0,'ellipse');
-    txt(s,`minute-${i}`,String(i),x-10,165,38,26,18.667,false,gray,'center');
+    const inputPoint=rect(s,`input-${i}`,x,198,18,18,'#666666','none',0,'ellipse','diagram-node');
+    txt(s,`minute-${i}`,String(i),x-10,165,38,26,18.667,false,gray,'center','none','label');
     if(data[i].kept) {
-      const retainedPoint=rect(s,`retained-${i}`,x-2,342,22,22,accent,black,1.2);
-      s.shapes.connect(inputPoint,retainedPoint,
+      const retainedPoint=rect(s,`retained-${i}`,x-2,342,22,22,accent,black,1.2,'rect','diagram-node');
+      const edge=s.shapes.connect(inputPoint,retainedPoint,
         {kind:'straight',fromSide:'bottom',toSide:'top',line:{fill:gray,width:1.2},tail:{type:'triangle',width:'sm',length:'sm'}});
+      edge.name=`role:diagram-edge|id:keep-${i}`;
+      record(s,`keep-${i}`,'diagram-edge','connector',null,{edge:{from:`input-${i}`,to:`retained-${i}`,direction:'forward',meaning:`${i}分の入力点を保持する対応`},source_ref:{path:'assets/example-source.org',section:'入力表（全行が合成データ）',time_minutes:i}});
     }
   }
-  txt(s,'axis-unit','時刻 [分]',794,266,95,28,18.667,false,gray,'right');
-  txt(s,'arrow-meaning','矢印は「保持する点」の対応',340,377,510,26,18.667,false,gray);
+  txt(s,'axis-unit','時刻 [分]',794,266,95,28,18.667,false,gray,'right','none','label');
+  txt(s,'arrow-meaning','矢印は「保持する点」の対応',340,377,510,26,18.667,false,gray,'left','none','label');
   references(s);
 }
 // 6. Native scatter chart with complete literal data and an embedded workbook.
@@ -155,8 +197,8 @@ function heading(slide, title, message) {
   const chart=s.charts.add('scatter',{
     position:{left:46,top:165,width:652,height:242},
     series:[
-      {name:'1分間隔 (小点)',xValues:data.map(d=>d.t),values:data.map(d=>d.v),fill:'#666666',line:{fill:'none',width:0},marker:{symbol:'circle',size:7}},
-      {name:'5分間隔 (大点)',xValues:retained.map(d=>d.t),values:retained.map(d=>d.v),fill:accent,line:{fill:'none',width:0},marker:{symbol:'square',size:12}},
+      {name:'1分間隔 (小点)',xValues:data.map(d=>d.t),values:data.map(d=>d.v),fill:'#666666',line:{fill:'none',width:0},marker:{symbol:'circle',size:7,fill:'#666666'}},
+      {name:'5分間隔 (大点)',xValues:retained.map(d=>d.t),values:retained.map(d=>d.v),fill:accent,line:{fill:'none',width:0},marker:{symbol:'square',size:12,fill:accent}},
       {name:'1000 ppm',xValues:[0,12],values:[1000,1000],line:{fill:'#777777',width:1.4,style:'dashed'},marker:{symbol:'none'}},
     ],
     scatterOptions:{style:'lineWithMarkers'},
@@ -165,6 +207,11 @@ function heading(slide, title, message) {
     yAxis:{title:'模擬濃度 [ppm]',min:600,max:1200,majorUnit:200,numberFormatCode:'0',textStyle:{typeface:font,fontSize:18.667},majorGridlines:{fill:'#DDDDDD',width:1}},
     chartFill:'#FFFFFF',plotAreaFill:'#FFFFFF',chartLine:{fill:'none',width:0},plotAreaLine:{fill:'none',width:0},
   });
+  record(s,'synthetic-comparison','chart','chart',[46,165,652,242],{chart:{series:[
+    {name:'1分間隔 (小点)',categories:data.map(d=>d.t),values:data.map(d=>d.v)},
+    {name:'5分間隔 (大点)',categories:retained.map(d=>d.t),values:retained.map(d=>d.v)},
+    {name:'1000 ppm',categories:[0,12],values:[1000,1000]},
+  ]},source_ref:{path:'assets/example-source.org',section:'入力表（全行が合成データ）'},evidence_status:'illustrative'});
   applyPresentationChartFont(chart,{fontFamily:font});
   txt(s,'maximum-label','保持最大値',724,187,190,30,24,true);
   txt(s,'all-max',`全13点\n${maxAll} ppm`,724,234,190,74,25.333,false);
@@ -175,8 +222,10 @@ function heading(slide, title, message) {
 {
   const s=base(7);
   heading(s,'記録量と保持された値','保持点は13点から3点に減る [1]');
-  const table=s.tables.add({rows:4,columns:3,left:48,top:174,width:864,height:228,
-    columnWidths:[412,226,226],values:[['比較項目','1分間隔','5分間隔'],['保持点数',String(data.length),String(retained.length)],['保持最大値 [ppm]',String(maxAll),String(maxKept)],['1000 ppm超の記録点数',String(aboveAll),String(aboveKept)]]});
+  const values=[['比較項目','1分間隔','5分間隔'],['保持点数',String(data.length),String(retained.length)],['保持最大値 [ppm]',String(maxAll),String(maxKept)],['1000 ppm超の記録点数',String(aboveAll),String(aboveKept)]];
+  const table=s.tables.add({rows:4,columns:3,left:48,top:174,width:864,height:228,columnWidths:[412,226,226],values});
+  table.name='role:table|id:comparison-table';
+  record(s,'comparison-table','table','table',[48,174,864,228],{table:{rows:values},source_ref:{path:'assets/example-source.org',section:'この入力から計算できる結果（架空）'},evidence_status:'illustrative'});
   table.borders.assign({fill:'#CCCCCC',width:1,style:'solid'});
   table.cells.block({row:0,column:0,rowCount:4,columnCount:3}).assign({textStyle:{typeface:font,fontSize:24,color:black},margins:{left:16,right:16,top:8,bottom:8},anchor:'center'});
   for(let r=0;r<4;r++)for(let c=0;c<3;c++){
@@ -198,7 +247,7 @@ function heading(slide, title, message) {
     const y=170+i*64;
     txt(s,`summary-label-${i}`,label,48,y,279.75,58,24,true,accent);
     txt(s,`summary-body-${i}`,body,345.75,y,566.25,58,24,false);
-    if(i<3)rect(s,`summary-rule-${i}`,48,y+60.5,864,1,'#D7DCD5');
+    if(i<3)rect(s,`summary-rule-${i}`,48,y+60.5,864,1,'#D7DCD5','none',0,'rect','rule');
   });
   references(s);
 }
@@ -207,7 +256,7 @@ function heading(slide, title, message) {
 // 9. Physical final page: overview, authors and explicitly fictional contact.
 {
   const s=base(9);
-  txt(s,'final-title','室内環境ログの記録間隔\n合成データを用いた予備検討',48,64,864,94,34.667,true);
+  txt(s,'final-title','室内環境ログの記録間隔\n合成データを用いた予備検討',48,64,864,94,34.667,true,black,'left','none','title');
   txt(s,'final-author','架空の発表者 ／ CPS LAB スタイル見本',48,170,864,34,24);
   const takeaways=['問い：記録点を減らすとき、短い変化が残るか', '確認：この合成例では、保持3点に1000 ppm超の値が残らない [1]', '次の計画：波形・開始時刻と実機条件を変えて確かめる'];
   takeaways.forEach((t,i)=>txt(s,`takeaway-${i}`,t,48,225+i*55,864,48,24));
@@ -216,8 +265,10 @@ function heading(slide, title, message) {
 }
 
 const candidatePath=path.join(stage,'candidate.pptx');
-const finalPath=path.join(out,'cps-layout-reference.pptx');
 await (await PresentationFile.exportPptx(pres)).save(candidatePath);
+const rolePath=path.join(stage,'roles.json');
+await fs.writeFile(rolePath,JSON.stringify({slides:records},null,2)+'\n');
+execFileSync(RUNTIME_PYTHON,[path.resolve(here,'../../scripts/tag_generated.py'),candidatePath,rolePath]);
 await finalizePresentation({workspaceDir,candidatePath,finalPath,pythonExecutable:RUNTIME_PYTHON,
   integrityValidatorPath:path.join(PRESENTATIONS_SKILL_DIR,'container_tools/inspect_presentation_package_integrity.py'),
   layoutValidatorPath:path.join(PRESENTATIONS_SKILL_DIR,'container_tools/inspect_presentation_layout_geometry.py'),
@@ -225,6 +276,17 @@ await finalizePresentation({workspaceDir,candidatePath,finalPath,pythonExecutabl
   explicitTotalSlideCount:9,requiredNativeTableOwnerSlides:[7],requiredNativeChartOwnerSlides:[6],materializeLiteralChartWorkbooks:true,
   fontPolicy:{basis:'design',families:[font,'Arial']},verifyArtifactToolImport:true,
   receiptPath:path.join(stage,'validation.json')});
+const layout={
+  schema_version:1,
+  pptx_sha256:crypto.createHash('sha256').update(await fs.readFile(finalPath)).digest('hex'),
+  source_sha256:crypto.createHash('sha256').update(source).digest('hex'),
+  profile_id:'cps-midterm',
+  source_origin:{path:'assets/example-source.org',kind:'fictional Org source',verification:'requires independent source and visual review'},
+  mapping_origin:'Author-assigned roles, geometry, text and data recorded at creation calls; not extracted from exported PPTX.',
+  scope:'Nine layout teaching examples, including two alternative covers and one chapter-divider example; not a complete four-chapter talk.',
+  slides:records,
+};
+await fs.writeFile(finalPath.replace(/\.pptx$/,'.layout.json'),JSON.stringify(layout,null,2)+'\n');
 
 // Keep oral qualifications beside the exported PPTX, mapped to its display pages.
 const memoRows = [

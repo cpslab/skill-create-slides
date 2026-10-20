@@ -1,0 +1,90 @@
+{
+  "pptx_sha256": "2d79647672bb046851531610ad9ec1854b922f0beb20021312ea443f80bc935b",
+  "renderer": "Microsoft PowerPoint 16.111 → PDF → Poppler Cairo",
+  "pdf": {
+    "sha256": "a967d37aed21672d5774cc4b06e39720b19a95b325d8c61ab077f787ba483c4f",
+    "source_binding": "exported directly from requested PPTX"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "image": "slide-01.png",
+      "image_sha256": "fe0a36cb8c634506eaae2996bc731ab6486aae11ce9907da00e848296be6f8c5",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 2,
+      "image": "slide-02.png",
+      "image_sha256": "645b34de87b56773a4c5f0358109df312c2b0020eeb581904a7b3567d8af1ab0",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 3,
+      "image": "slide-03.png",
+      "image_sha256": "2dd31e272d2229c404d9833892719c30b23d84d5b3392f31c9dcfe3e3a542ee5",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 4,
+      "image": "slide-04.png",
+      "image_sha256": "0a60795296fea6e48a94b2602b954989214daeaf5a7d7493096215cdeff2eba1",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 5,
+      "image": "slide-05.png",
+      "image_sha256": "98e57f6f7bb205fda296af6a8678bcb70a4593a462eb90c5871c1e4c34395ad9",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 6,
+      "image": "slide-06.png",
+      "image_sha256": "3ac750885e138719bd2517d8e7b97c06322b2c6abd6deb9f94e90a63b6aec5ac",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 7,
+      "image": "slide-07.png",
+      "image_sha256": "6912f2285f18dcc7ad77e583d959e90035be7e1f0c0a9d0ebe7801fe99cb8aa7",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 8,
+      "image": "slide-08.png",
+      "image_sha256": "288f937f6803eee3387e0e2c37caa47119ef19bdb3b5bb35c0e39910ba985f6b",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 9,
+      "image": "slide-09.png",
+      "image_sha256": "d4beecb811c9a233457eda6be7bfe6c383af0678fe4634f6557510876cab85c3",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    },
+    {
+      "number": 10,
+      "image": "slide-10.png",
+      "image_sha256": "508cf62f9242903a557cc3ec938387ffe832f6336481a4fd5c23ac80c6bcf620",
+      "width": 1440,
+      "height": 810,
+      "status": "unverified"
+    }
+  ]
+}

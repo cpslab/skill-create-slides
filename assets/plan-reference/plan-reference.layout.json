@@ -1,0 +1,1226 @@
+{
+  "schema_version": 1,
+  "pptx_sha256": "eb71e9cb047d9106b8f4679ef4a23e23b32d0d1c4583fe0326b4c03f0d15ecf4",
+  "source_sha256": "a9cae37d70fd045b0f83c8e7a27526df983dc0d7a3b7284dd61939d47ea13856",
+  "profile_id": "cps-workshop",
+  "slides": [
+    {
+      "number": 1,
+      "id": "cover",
+      "required_text": [
+        "How community archives decide\nwhat remains undocumented",
+        "Jamie Patel · Fictional social research group",
+        "Research plan · fictional teaching example",
+        "Fictional research plan · no empirical results",
+        "1"
+      ],
+      "expected_elements": [
+        {
+          "id": "cover-band",
+          "role": "background",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.45,
+            9,
+            1.45
+          ]
+        },
+        {
+          "id": "cover-title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.75,
+            1.6,
+            8.5,
+            1.1
+          ],
+          "text": "How community archives decide\nwhat remains undocumented",
+          "font_pt": 28
+        },
+        {
+          "id": "cover-author",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            3.35,
+            8.6,
+            0.65
+          ],
+          "text": "Jamie Patel · Fictional social research group",
+          "font_pt": 16
+        },
+        {
+          "id": "venue",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            0.6,
+            8.6,
+            0.65
+          ],
+          "text": "Research plan · fictional teaching example",
+          "font_pt": 16
+        },
+        {
+          "id": "fictional",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            4.5,
+            8.6,
+            0.4
+          ],
+          "text": "Fictional research plan · no empirical results",
+          "font_pt": 14
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "frame_bounds_in": [
+            0.321,
+            5.253,
+            0.895,
+            0.25133561643835617
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 489.3854748603352,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "cover-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "1",
+          "font_pt": 9
+        }
+      ],
+      "allowed_overlaps": [
+        [
+          "cover-media",
+          "cover-title"
+        ],
+        [
+          "cover-band",
+          "cover-title"
+        ],
+        [
+          "cover-media",
+          "cover-author"
+        ],
+        [
+          "cover-band",
+          "cover-author"
+        ],
+        [
+          "cover-media",
+          "venue"
+        ],
+        [
+          "cover-band",
+          "venue"
+        ],
+        [
+          "cover-media",
+          "fictional"
+        ],
+        [
+          "cover-band",
+          "fictional"
+        ],
+        [
+          "cover-media",
+          "cover-rule"
+        ],
+        [
+          "cover-band",
+          "cover-rule"
+        ],
+        [
+          "cover-media",
+          "page"
+        ],
+        [
+          "cover-band",
+          "page"
+        ]
+      ],
+      "semantic_claims": []
+    },
+    {
+      "number": 2,
+      "id": "contents",
+      "required_text": [
+        "Contents",
+        "Undocumented community knowledge",
+        "Contents",
+        "2",
+        "01  Question and concepts",
+        "Distinguish absence from exclusion",
+        "3–4",
+        "02  Study plan and limits",
+        "Interviews, interpretation and consent",
+        "5–6"
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Contents",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Undocumented community knowledge",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Contents",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "2",
+          "font_pt": 9
+        },
+        {
+          "id": "section-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            7.7,
+            0.4
+          ],
+          "text": "01  Question and concepts",
+          "font_pt": 16
+        },
+        {
+          "id": "section-desc-0",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.95,
+            1.91,
+            7.25,
+            0.45
+          ],
+          "text": "Distinguish absence from exclusion",
+          "font_pt": 14
+        },
+        {
+          "id": "range-0",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            8.5,
+            1.48,
+            1,
+            0.35
+          ],
+          "text": "3–4",
+          "font_pt": 14
+        },
+        {
+          "id": "section-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.5300000000000002,
+            7.7,
+            0.4
+          ],
+          "text": "02  Study plan and limits",
+          "font_pt": 16
+        },
+        {
+          "id": "section-desc-1",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.95,
+            2.9600000000000004,
+            7.25,
+            0.45
+          ],
+          "text": "Interviews, interpretation and consent",
+          "font_pt": 14
+        },
+        {
+          "id": "range-1",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            8.5,
+            2.5300000000000002,
+            1,
+            0.35
+          ],
+          "text": "5–6",
+          "font_pt": 14
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 3,
+      "id": "research-question",
+      "required_text": [
+        "Question and concepts",
+        "Undocumented community knowledge",
+        "An empty record has several explanations",
+        "3",
+        "A missing account does not, by itself, show why it is missing.",
+        "How do contributors decide\nwhat to leave unrecorded?"
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Question and concepts",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Undocumented community knowledge",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "An empty record has several explanations",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "3",
+          "font_pt": 9
+        },
+        {
+          "id": "premise",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            1.58,
+            8.6,
+            0.65
+          ],
+          "text": "A missing account does not, by itself, show why it is missing.",
+          "font_pt": 16
+        },
+        {
+          "id": "question",
+          "role": "question",
+          "kind": "shape",
+          "bounds_in": [
+            0.7,
+            2.4299999999999997,
+            8.5,
+            2.4
+          ],
+          "text": "How do contributors decide\nwhat to leave unrecorded?",
+          "font_pt": 28
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 4,
+      "id": "conceptual-distinction",
+      "required_text": [
+        "Question and concepts",
+        "Undocumented community knowledge",
+        "Distinguish possible explanations",
+        "4"
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Question and concepts",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Undocumented community knowledge",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Distinguish possible explanations",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "4",
+          "font_pt": 9
+        },
+        {
+          "id": "main-table",
+          "role": "table",
+          "kind": "table",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            3.4
+          ],
+          "table": {
+            "rows": [
+              [
+                "Concept",
+                "Possible meaning",
+                "Evidence to seek"
+              ],
+              [
+                "Absence",
+                "No account was collected",
+                "Collection history"
+              ],
+              [
+                "Withholding",
+                "A contributor chose not to record it",
+                "Contributor explanation"
+              ],
+              [
+                "Exclusion",
+                "A rule prevented its inclusion",
+                "Rule and decision record"
+              ]
+            ]
+          },
+          "font_pt": 14
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 5,
+      "id": "study-plan",
+      "required_text": [
+        "Study plan and limits",
+        "Undocumented community knowledge",
+        "A qualitative study is planned",
+        "5",
+        "Invite archive contributors to discuss a decision they are willing to share.",
+        "Compare their explanations with the relevant collection policies.",
+        "Develop interpretations collaboratively and retain disagreements."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Study plan and limits",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Undocumented community knowledge",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "A qualitative study is planned",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "5",
+          "font_pt": 9
+        },
+        {
+          "id": "block-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            0.9833333333333333
+          ],
+          "text": "Invite archive contributors to discuss a decision they are willing to share.",
+          "font_pt": 16
+        },
+        {
+          "id": "block-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.6133333333333333,
+            9,
+            0.9833333333333333
+          ],
+          "text": "Compare their explanations with the relevant collection policies.",
+          "font_pt": 16
+        },
+        {
+          "id": "block-2",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.7466666666666666,
+            9,
+            0.9833333333333333
+          ],
+          "text": "Develop interpretations collaboratively and retain disagreements.",
+          "font_pt": 16
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 6,
+      "id": "consent",
+      "required_text": [
+        "Study plan and limits",
+        "Undocumented community knowledge",
+        "Separate permission to discuss and to\npublish",
+        "6",
+        "Research conversation",
+        "Participants choose which decisions to discuss.\n\nThey may decline a topic.",
+        "Publication decision",
+        "Seek separate permission for any quoted account.\n\nRetain anonymity preferences."
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Study plan and limits",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Undocumented community knowledge",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.8666666666666667
+          ],
+          "text": "Separate permission to discuss and to\npublish",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.646666666666667,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "6",
+          "font_pt": 9
+        },
+        {
+          "id": "condition-title-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.9166666666666667,
+            4.35,
+            0.5
+          ],
+          "text": "Research conversation",
+          "font_pt": 16
+        },
+        {
+          "id": "condition-body-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.566666666666667,
+            4.35,
+            2.313333333333333
+          ],
+          "text": "Participants choose which decisions to discuss.\n\nThey may decline a topic.",
+          "font_pt": 16
+        },
+        {
+          "id": "condition-title-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            5.15,
+            1.9166666666666667,
+            4.35,
+            0.5
+          ],
+          "text": "Publication decision",
+          "font_pt": 16
+        },
+        {
+          "id": "condition-body-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            5.15,
+            2.566666666666667,
+            4.35,
+            2.313333333333333
+          ],
+          "text": "Seek separate permission for any quoted account.\n\nRetain anonymity preferences.",
+          "font_pt": 16
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    },
+    {
+      "number": 7,
+      "id": "closing",
+      "required_text": [
+        "Summary",
+        "Undocumented community knowledge",
+        "Study the decision behind an absent account",
+        "7",
+        "How community archives decide\nwhat remains undocumented",
+        "Jamie Patel · Fictional social research group",
+        "Question: what makes contributors leave an account unrecorded?",
+        "Method: planned interviews and policy comparison.",
+        "Limit: no findings exist yet; the concepts may change.",
+        "jamie.patel@example.org"
+      ],
+      "expected_elements": [
+        {
+          "id": "chapter",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.25,
+            4.1,
+            0.35
+          ],
+          "text": "Summary",
+          "font_pt": 11
+        },
+        {
+          "id": "short-title",
+          "role": "header",
+          "kind": "shape",
+          "bounds_in": [
+            4.8,
+            0.25,
+            4.7,
+            0.35
+          ],
+          "text": "Undocumented community knowledge",
+          "font_pt": 11
+        },
+        {
+          "id": "title",
+          "role": "title",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            0.68,
+            7.55,
+            0.43
+          ],
+          "text": "Study the decision behind an absent account",
+          "font_pt": 24
+        },
+        {
+          "id": "logo",
+          "role": "logo",
+          "kind": "image",
+          "bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "frame_bounds_in": [
+            8.337,
+            0.719,
+            1.18,
+            0.3313698630136986
+          ],
+          "asset": {
+            "path": "skill:assets/NewmajimeModeLogoSmall.png",
+            "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c",
+            "width_px": 438,
+            "height_px": 123,
+            "effective_ppi": 371.1864406779661,
+            "fit": "contain"
+          }
+        },
+        {
+          "id": "title-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.209,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "footer-rule",
+          "role": "rule",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            5.188,
+            9,
+            0.008
+          ]
+        },
+        {
+          "id": "page",
+          "role": "page",
+          "kind": "shape",
+          "bounds_in": [
+            9.17,
+            5.32,
+            0.33,
+            0.19
+          ],
+          "text": "7",
+          "font_pt": 9
+        },
+        {
+          "id": "summary-title",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            1.48,
+            9,
+            0.4866666666666667
+          ],
+          "text": "How community archives decide\nwhat remains undocumented",
+          "font_pt": 14
+        },
+        {
+          "id": "summary-author",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.006666666666667,
+            9,
+            0.25333333333333335
+          ],
+          "text": "Jamie Patel · Fictional social research group",
+          "font_pt": 14
+        },
+        {
+          "id": "takeaway-0",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.3400000000000003,
+            9,
+            0.2866666666666667
+          ],
+          "text": "Question: what makes contributors leave an account unrecorded?",
+          "font_pt": 16
+        },
+        {
+          "id": "takeaway-1",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            2.806666666666667,
+            9,
+            0.2866666666666667
+          ],
+          "text": "Method: planned interviews and policy comparison.",
+          "font_pt": 16
+        },
+        {
+          "id": "takeaway-2",
+          "role": "body",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            3.273333333333334,
+            9,
+            0.2866666666666667
+          ],
+          "text": "Limit: no findings exist yet; the concepts may change.",
+          "font_pt": 16
+        },
+        {
+          "id": "contact",
+          "role": "label",
+          "kind": "shape",
+          "bounds_in": [
+            0.5,
+            4.626666666666667,
+            9,
+            0.25333333333333335
+          ],
+          "text": "jamie.patel@example.org",
+          "font_pt": 14
+        }
+      ],
+      "allowed_overlaps": [],
+      "semantic_claims": []
+    }
+  ],
+  "structure": {
+    "toc_style": "vertical",
+    "section_dividers": "none",
+    "summary_placement": "end_of_main",
+    "appendix_after_main": true,
+    "sections": [
+      {
+        "id": "question",
+        "title": "Question and concepts",
+        "description": "Distinguish absence from exclusion"
+      },
+      {
+        "id": "plan",
+        "title": "Study plan and limits",
+        "description": "Interviews, interpretation and consent"
+      }
+    ]
+  },
+  "ranges": [
+    {
+      "id": "question",
+      "title": "Question and concepts",
+      "description": "Distinguish absence from exclusion",
+      "start": 3,
+      "end": 4
+    },
+    {
+      "id": "plan",
+      "title": "Study plan and limits",
+      "description": "Interviews, interpretation and consent",
+      "start": 5,
+      "end": 6
+    }
+  ]
+}

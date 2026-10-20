@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "pptx": "workshop-reference.pptx",
+  "pptx_sha256": "2d79647672bb046851531610ad9ec1854b922f0beb20021312ea443f80bc935b",
+  "input": "input.json",
+  "input_sha256": "8bf601015955fb817801e03d4636a338ca9b3f7ebb520c124403a4a6fcc8f85d",
+  "renderer": "Microsoft PowerPoint 16.111 → PDF → Poppler Cairo",
+  "pdf": {
+    "path": "powerpoint-export.pdf",
+    "sha256": "a967d37aed21672d5774cc4b06e39720b19a95b325d8c61ab077f787ba483c4f",
+    "source_binding": "exported directly from requested PPTX"
+  },
+  "reviewed_at": "2026-10-20T10:41:36.590Z",
+  "reviewer": "Codex subagent /root/baseline",
+  "method": "All pages individually opened at original 1440×810 resolution from the exact PowerPoint-exported PDF/Cairo PNGs. Suspected header visibility in the image tool checked with source-PNG crops and exact RGB-region comparisons.",
+  "status": "pass",
+  "pages": [
+    {
+      "number": 1,
+      "image": "slide-01.png",
+      "image_sha256": "fe0a36cb8c634506eaae2996bc731ab6486aae11ce9907da00e848296be6f8c5",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "正式題目2行、著者、架空研究・合成データ・コンセプト画像の区分、連番1が明瞭。"
+    },
+    {
+      "number": 2,
+      "image": "slide-02.png",
+      "image_sha256": "645b34de87b56773a4c5f0358109df312c2b0020eeb581904a7b3567d8af1ab0",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "3章の正式名・説明と範囲3–4、5–7、8–9が入力の章割当と一致。タイトルと範囲は分離。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 3,
+      "image": "slide-03.png",
+      "image_sha256": "2dd31e272d2229c404d9833892719c30b23d84d5b3392f31c9dcfe3e3a542ee5",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "保存点数とログサイズの前提、2行の研究疑問、入力[1]出典が見える。健康・電池効果へ一般化していない。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 4,
+      "image": "slide-04.png",
+      "image_sha256": "0a60795296fea6e48a94b2602b954989214daeaf5a7d7493096215cdeff2eba1",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "5行×4列の全セル、強調されたCombined rule行、出典が読める。規則の候補を比較結果に変えていない。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 5,
+      "image": "slide-05.png",
+      "image_sha256": "98e57f6f7bb205fda296af6a8678bcb70a4593a462eb90c5871c1e4c34395ad9",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "両コンセプト画像は入力ファイルと完全同一SHA。画像・役割ラベル・説明が対応し、未検証のコンセプトという入力表現を表示。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 6,
+      "image": "slide-06.png",
+      "image_sha256": "3ac750885e138719bd2517d8e7b97c06322b2c6abd6deb9f94e90a63b6aec5ac",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "入力UI画像が全体表示され、3ステップは編集可能な外側テキストとして読める。実装済みアプリとは表示していない。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 7,
+      "image": "slide-07.png",
+      "image_sha256": "6912f2285f18dcc7ad77e583d959e90035be7e1f0c0a9d0ebe7801fe99cb8aa7",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "入力→規則選択→Regular/Eventの全3矢印が正しい端点・方向で表示。逆方向・因果効果・無作為群を示す変化はない。説明・連番7も読める。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 8,
+      "image": "slide-08.png",
+      "image_sha256": "288f937f6803eee3387e0e2c37caa47119ef19bdb3b5bb35c0e39910ba985f6b",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "PowerPoint版で縦軸タイトルSynthetic concentration [ppm]が12ptの複数行として読め、scopeと接触しない。軸目盛0/500/1000、上限1200のnativeデータ、5カテゴリ・2系列・凡例・解釈が整合。全10値と埋込Excelは同一hashの入力照合で保持を確認。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 9,
+      "image": "slide-09.png",
+      "image_sha256": "d4beecb811c9a233457eda6be7bfe6c383af0678fe4634f6557510876cab85c3",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "両比較条件と評価予定・結果未取得の文言が明瞭。共通トレース・尺度を使う計画の意味を保持。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    },
+    {
+      "number": 10,
+      "image": "slide-10.png",
+      "image_sha256": "508cf62f9242903a557cc3ec938387ffe832f6336481a4fd5c23ac80c6bcf620",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex subagent /root/baseline",
+      "method": "Individual original-resolution PowerPoint → PDF → Cairo image inspection.",
+      "notes": "正式題目2行、著者、3点の要約、連絡先、出典、連番10が見える。経験的有効性や省電力の検証済み主張へ変えていない。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。"
+    }
+  ],
+  "input_semantics": {
+    "status": "pass",
+    "comparison_failures": [],
+    "report": "input-audit.json",
+    "checks": [
+      "Display-order slide mapping",
+      "Raw text including formal title, author and specified contact",
+      "Native table cell matrix",
+      "Native chart categories, series names, caches and embedded workbook where present",
+      "Input image byte hashes",
+      "All displayed page numbers",
+      "Per-slide notes including evidence scope",
+      "Core metadata title and author"
+    ]
+  },
+  "scope": "Native PowerPoint PDF display, exact-file OOXML/input meaning and structure; not an interactive edit-and-resave test.",
+  "resolved_findings": [
+    {
+      "id": "notes_meaning:1:slide",
+      "status": "pass",
+      "reason": "架空の登壇者・研究・生成コンセプト画像という入力の証拠区分を保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[0]",
+        "slide-01.png"
+      ]
+    },
+    {
+      "id": "source_meaning:1:slide",
+      "status": "pass",
+      "reason": "架空の登壇者・研究・生成コンセプト画像という入力の証拠区分を保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[0]",
+        "slide-01.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:2:slide",
+      "status": "pass",
+      "reason": "目次は実際の章割当と表示順に対応。入力にノートはなく空ノートが生成されている。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[1]",
+        "slide-02.png"
+      ]
+    },
+    {
+      "id": "source_meaning:2:slide",
+      "status": "pass",
+      "reason": "目次は実際の章割当と表示順に対応。入力にノートはなく空ノートが生成されている。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[1]",
+        "slide-02.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:3:slide",
+      "status": "pass",
+      "reason": "ログの記録点数に関する研究疑問であり、健康・電池寿命の効果を主張しないというノートを同ページに保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[2]",
+        "slide-03.png"
+      ]
+    },
+    {
+      "id": "source_meaning:3:slide",
+      "status": "pass",
+      "reason": "ログの記録点数に関する研究疑問であり、健康・電池寿命の効果を主張しないというノートを同ページに保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[2]",
+        "slide-03.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:4:slide",
+      "status": "pass",
+      "reason": "四つの設計上の候補と必要証拠を表す。比較試験の結果ではないというノートを保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[3]",
+        "slide-04.png"
+      ]
+    },
+    {
+      "id": "source_meaning:4:slide",
+      "status": "pass",
+      "reason": "四つの設計上の候補と必要証拠を表す。比較試験の結果ではないというノートを保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[3]",
+        "slide-04.png"
+      ]
+    },
+    {
+      "id": "raster_content:5:photo-0",
+      "status": "pass",
+      "reason": "両コンセプト画像は入力ファイルと完全同一SHA。画像・役割ラベル・説明が対応し、未検証のコンセプトという入力表現を表示。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[4]",
+        "slide-05.png"
+      ]
+    },
+    {
+      "id": "raster_content:5:photo-1",
+      "status": "pass",
+      "reason": "両コンセプト画像は入力ファイルと完全同一SHA。画像・役割ラベル・説明が対応し、未検証のコンセプトという入力表現を表示。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[4]",
+        "slide-05.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:5:slide",
+      "status": "pass",
+      "reason": "装置の役割を示す生成画像であり、稼働プロトタイプではないという本文とノートを保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[4]",
+        "slide-05.png"
+      ]
+    },
+    {
+      "id": "source_meaning:5:slide",
+      "status": "pass",
+      "reason": "装置の役割を示す生成画像であり、稼働プロトタイプではないという本文とノートを保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[4]",
+        "slide-05.png"
+      ]
+    },
+    {
+      "id": "raster_content:6:ui",
+      "status": "pass",
+      "reason": "入力UI画像が全体表示され、3ステップは編集可能な外側テキストとして読める。実装済みアプリとは表示していない。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[5]",
+        "slide-06.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:6:slide",
+      "status": "pass",
+      "reason": "概念画面であることと編集可能な外側説明を保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[5]",
+        "slide-06.png"
+      ]
+    },
+    {
+      "id": "source_meaning:6:slide",
+      "status": "pass",
+      "reason": "概念画面であることと編集可能な外側説明を保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[5]",
+        "slide-06.png"
+      ]
+    },
+    {
+      "id": "transform_unsupported:7:to-regular",
+      "status": "pass",
+      "reason": "to-regularは最終画像でChoose rule右端からRegular samples左端へ進む矢印と個別確認。OOXMLにも始点9→終点10、headなし/tail triangleを保持。チェッカーのflip未解決を最終表示で補完。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[6]",
+        "slide-07.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:7:slide",
+      "status": "pass",
+      "reason": "処理順と選択肢を示す3方向矢印であり、因果効果・無作為化実験群でないという説明とノートを保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[6]",
+        "slide-07.png"
+      ]
+    },
+    {
+      "id": "source_meaning:7:slide",
+      "status": "pass",
+      "reason": "処理順と選択肢を示す3方向矢印であり、因果効果・無作為化実験群でないという説明とノートを保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[6]",
+        "slide-07.png"
+      ]
+    },
+    {
+      "id": "chart_meaning:8:main-chart",
+      "status": "pass",
+      "reason": "単一の合成トレース、ppm、時点ごとの最後の保持値という条件を保持。ネイティブchart cacheと埋込xlsxの全10値・5カテゴリ・2系列名が入力一致。表示上の繰返しは追加測定ではなく1140は安全閾値ではないというノートを保持。描画上の重なりは本releaseで解消。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[7]",
+        "slide-08.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:8:slide",
+      "status": "pass",
+      "reason": "単一の合成トレース、ppm、時点ごとの最後の保持値という条件を保持。ネイティブchart cacheと埋込xlsxの全10値・5カテゴリ・2系列名が入力一致。表示上の繰返しは追加測定ではなく1140は安全閾値ではないというノートを保持。描画上の重なりは本releaseで解消。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[7]",
+        "slide-08.png"
+      ]
+    },
+    {
+      "id": "source_meaning:8:slide",
+      "status": "pass",
+      "reason": "単一の合成トレース、ppm、時点ごとの最後の保持値という条件を保持。ネイティブchart cacheと埋込xlsxの全10値・5カテゴリ・2系列名が入力一致。表示上の繰返しは追加測定ではなく1140は安全閾値ではないというノートを保持。描画上の重なりは本releaseで解消。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[7]",
+        "slide-08.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:9:slide",
+      "status": "pass",
+      "reason": "共通トレース・尺度で規則を比較する計画。トレース選択と閾値を先に固定するノートを保持し、実施済み結果に変えていない。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[8]",
+        "slide-09.png"
+      ]
+    },
+    {
+      "id": "source_meaning:9:slide",
+      "status": "pass",
+      "reason": "共通トレース・尺度で規則を比較する計画。トレース選択と閾値を先に固定するノートを保持し、実施済み結果に変えていない。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[8]",
+        "slide-09.png"
+      ]
+    },
+    {
+      "id": "notes_meaning:10:slide",
+      "status": "pass",
+      "reason": "問い、単一合成例、次の計画という3点。機器・アプリ・省電力を未検証とするノートを保持。",
+      "method": "Independent per-slide notes XML/input comparison and semantic reading. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[9]",
+        "slide-10.png"
+      ]
+    },
+    {
+      "id": "source_meaning:10:slide",
+      "status": "pass",
+      "reason": "問い、単一合成例、次の計画という3点。機器・アプリ・省電力を未検証とするノートを保持。",
+      "method": "Input/OOXML comparison and individual final-render inspection. Native PowerPoint/Cairo final page also individually inspected.",
+      "evidence": [
+        "input-audit.json#pages[9]",
+        "slide-10.png"
+      ]
+    }
+  ],
+  "closed_previous_findings": [
+    {
+      "id": "chart-axis-scope-label-overlap",
+      "severity": "P2",
+      "slide": 8,
+      "status": "resolved",
+      "description": "値・カテゴリ・凡例・0–1200軸・解釈は入力と対応。ただし縦軸タイトル上端が条件ラベルの左端付近と重なる。Artifact表示を要修正として記録。",
+      "evidence": "slide-08.png",
+      "native_application_reproduction": "The corrected native PowerPoint output has no overlap.",
+      "reason": "PowerPoint版で縦軸タイトルSynthetic concentration [ppm]が12ptの複数行として読め、scopeと接触しない。軸目盛0/500/1000、上限1200のnativeデータ、5カテゴリ・2系列・凡例・解釈が整合。全10値と埋込Excelは同一hashの入力照合で保持を確認。 短縮タイトルとロゴは目視済みp2の該当RGB領域と完全一致。",
+      "previous_pptx_sha256": "580ccc4986cccb146f77b95b88f83cd81c3965d0652119df2cf9a614ee8b4640"
+    }
+  ],
+  "visual_findings": [],
+  "application_checks": {
+    "required": true,
+    "status": "pass",
+    "application": "Microsoft PowerPoint",
+    "version": "16.111",
+    "platform": "macOS",
+    "operator": "Root agent /root",
+    "reviewer": "Codex subagent /root/baseline",
+    "operations": [
+      "Requested final PPTX opened normally by exact file identity.",
+      "Exported the presentation to PDF.",
+      "Closed the presentation without saving.",
+      "Rendered exported PDF using Poppler Cairo.",
+      "All native PDF/Cairo pages visually reviewed at original resolution."
+    ],
+    "evidence": [
+      "render-record.json"
+    ],
+    "operation_report": "Root agent reported normal completion with exit 0 for B1 10 pages and B2 7 pages on 2026-10-20; render_powerpoint.applescript rejects repaired/unrelated presentations by exact-file identity.",
+    "source_pptx_unchanged": true,
+    "not_tested": [
+      "Interactive editing and saving changes in PowerPoint.",
+      "Slide-show-mode interaction."
+    ],
+    "pdf_evidence": "PDF hash is recorded in render-record.json; the export itself is retained in the external development audit."
+  },
+  "gate": {
+    "status": "pass",
+    "pptx_sha256": "2d79647672bb046851531610ad9ec1854b922f0beb20021312ea443f80bc935b",
+    "scope": "All-page visual, native-data and layout/source checks. Other research types and other computers are not certified."
+  }
+}

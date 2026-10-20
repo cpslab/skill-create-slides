@@ -1,0 +1,64 @@
+=== GENERATED CONTENT START ===
+表示ページ番号：1
+スライドID：cover
+題名：Recording brief changes
+in classroom air
+口頭補足：All study data and the presenter are fictional. Images are generated concepts, not working devices.
+根拠：今回の入力資料
+
+表示ページ番号：2
+スライドID：contents
+題名：Contents
+口頭補足：追加の口頭補足なし
+根拠：今回の入力資料
+
+表示ページ番号：3
+スライドID：question
+題名：A short change can fall between samples
+口頭補足：This question does not assert an effect on health or battery life.
+根拠：[1] Synthetic classroom trace, supplied teaching input (2026).
+
+表示ページ番号：4
+スライドID：alternatives
+題名：Choose what the recording rule preserves
+口頭補足：Candidate rules, not results of a comparative trial.
+根拠：[1] Synthetic teaching specification; alternatives are design options.
+
+表示ページ番号：5
+スライドID：concept-materials
+題名：Two concept components
+口頭補足：Both images were created with ImageGen for this fictional example.
+根拠：今回の入力資料
+
+表示ページ番号：6
+スライドID：interface
+題名：Choose the recording interval
+口頭補足：The screen is illustrative. Its key labels are repeated in editable text outside the image.
+根拠：今回の入力資料
+
+表示ページ番号：7
+スライドID：selection
+題名：Select a rule before retaining data
+口頭補足：The paths are operator-selected alternatives, not randomised experimental arms.
+根拠：今回の入力資料
+
+表示ページ番号：8
+スライドID：synthetic-result
+題名：Sparse samples miss one peak in this trace
+口頭補足：The retained representation repeats the last retained reading for display; these repeats are not additional measurements. The synthetic peak is not a safety threshold. No real-world detection claim.
+根拠：[1] Synthetic values in input.json; retained values use the last recorded sample.
+
+表示ページ番号：9
+スライドID：planned-comparison
+題名：Planned comparison across varied traces
+口頭補足：Planned study. Trace selection and thresholds must be fixed before evaluation.
+根拠：今回の入力資料
+
+表示ページ番号：10
+スライドID：closing
+題名：A recording rule determines what can be seen
+口頭補足：No hardware, application or energy saving has been validated. Contact details are fictional.
+根拠：[1] Synthetic teaching input; no empirical effectiveness claim.
+=== GENERATED CONTENT END ===
+
+利用者の追記（再生成時も保持）：

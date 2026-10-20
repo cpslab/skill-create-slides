@@ -1,0 +1,21 @@
+{
+  "application": "Microsoft PowerPoint 16.111",
+  "source_sha256": "eb71e9cb047d9106b8f4679ef4a23e23b32d0d1c4583fe0326b4c03f0d15ecf4",
+  "test_copy_sha256": "e5495e4ce78d5bdb18cce5b754668b054cde0e15f348402b7b79645b1e2959a1",
+  "source_unchanged": true,
+  "operations": [
+    "opened a separate copy",
+    "changed a native title text range and native table cell via the application API",
+    "saved as Open XML presentation",
+    "reopened saved copy",
+    "read back both changed strings from the application",
+    "closed test copy without modifying the deliverable"
+  ],
+  "readback": [
+    "Native text edit check",
+    "Native table edit check"
+  ],
+  "native_tables_after_save": 1,
+  "status": "pass",
+  "scope": "Native text/table round trip only; chart data-editor GUI and graphical media controls were not operated. This copy is not a presentation deliverable."
+}

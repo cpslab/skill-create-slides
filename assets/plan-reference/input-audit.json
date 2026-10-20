@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "method": "Independent stdlib OOXML extraction, display-order relationship traversal and input comparisons; semantic interpretation requires agent review.",
+  "pptx": "plan-reference.pptx",
+  "pptx_sha256": "eb71e9cb047d9106b8f4679ef4a23e23b32d0d1c4583fe0326b4c03f0d15ecf4",
+  "input": "assets/plan-reference/input.json",
+  "input_sha256": "a9cae37d70fd045b0f83c8e7a27526df983dc0d7a3b7284dd61939d47ea13856",
+  "pages": [
+    {
+      "number": 1,
+      "id": "cover",
+      "type": "cover",
+      "part": "ppt/slides/slide1.xml",
+      "paragraphs": [
+        "How community archives decide",
+        "what remains undocumented",
+        "Jamie Patel · Fictional social research group",
+        "Research plan · fictional teaching example",
+        "Fictional research plan · no empirical results",
+        "1"
+      ],
+      "missing_expected_strings": [],
+      "notes": [
+        "",
+        ""
+      ],
+      "notes_match": true,
+      "tables": [],
+      "table_match": true,
+      "charts": [],
+      "images": [
+        {
+          "name": "role:logo|id:logo",
+          "part": "ppt/media/image.png",
+          "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+        }
+      ],
+      "connectors": [],
+      "page_number_text": [
+        [
+          "1"
+        ]
+      ],
+      "input_image_hash_matches": []
+    },
+    {
+      "number": 2,
+      "id": "contents",
+      "type": "toc",
+      "part": "ppt/slides/slide2.xml",
+      "paragraphs": [
+        "Contents",
+        "Undocumented community knowledge",
+        "Contents",
+        "2",
+        "01  Question and concepts",
+        "Distinguish absence from exclusion",
+        "3–4",
+        "02  Study plan and limits",
+        "Interviews, interpretation and consent",
+        "5–6"
+      ],
+      "missing_expected_strings": [],
+      "notes": [
+        "",
+        ""
+      ],
+      "notes_match": true,
+      "tables": [],
+      "table_match": true,
+      "charts": [],
+      "images": [
+        {
+          "name": "role:logo|id:logo",
+          "part": "ppt/media/image2.png",
+          "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+        }
+      ],
+      "connectors": [],
+      "page_number_text": [
+        [
+          "2"
+        ]
+      ],
+      "input_image_hash_matches": []
+    },
+    {
+      "number": 3,
+      "id": "research-question",
+      "type": "question",
+      "part": "ppt/slides/slide3.xml",
+      "paragraphs": [
+        "Question and concepts",
+        "Undocumented community knowledge",
+        "An empty record has several explanations",
+        "3",
+        "A missing account does not, by itself, show why it is missing.",
+        "How do contributors decide",
+        "what to leave unrecorded?"
+      ],
+      "missing_expected_strings": [],
+      "notes": [
+        "Open research question; no observed participant accounts.",
+        ""
+      ],
+      "notes_match": true,
+      "tables": [],
+      "table_match": true,
+      "charts": [],
+      "images": [
+        {
+          "name": "role:logo|id:logo",
+          "part": "ppt/media/image3.png",
+          "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+        }
+      ],
+      "connectors": [],
+      "page_number_text": [
+        [
+          "3"
+        ]
+      ],
+      "input_image_hash_matches": []
+    },
+    {
+      "number": 4,
+      "id": "conceptual-distinction",
+      "type": "table",
+      "part": "ppt/slides/slide4.xml",
+      "paragraphs": [
+        "Question and concepts",
+        "Undocumented community knowledge",
+        "Distinguish possible explanations",
+        "4",
+        "Concept",
+        "Possible meaning",
+        "Evidence to seek",
+        "Absence",
+        "No account was collected",
+        "Collection history",
+        "Withholding",
+        "A contributor chose not to record it",
+        "Contributor explanation",
+        "Exclusion",
+        "A rule prevented its inclusion",
+        "Rule and decision record"
+      ],
+      "missing_expected_strings": [],
+      "notes": [
+        "Sensitising concepts for a planned study, not established categories derived from data.",
+        ""
+      ],
+      "notes_match": true,
+      "tables": [
+        [
+          [
+            "Concept",
+            "Possible meaning",
+            "Evidence to seek"
+          ],
+          [
+            "Absence",
+            "No account was collected",
+            "Collection history"
+          ],
+          [
+            "Withholding",
+            "A contributor chose not to record it",
+            "Contributor explanation"
+          ],
+          [
+            "Exclusion",
+            "A rule prevented its inclusion",
+            "Rule and decision record"
+          ]
+        ]
+      ],
+      "table_match": true,
+      "charts": [],
+      "images": [
+        {
+          "name": "role:logo|id:logo",
+          "part": "ppt/media/image4.png",
+          "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+        }
+      ],
+      "connectors": [],
+      "page_number_text": [
+        [
+          "4"
+        ]
+      ],
+      "input_image_hash_matches": []
+    },
+    {
+      "number": 5,
+      "id": "study-plan",
+      "type": "concept",
+      "part": "ppt/slides/slide5.xml",
+      "paragraphs": [
+        "Study plan and limits",
+        "Undocumented community knowledge",
+        "A qualitative study is planned",
+        "5",
+        "Invite archive contributors to discuss a decision they are willing to share.",
+        "Compare their explanations with the relevant collection policies.",
+        "Develop interpretations collaboratively and retain disagreements."
+      ],
+      "missing_expected_strings": [],
+      "notes": [
+        "Recruitment, consent and analysis have not occurred. No device, application or quantitative outcome is required.",
+        ""
+      ],
+      "notes_match": true,
+      "tables": [],
+      "table_match": true,
+      "charts": [],
+      "images": [
+        {
+          "name": "role:logo|id:logo",
+          "part": "ppt/media/image5.png",
+          "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+        }
+      ],
+      "connectors": [],
+      "page_number_text": [
+        [
+          "5"
+        ]
+      ],
+      "input_image_hash_matches": []
+    },
+    {
+      "number": 6,
+      "id": "consent",
+      "type": "comparison",
+      "part": "ppt/slides/slide6.xml",
+      "paragraphs": [
+        "Study plan and limits",
+        "Undocumented community knowledge",
+        "Separate permission to discuss and to",
+        "publish",
+        "6",
+        "Research conversation",
+        "Participants choose which decisions to discuss.",
+        "",
+        "They may decline a topic.",
+        "Publication decision",
+        "Seek separate permission for any quoted account.",
+        "",
+        "Retain anonymity preferences."
+      ],
+      "missing_expected_strings": [],
+      "notes": [
+        "Proposed procedures; local review and participant agreement remain necessary.",
+        ""
+      ],
+      "notes_match": true,
+      "tables": [],
+      "table_match": true,
+      "charts": [],
+      "images": [
+        {
+          "name": "role:logo|id:logo",
+          "part": "ppt/media/image6.png",
+          "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+        }
+      ],
+      "connectors": [],
+      "page_number_text": [
+        [
+          "6"
+        ]
+      ],
+      "input_image_hash_matches": []
+    },
+    {
+      "number": 7,
+      "id": "closing",
+      "type": "summary",
+      "part": "ppt/slides/slide7.xml",
+      "paragraphs": [
+        "Summary",
+        "Undocumented community knowledge",
+        "Study the decision behind an absent account",
+        "7",
+        "How community archives decide",
+        "what remains undocumented",
+        "Jamie Patel · Fictional social research group",
+        "Question: what makes contributors leave an account unrecorded?",
+        "Method: planned interviews and policy comparison.",
+        "Limit: no findings exist yet; the concepts may change.",
+        "jamie.patel@example.org"
+      ],
+      "missing_expected_strings": [],
+      "notes": [
+        "Fictional author/contact. No empirical participant data or citations to real studies.",
+        ""
+      ],
+      "notes_match": true,
+      "tables": [],
+      "table_match": true,
+      "charts": [],
+      "images": [
+        {
+          "name": "role:logo|id:logo",
+          "part": "ppt/media/image7.png",
+          "sha256": "1a6c88b9ee039558d50ad13f2b975891bfb2b25c947e1d7a0739bf713b53d11c"
+        }
+      ],
+      "connectors": [],
+      "page_number_text": [
+        [
+          "7"
+        ]
+      ],
+      "input_image_hash_matches": []
+    }
+  ],
+  "core_metadata": {
+    "creator": "Jamie Patel · Fictional social research group",
+    "lastModifiedBy": "Jamie Patel · Fictional social research group",
+    "title": "How community archives decide\nwhat remains undocumented",
+    "created": "2026-10-20T10:24:08.2970000Z",
+    "modified": "2026-10-20T10:24:08.2970000Z"
+  },
+  "comparison_failures": []
+}

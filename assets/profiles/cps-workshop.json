@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "cps-workshop",
+  "slide_size_in": [
+    10,
+    5.625
+  ],
+  "font": "Noto Sans JP",
+  "palette": "botanica",
+  "colour_roles": {
+    "background": "#FFFFFF",
+    "body": "#24302C",
+    "muted": "#59636E",
+    "table_header": "#F4F6F2",
+    "highlight": "#EDF4E8",
+    "series": [
+      "#A6B1B6",
+      "#7D9D69"
+    ]
+  },
+  "structure": {
+    "toc_style": "vertical",
+    "section_dividers": "none",
+    "summary_placement": "end_of_main",
+    "appendix_after_main": true
+  },
+  "frame": {
+    "margin_in": 0.5,
+    "logo_position": "title_right",
+    "title_rule": true,
+    "FOOTER_LINE": "on",
+    "body_top_in": 1.48,
+    "body_bottom_in": 4.88,
+    "source_y_in": 5.0,
+    "footer_y_in": 5.188
+  },
+  "typography_pt": {
+    "title": 24,
+    "body": 16,
+    "question": 28,
+    "header": 11,
+    "table": 14,
+    "label": 14,
+    "source": 8.5,
+    "page": 9,
+    "caption": 12
+  },
+  "minimum_font_pt": {
+    "title": 22,
+    "body": 16,
+    "question": 24,
+    "header": 10,
+    "table": 14,
+    "label": 14,
+    "source": 8.5,
+    "page": 9,
+    "caption": 12
+  },
+  "geometry_tolerance_in": 0.02
+}

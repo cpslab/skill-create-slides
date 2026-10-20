@@ -6,6 +6,7 @@ Exit 0 means the package checks passed, not that visual quality or editing was v
 
 import argparse
 from collections import Counter
+from io import BytesIO
 import json
 from pathlib import Path
 import posixpath
@@ -20,6 +21,40 @@ NS = {
     "c": "http://schemas.openxmlformats.org/drawingml/2006/chart",
     "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
 }
+
+XSI_TYPE = "{http://www.w3.org/2001/XMLSchema-instance}type"
+
+
+def parse_xml(data):
+    """Parse XML and validate namespace bindings inside QName-valued xsi:type.
+
+    ElementTree checks prefixes in element/attribute names, but not prefixes
+    embedded in attribute values. Keep the actual per-element namespace scope.
+    """
+    scopes = [{"xml": "http://www.w3.org/XML/1998/namespace"}]
+    pending = {}
+    findings = []
+    parser = ET.iterparse(BytesIO(data), events=("start-ns", "start", "end"))
+    for event, value in parser:
+        if event == "start-ns":
+            prefix, uri = value
+            pending[prefix] = uri
+        elif event == "start":
+            scope = {**scopes[-1], **pending}
+            pending.clear()
+            scopes.append(scope)
+            qname = value.get(XSI_TYPE)
+            if qname is not None:
+                qname = qname.strip()
+                if not qname or any(c.isspace() for c in qname) or qname.count(":") > 1:
+                    findings.append(f"Malformed xsi:type QName: {qname!r}")
+                elif ":" in qname:
+                    prefix, local = qname.split(":")
+                    if not local or not prefix or not scope.get(prefix):
+                        findings.append(f"Undeclared xsi:type QName prefix: {qname!r}")
+        else:
+            scopes.pop()
+    return parser.root, findings
 
 
 def relationship_owner(name):
@@ -61,7 +96,8 @@ def inspect(path, expected=None):
             for name in names:
                 if name.endswith((".xml", ".rels")):
                     try:
-                        trees[name] = ET.fromstring(archive.read(name))
+                        trees[name], qname_errors = parse_xml(archive.read(name))
+                        errors.extend(f"{message}: {name}" for message in qname_errors)
                     except ET.ParseError as error:
                         errors.append(f"Malformed XML: {name}: {error}")
             relationships = {}

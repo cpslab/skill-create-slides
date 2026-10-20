@@ -1,0 +1,862 @@
+{
+  "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+  "renderer": "Microsoft PowerPoint 16.111 → PDF → Poppler Cairo",
+  "pdf": {
+    "sha256": "9bbd77cf007815ef14d0b7a55b649cf298b2440f965ae44278dcc0f9531b3b20",
+    "source_binding": "exported directly from requested PPTX"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "image": "slide-1.png",
+      "image_sha256": "4492661da06394010b9256de919af90619bde017cdd7222ab26802d946c43944",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "表紙Aの題目2行、所属、架空発表者、写真未同梱の枠、正本ロゴ、ページ1を確認。文字欠け・意図しない重なりなし。"
+    },
+    {
+      "number": 2,
+      "image": "slide-2.png",
+      "image_sha256": "d841c25c06ce4b899ccb828be46c940d5d8efc5188d6348d960368ab52628ace",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "静止表紙Bの白文字、題目、架空発表者、素材置換用の見本表示、ページ2を確認。全画面の暗地と可読性を保持。動画実装・再生の証拠ではない。"
+    },
+    {
+      "number": 3,
+      "image": "slide-3.png",
+      "image_sha256": "9d0e41da71d71fea15ee20769d1742aa35b64ea0c1916e90d3cc3161e0c44b23",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "4章2×2目次の章名・番号・区切り線・素材枠、計画表示、小見出し、ロゴ、ページ3を確認。教材としての未提供素材の枠が明確。"
+    },
+    {
+      "number": 4,
+      "image": "slide-4.png",
+      "image_sha256": "ea1fac967eaf4f9ca2c61b27e3f528ce15b21448a4c1a7b026828ef02351207c",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "上部章扉の03と章名、合成データの案内文、左右小見出し、上部ロゴ、ページ4を確認。帯内文字と余白に衝突なし。"
+    },
+    {
+      "number": 5,
+      "image": "slide-5.png",
+      "image_sha256": "2c12e30084ff4fd8709096f3f59359d40851f632b250c30e593ed73f7181fd72",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "合成13点の時刻0〜12分、保持0・5・10分の3点、3本の下向き矢印と説明、時刻単位、[1]、出典、ページ5を確認。選択の対応を因果効果として示していない。"
+    },
+    {
+      "number": 6,
+      "image": "slide-6.png",
+      "image_sha256": "9de6b62ff2999927e25fcbe361a8145e07777668a60a760f7f52098c2442bad4",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "灰の全13点と緑の保持3点、時刻0〜12分、模擬濃度ppm、閾値1000、最大1120/970、凡例、出典、ページ6を確認。塗りと注記は一致。細い輪郭にはOfficeの青・橙が残るが凡例とも一致し、系列の識別・意味を損なわない。"
+    },
+    {
+      "number": 7,
+      "image": "slide-7.png",
+      "image_sha256": "49872c00212b4b3fc70ca3f07f2e5d7672f702f18def644b4d515962479cf83e",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "表の13/3、1120/970 ppm、1000 ppm超2/0を原Orgと照合。小見出し、タイトル末尾「値」、出典、ページ7を確認。ツール全画面表示の欠けに疑義が出たため、同じhashのPNGから上部と出典の診断用cropを表示し、全字の保持を再確認。元画像は変更していない。"
+    },
+    {
+      "number": 8,
+      "image": "slide-8.png",
+      "image_sha256": "4a78ba9575572293336dd1b9581ae4cf8e652b6dc42e6f67027c81b789b40115",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "目次と同順の縦4行まとめ。問い、合成13/3の比較、この例の結果、将来の計画を区別。第3行の2行本文、区切り、出典、ページ8に欠け・重なりなし。"
+    },
+    {
+      "number": 9,
+      "image": "slide-9.png",
+      "image_sha256": "6342ecb40be151f14e228bdb769fbe53375b92fe01970b0057a1d583bfa3b8bd",
+      "width": 1440,
+      "height": 810,
+      "status": "pass",
+      "reviewer": "Codex /root/docs — functions.view_image detail:originalで1枚ずつ確認",
+      "notes": "正式題目、架空の発表者と所属、問い・この合成例の結果・次の計画、架空教材と明示した連絡先、出典、ページ9を確認。計画を実施済みの成果として記載していない。"
+    }
+  ],
+  "schema_version": 1,
+  "reviewed_on": "2026-10-20",
+  "status": "pass_for_recorded_scope",
+  "scope": "架空研究・合成入力による9種類の従来型レイアウト教材。表紙2種類と章扉1例を含み、完全な4章研究発表の検証ではない。静止表示・構造・原資料の意味対応の確認。",
+  "source_review": {
+    "file": "../example-source.org",
+    "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+    "reviewed_sections": [
+      "利用範囲",
+      "発表条件（架空）",
+      "問いと処理（架空）",
+      "入力表（全行が合成データ）",
+      "この入力から計算できる結果（架空）",
+      "根拠ラベル",
+      "出典と生成記録",
+      "教材の発表者と連絡先"
+    ],
+    "reference_base": "配布物のassets/visual-reference（../example-source.orgを参照）"
+  },
+  "generator": {
+    "file": "build.mjs",
+    "sha256": "0c891145acfb1c92d25cd582df74e7acf8e9636ee4d6a00aa9cead97ed6feb81"
+  },
+  "native_data_check": {
+    "status": "pass",
+    "source": "../example-source.org",
+    "input_time_minutes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "input_values_ppm": [
+      700,
+      720,
+      760,
+      820,
+      930,
+      970,
+      1120,
+      1080,
+      920,
+      870,
+      820,
+      780,
+      760
+    ],
+    "retained_time_minutes": [
+      0,
+      5,
+      10
+    ],
+    "retained_values_ppm": [
+      700,
+      970,
+      820
+    ],
+    "table_rows": [
+      [
+        "比較項目",
+        "1分間隔",
+        "5分間隔"
+      ],
+      [
+        "保持点数",
+        "13",
+        "3"
+      ],
+      [
+        "保持最大値 [ppm]",
+        "1120",
+        "970"
+      ],
+      [
+        "1000 ppm超の記録点数",
+        "2",
+        "0"
+      ]
+    ]
+  },
+  "resolved_findings": [
+    {
+      "id": "source_missing:0:slide",
+      "status": "pass",
+      "reason": "独立JSONは存在しないが、生成sidecarとは別に元Org全文を読み、最終PPTXのネイティブ値/文字・全9レンダー・発表メモを照合した。自動JSON照合済みとは扱わず、この固定教材に限る独立した原資料の手動確認で解消する。",
+      "method": "原Orgの全文読解、ネイティブチャート/表の抽出、数値再計算、全ページ個別目視",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": null,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": [
+          "4492661da06394010b9256de919af90619bde017cdd7222ab26802d946c43944",
+          "d841c25c06ce4b899ccb828be46c940d5d8efc5188d6348d960368ab52628ace",
+          "9d0e41da71d71fea15ee20769d1742aa35b64ea0c1916e90d3cc3161e0c44b23",
+          "ea1fac967eaf4f9ca2c61b27e3f528ce15b21448a4c1a7b026828ef02351207c",
+          "2c12e30084ff4fd8709096f3f59359d40851f632b250c30e593ed73f7181fd72",
+          "9de6b62ff2999927e25fcbe361a8145e07777668a60a760f7f52098c2442bad4",
+          "49872c00212b4b3fc70ca3f07f2e5d7672f702f18def644b4d515962479cf83e",
+          "4a78ba9575572293336dd1b9581ae4cf8e652b6dc42e6f67027c81b789b40115",
+          "6342ecb40be151f14e228bdb769fbe53375b92fe01970b0057a1d583bfa3b8bd"
+        ],
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:1:slide",
+      "status": "pass",
+      "reason": "PPTX内部ノートは合成・架空の教材、写真・動画枠の位置見本、推奨枚数ではないことを明記。メモのSAMPLE-01と対応し原Orgに反しない。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 1,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "4492661da06394010b9256de919af90619bde017cdd7222ab26802d946c43944",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:1:slide",
+      "status": "pass",
+      "reason": "原Orgの架空題目・発表者・所属と一致。写真枠は「未同梱」と明示され、未実施の実機測定の証拠を作っていない。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 1,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "4492661da06394010b9256de919af90619bde017cdd7222ab26802d946c43944",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:2:slide",
+      "status": "pass",
+      "reason": "内部ノートとメモのSAMPLE-02はいずれも静止レイアウト/動画未同梱と明記。再生条件は将来の制作条件で、今回の再生成功を報告していない。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 2,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "d841c25c06ce4b899ccb828be46c940d5d8efc5188d6348d960368ab52628ace",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:2:slide",
+      "status": "pass",
+      "reason": "原Orgの架空題目・発表者・所属と一致。動画・ポスターへの置換用レイアウト見本と表示し、実装済み動画を装わない。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 2,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "d841c25c06ce4b899ccb828be46c940d5d8efc5188d6348d960368ab52628ace",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:3:slide",
+      "status": "pass",
+      "reason": "内部ノートは全数値が合成で素材枠が実証写真でないことを明記。メモSAMPLE-03は未提供画像枠と正本素材への差し替えを説明。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 3,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "9d0e41da71d71fea15ee20769d1742aa35b64ea0c1916e90d3cc3161e0c44b23",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:3:slide",
+      "status": "pass",
+      "reason": "4章は従来型の教材構成。画像枠表示と将来構想の「計画」を保持し、原Orgの実機未実施を実測結果へ読み替えない。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 3,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "9d0e41da71d71fea15ee20769d1742aa35b64ea0c1916e90d3cc3161e0c44b23",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:4:slide",
+      "status": "pass",
+      "reason": "内部ノートは架空・合成の9種の教材と記載。章扉に個別の実測主張はなく、口頭補足を持つ本文とは区別する。外部メモに4の項目がないことを隠さず、内部ノートを照合した。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 4,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "ea1fac967eaf4f9ca2c61b27e3f528ce15b21448a4c1a7b026828ef02351207c",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:4:slide",
+      "status": "pass",
+      "reason": "「合成データで確認したことと、残る課題」は原Orgの合成処理確認と未実施範囲に整合。全章分の章扉を揃えた通し発表であるとは扱わない。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 4,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "ea1fac967eaf4f9ca2c61b27e3f528ce15b21448a4c1a7b026828ef02351207c",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:5:slide",
+      "status": "pass",
+      "reason": "内部ノートの[1]は原Orgを指し、実在論文ではない。メモSAMPLE-05は開始0分の合成系列1例・間引き処理のみを説明し、画面の0/5/10分と整合。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 5,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "2c12e30084ff4fd8709096f3f59359d40851f632b250c30e593ed73f7181fd72",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:5:slide",
+      "status": "pass",
+      "reason": "原Orgの1分間隔13点と0/5/10分の保持3点を、ノード・矢印・ラベルで一致させた。単位は分、集約単位は記録点。因果や省電力を主張していない。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 5,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "2c12e30084ff4fd8709096f3f59359d40851f632b250c30e593ed73f7181fd72",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "chart_meaning:6:synthetic-comparison",
+      "status": "pass",
+      "reason": "元Orgの13値と保持0/5/10分の3値をネイティブチャートXMLに照合。横軸は分、縦軸は模擬濃度ppm、1系列の各記録点であり平均や人数ではない。600〜1200の共通縦軸上の散布図で、凡例・点の形・保持最大値・1000 ppmの任意閾値を確認。",
+      "method": "原Org E1/E2の独立照合、ネイティブキャッシュ値の全件比較、6枚目個別目視",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 6,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "9de6b62ff2999927e25fcbe361a8145e07777668a60a760f7f52098c2442bad4",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:6:slide",
+      "status": "pass",
+      "reason": "内部ノートの架空・合成/原Org出典と、メモSAMPLE-06の任意閾値、安全基準ではない、別波形/開始時刻/実環境未確認の限定が原Orgと一致。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 6,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "9de6b62ff2999927e25fcbe361a8145e07777668a60a760f7f52098c2442bad4",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:6:slide",
+      "status": "pass",
+      "reason": "原Orgの合成系列1例を同一時刻軸で比較。保持最大値1120/970、1000 ppmを超える点は保持3点にないという限定結果が一致。1000 ppmは教材の任意閾値で、健康・安全基準や実測の有効性を主張していない。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 6,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "9de6b62ff2999927e25fcbe361a8145e07777668a60a760f7f52098c2442bad4",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:7:slide",
+      "status": "pass",
+      "reason": "内部ノートの合成表示と、メモSAMPLE-07の電力未測定・省電力未確認・健康リスク未評価が原Org U1/未実施に一致。表値を効能へ拡張しない。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 7,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "49872c00212b4b3fc70ca3f07f2e5d7672f702f18def644b4d515962479cf83e",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:7:slide",
+      "status": "pass",
+      "reason": "原Org E2の保持点数13/3、最大1120/970 ppm、1000 ppm超の記録点数2/0と一致。点数を継続時間・人数・電力効果へ読み替えない。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 7,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "49872c00212b4b3fc70ca3f07f2e5d7672f702f18def644b4d515962479cf83e",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:8:slide",
+      "status": "pass",
+      "reason": "内部ノートの合成表示と、メモSAMPLE-08の系列1例・最適間隔の実証ではない・実機は次の計画という補足を照合。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 8,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "4a78ba9575572293336dd1b9581ae4cf8e652b6dc42e6f67027c81b789b40115",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:8:slide",
+      "status": "pass",
+      "reason": "問い→同じ合成系列の比較→この例の結果→波形・開始時刻・実機条件を確かめる計画の順序と証拠状態が原Org E1/E2/P1/U1に整合。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 8,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "4a78ba9575572293336dd1b9581ae4cf8e652b6dc42e6f67027c81b789b40115",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "notes_meaning:9:slide",
+      "status": "pass",
+      "reason": "内部ノートの架空/合成と、メモSAMPLE-09の教材専用連絡先・結果と次の計画の区別を照合。",
+      "method": "最終PPTXから内部ノートを抽出して読み、同じ版の発表メモと原Orgを照合",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 9,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "6342ecb40be151f14e228bdb769fbe53375b92fe01970b0057a1d583bfa3b8bd",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    },
+    {
+      "id": "source_meaning:9:slide",
+      "status": "pass",
+      "reason": "問い、合成例に限った保持3点の結果、次の計画を区別。架空の発表者・所属・presenter@example.orgが原Orgの教材指定と一致。",
+      "method": "元Orgと最終PNGを個別照合し、対象・単位・集約単位・合成/計画・出典を確認",
+      "evidence": {
+        "source": {
+          "file": "../example-source.org",
+          "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f",
+          "reviewed_sections": [
+            "利用範囲",
+            "発表条件（架空）",
+            "問いと処理（架空）",
+            "入力表（全行が合成データ）",
+            "この入力から計算できる結果（架空）",
+            "根拠ラベル",
+            "出典と生成記録",
+            "教材の発表者と連絡先"
+          ]
+        },
+        "page": 9,
+        "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+        "image_sha256": "6342ecb40be151f14e228bdb769fbe53375b92fe01970b0057a1d583bfa3b8bd",
+        "memo_sha256": "e5910a77710e63de3fa051b2da20eef6faaafb68a0f7e1004fc1343472d3d91d"
+      }
+    }
+  ],
+  "application_checks": {
+    "required": true,
+    "status": "pass",
+    "scope": "この静止表示検証に必要な開封・PDF書出し・閉じる操作",
+    "application": "Microsoft PowerPoint 16.111",
+    "renderer": "PDF → Poppler Cairo",
+    "evidence": "render_record (this document)",
+    "reported_execution": "親担当がrender_deck --renderer powerpointの終了値0、9枚生成、閉じる操作までの完了を確認。利用者が表示されたアクセス許可を承認した後の実行。",
+    "native_manual_edit_and_resave": {
+      "status": "unverified",
+      "reason": "文字・表・グラフを手で編集してPPTXを再保存する操作は実施していない。"
+    },
+    "video_playback": {
+      "status": "not_applicable",
+      "reason": "この教材に動画を同梱していない。"
+    },
+    "repeated_export_stability": {
+      "status": "pass",
+      "scope": "今回の同じmacOS/PowerPoint環境で4件を順次開封・PDF書出し・閉じる処理まで実行した範囲",
+      "decks": [
+        {
+          "kind": "従来レイアウト教材",
+          "pages": 9
+        },
+        {
+          "kind": "固定入力の再構成",
+          "pages": 21
+        },
+        {
+          "kind": "架空研究作例",
+          "pages": 10
+        },
+        {
+          "kind": "計画研究作例",
+          "pages": 7
+        }
+      ],
+      "evidence": "親担当が4件とも最新helperの終了値0と正常完了を確認。任意環境での無制限の反復安定性を証明するものではない。"
+    }
+  },
+  "limitations": [
+    "全9枚は架空のレイアウト教材であり、新規実研究の使用者レビュー記録ではない。",
+    "グラフの塗りは灰・緑。PowerPointの細いマーカー輪郭には青・橙が残るが、凡例と対応し意味・識別に問題は見られない。",
+    "文字・表・チャートの手動編集とPPTX再保存は未検証。今回の反復書出し成功は記録した4件と環境に限る。",
+    "画像全体の読み取りによる疑義は同一PNGの領域を別表示して再確認した。artifact-tool/Cairo等の描画欠落を実証した記録ではない。"
+  ],
+  "file": "cps-layout-reference.pptx",
+  "version": "1.5.0",
+  "quality_gate": {
+    "exit_code": 0,
+    "status": "pass",
+    "verified_complete": true,
+    "scope": "記録した静止表示・構造・原資料意味対応。上記未検証操作を完了としない。",
+    "issues": []
+  },
+  "structure_check": {
+    "exit_code": 0,
+    "slide_count": 9,
+    "notes_count": 9,
+    "errors": [],
+    "review_items": [],
+    "native_chart_pages": [
+      6
+    ],
+    "native_table_pages": [
+      7
+    ],
+    "native_connector_pages": [
+      5
+    ]
+  },
+  "layout_check": {
+    "exit_code_before_review": 2,
+    "errors": [],
+    "review_required": 19,
+    "unverified": 1,
+    "resolved_findings": 20,
+    "source_json": "not_provided — original Org reviewed independently"
+  },
+  "render_record": {
+    "renderer": "Microsoft PowerPoint 16.111 → PDF → Poppler Cairo",
+    "pptx_sha256": "4bedf79722c1248a396f0c259d39226dced97bcd4d684eb65516f63fa1ebf614",
+    "pdf": {
+      "sha256": "9bbd77cf007815ef14d0b7a55b649cf298b2440f965ae44278dcc0f9531b3b20",
+      "source_binding": "exported directly from requested PPTX"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "image": "slide-1.png",
+        "image_sha256": "4492661da06394010b9256de919af90619bde017cdd7222ab26802d946c43944"
+      },
+      {
+        "number": 2,
+        "image": "slide-2.png",
+        "image_sha256": "d841c25c06ce4b899ccb828be46c940d5d8efc5188d6348d960368ab52628ace"
+      },
+      {
+        "number": 3,
+        "image": "slide-3.png",
+        "image_sha256": "9d0e41da71d71fea15ee20769d1742aa35b64ea0c1916e90d3cc3161e0c44b23"
+      },
+      {
+        "number": 4,
+        "image": "slide-4.png",
+        "image_sha256": "ea1fac967eaf4f9ca2c61b27e3f528ce15b21448a4c1a7b026828ef02351207c"
+      },
+      {
+        "number": 5,
+        "image": "slide-5.png",
+        "image_sha256": "2c12e30084ff4fd8709096f3f59359d40851f632b250c30e593ed73f7181fd72"
+      },
+      {
+        "number": 6,
+        "image": "slide-6.png",
+        "image_sha256": "9de6b62ff2999927e25fcbe361a8145e07777668a60a760f7f52098c2442bad4"
+      },
+      {
+        "number": 7,
+        "image": "slide-7.png",
+        "image_sha256": "49872c00212b4b3fc70ca3f07f2e5d7672f702f18def644b4d515962479cf83e"
+      },
+      {
+        "number": 8,
+        "image": "slide-8.png",
+        "image_sha256": "4a78ba9575572293336dd1b9581ae4cf8e652b6dc42e6f67027c81b789b40115"
+      },
+      {
+        "number": 9,
+        "image": "slide-9.png",
+        "image_sha256": "6342ecb40be151f14e228bdb769fbe53375b92fe01970b0057a1d583bfa3b8bd"
+      }
+    ]
+  },
+  "review_corrections": [
+    {
+      "page": 7,
+      "scope": "元PNGの表示確認",
+      "result": "全体表示で末尾/小見出し/出典が欠けたように見えた初期判断を訂正。PowerPoint/Cairo画像とartifact-tool画像の双方で、同一元PNGの上部と出典を切り出して別表示すると全字の保持を確認。元PNGは変更していない。"
+    }
+  ]
+}
