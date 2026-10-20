@@ -324,13 +324,16 @@ uv run --frozen python scripts/check_layout.py "$SLIDE_TRIAL_DIR/output/plan-v1.
 
 ## 使い方
 
-研究資料があるプロジェクトを利用するエージェントで開きます。OpenCodeならそのフォルダで `opencode`、Claude Codeなら `claude` を起動します。スキルのフォルダを研究作業先にせず、自分の論文・研究計画・結果・素材の場所と出力先を指定してください。次は全クライアントで使える依頼例です。Codexでは先頭を `$research-presentation-slides`、Claude Codeでは `/research-presentation-slides` にしても構いません。
+研究資料があるフォルダを利用するエージェントで開きます。OpenCodeならそのフォルダで `opencode`、Claude Codeなら `claude` を起動します。開始時のワーキングディレクトリを基点に、エージェントが直下と既存のサブディレクトリから関連する論文・研究計画・結果・素材を確認します。`sources/` や `assets/` を作ったり、資料を移動・改名したりする準備は不要です。特定のファイルや範囲だけを使いたい場合は、その指定を優先します。
+
+スキルの導入先と研究資料の作業先は別です。同梱の `assets/` はロゴ・ひな型・架空作例等の配布物で、利用者の入力フォルダ名を指定するものではありません。次は全クライアントで使える依頼例です。Codexでは先頭を `$research-presentation-slides`、Claude Codeでは `/research-presentation-slides` にしても構いません。
 
 ```text
 research-presentation-slides スキルを読み込んでください。
 読込み元・バージョンと、PPTX生成・描画・画像生成・画像閲覧の機能を確認してください。
 
-sources/ の論文・研究計画と assets/ の素材を今回の正本として使い、
+このワーキングディレクトリにある資料を、既存のサブディレクトリも含めて確認し、
+今回の研究に関連する資料・素材を元の配置のまま入力に使ってください。
 学会の10分発表を制作してください。質疑は別に5分です。
 聴衆は情報工学系の学生・研究者、言語は日本語です。
 発表者・所属：［氏名・所属］

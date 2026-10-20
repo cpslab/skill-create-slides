@@ -30,16 +30,16 @@
   },
   "files": {
     "AGENTS.md": {
-      "bytes": 6232,
-      "sha256": "e844a0a2af0c95a3a9c96db13bdcac18d8741d97cf87b0a6c720642eca49a6f7"
+      "bytes": 6546,
+      "sha256": "df21316589781451f55a600279521d25a1090cb8ad47df2a7f2c70224194e665"
     },
     "README.md": {
-      "bytes": 33757,
-      "sha256": "fe81737bc0ed03120408a2b2e4c1bee6bd9912e43819f0a08fad0a6006861e87"
+      "bytes": 34351,
+      "sha256": "58f351fb34f789fff47fccb246a8d7aee8a4f8ddf47292739e9df65441ebb86c"
     },
     "SKILL.md": {
-      "bytes": 35685,
-      "sha256": "01999e5fa2e32c8248ad88baf1501087d5b4748c1cff2d2b26f37b215171af7c"
+      "bytes": 36507,
+      "sha256": "fca80fe1db2f5fdc304c45a5db4fc5e1c283556f3deea9f6ba414e1d9c906272"
     },
     "agents/openai.yaml": {
       "bytes": 199,
@@ -54,8 +54,8 @@
       "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f"
     },
     "assets/input-brief.org": {
-      "bytes": 3730,
-      "sha256": "6bb4845057b1ab322d6c2715566f31c0b1945ab67aa2db884018f58d4345a0fc"
+      "bytes": 4054,
+      "sha256": "811f88718e7ab9dd34838e2adcfa643936308ca72b588b77f0824eedbbd9f02f"
     },
     "assets/layouts/cps.mjs": {
       "bytes": 27434,
@@ -250,8 +250,8 @@
       "sha256": "f73df060c4b595d508af01413c0621668ee016dcde50d4371cd4f35194f01841"
     },
     "assets/workflow-template.org": {
-      "bytes": 7697,
-      "sha256": "b806d0d0294f60c5e4091a80fe6c8bd77423be0fe0f4a81ce245c8ef4ea5d65e"
+      "bytes": 8177,
+      "sha256": "bc48103b27a6ea5ee25b0cde9b047d7996ed598581df91bbf1f5770761b838cd"
     },
     "assets/workshop-reference/contact-sheet.png": {
       "bytes": 377303,
@@ -366,8 +366,8 @@
       "sha256": "1bcb452b197bf88faf6a4ea57986d9994adaf4c6cd0eec620526e516a59056b2"
     },
     "references/generation.md": {
-      "bytes": 24323,
-      "sha256": "a6088072512736c0d0e49f9852ab36ccede4e178c58dbc9a87d9072dea51bfbb"
+      "bytes": 24814,
+      "sha256": "170ce3574e41ddc2a3644003a98df90504e2cfbfaa39b4c9cb5e214857543b5a"
     },
     "references/history.md": {
       "bytes": 4320,
@@ -390,16 +390,16 @@
       "sha256": "86ae55dc8fb573e5490e7f6d75f1b72060709f69c831c1cc26577ede0c39a029"
     },
     "references/production.md": {
-      "bytes": 29490,
-      "sha256": "de8e87097fcc8c9415a90489d766e3b54e136596edc761c144cb79d0775b4600"
+      "bytes": 29749,
+      "sha256": "9f60aabc09979c9b981eaa727db8e419f071b8062a40d6591c91c49c56a19881"
     },
     "references/quality-standard.md": {
       "bytes": 17330,
       "sha256": "4813c27768d84f0a035084446cc8db21b26a6a9b9b42b7dab5292f9b9a758d3b"
     },
     "references/sharing.md": {
-      "bytes": 10715,
-      "sha256": "8835c67de7969e7577811a06b5b9fc8a426a9307bc94b42a72c9285aa60cd590"
+      "bytes": 11142,
+      "sha256": "de90c44d83807b78cb47300840a66c87d99514e7bef07b4ef9e62688d52562de"
     },
     "references/visual-reference.md": {
       "bytes": 8017,
