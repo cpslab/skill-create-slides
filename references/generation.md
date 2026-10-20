@@ -4,13 +4,13 @@
 
 ## 正本と入出力
 
-研究の正本は利用者の資料、編集する構成正本は `slide-structure.org`。そこから照合して作ったJSONを生成入力とし、元Orgの版を制作記録へ残す。JSONをOrgとは別の内容正本として編集し続けない。修正を生成入力へ加えるときは構成正本にも戻し、主張や順序が変わる場合は必要なレビューを受け直す。機械入力の自動変換がないことを、自動同期済みと説明しない。
+研究の正本は利用者の資料、編集する構成正本はMarkdownの `slide-structure.md`。そこから照合して作ったJSONを生成入力とし、対応する構成の版を制作記録へ残す。JSONを構成とは別の内容正本として編集し続けない。修正を生成入力へ加えるときは構成正本にも戻し、主張や順序が変わる場合は必要なレビューを受け直す。MarkdownとJSONは自動変換・自動同期されない。既存のOrg等の構成正本を引き継ぐ場合は、その形式と手修正を保持する。
 
 研究資料は開始時のワーキングディレクトリから選び、使用者のパス・参照範囲の指定を優先する。入力用のフォルダ構成は要求しない。以下のコマンドをスキルのルートで実行しても、記録した資料の基点は変えない。生成用JSONは制作者が作り、素材パスをJSONの場所から元の保存先へ解決できるように記入する。素材をJSONと同じフォルダへ集める必要はない。
 
 | 分担 | ファイル・処理 |
 |---|---|
-| 研究入力と構成 | 当該作業先の資料、Org、生成用JSON。題目・著者・出典・素材は毎回ここから取得 |
+| 研究入力と構成 | 当該作業先の資料、Markdownの構成正本、生成用JSON。題目・著者・出典・素材は毎回ここから取得 |
 | 共通の視覚仕様 | [cps-midterm.json](../assets/profiles/cps-midterm.json)、[cps-workshop.json](../assets/profiles/cps-workshop.json)、[配色正本](cps-lab-style.md) |
 | レイアウト部品 | [cps.mjs](../assets/layouts/cps.mjs)。研究固有の既定値を持たない |
 | 生成 | [build_deck.mjs](../scripts/build_deck.mjs)。入力JSONからPPTX・配置対応表・発表メモを出力 |
@@ -117,7 +117,7 @@ python3 scripts/check_layout.py /path/to/work/output/deck-v1.pptx \
 
 `--work-dir` で私的な作業先を明示し、最終PPTXはその配下の独立した出力ディレクトリへ保存する。作業先直下へのPPTX保存や、作業先外へ向く出力先・シンボリックリンクは受け付けない。候補と検証receiptは作業先の `.build/` に実行ごとの一意なディレクトリを作り、最終成果物と分離する。
 
-既存PPTXは上書きしない。新しい版名で生成し、最終処理が失敗した場合は `.build/` 内の候補を調べる。成功時はPPTXと同じディレクトリに `.layout.json`、`-発表メモ.txt` ができる。発表メモの自動生成範囲外の利用者追記は保つ。既存メモを別版へ引き継ぐ場合も内容を照合して保持する。
+既存PPTXは上書きしない。新しい版名で生成し、最終処理が失敗した場合は `.build/` 内の候補を調べる。成功時はPPTXと同じディレクトリに `.layout.json`、`-発表メモ.md` ができる。既存の同名 `-発表メモ.txt` だけがある場合は、その形式を継続する。MDとTXTが併存する場合は自動で正本を選ばずエラーにする。発表メモの自動生成範囲外の利用者追記は保つ。既存メモを別版へ引き継ぐ場合も内容を照合して保持する。
 
 レンダーは全ページ画像、`contact-sheet.png`、PPTXと画像のhashを持つ `render-record.json` を出力する。各ページの初期状態は `unverified`。一覧生成だけで目視合格へ書き換えない。使用者レビュー用の完成イメージと、この最終ファイル検証用レンダーは役割を区別する。
 
@@ -196,7 +196,7 @@ python3 -m unittest discover -s tests
 | [workshop-reference/research-source.org](../assets/workshop-reference/research-source.org) | [workshop-reference/input.json](../assets/workshop-reference/input.json) | 10枚、3章。短い問い、比較表、生成した概念素材・UI、分岐、1合成系列の比較、次の計画。実機や実測の成果を主張しない | [PPTX](../assets/workshop-reference/workshop-reference.pptx)、[一覧](../assets/workshop-reference/contact-sheet.png)、[検証記録](../assets/workshop-reference/validation.json) |
 | [plan-reference/research-source.org](../assets/plan-reference/research-source.org) | [plan-reference/input.json](../assets/plan-reference/input.json) | 7枚、2章。未記録の意味を区別する概念と質的研究計画。装置・UI・定量結果を入力にも出力にも要求しない | [PPTX](../assets/plan-reference/plan-reference.pptx)、[一覧](../assets/plan-reference/contact-sheet.png)、[検証記録](../assets/plan-reference/validation.json) |
 
-この2作例の `research-source.org` は、今回の既存固定JSONにある研究上の事実・計画・全合成値・集約単位・架空発表者・素材区分を相互照合して整理した教材資料。JSONより前に存在した元論文や実験記録ではない。研究内容はOrgで、ページ順・章・部品型・座標はJSONで確認できるよう分離している。今回JSONは変更せず、生成は従来どおりJSONを読む。Orgからの自動変換・自動同期や、研究資料だけから独立して構成した検証を実施済みとは扱わない。
+この2作例の `research-source.org` は、今回の既存固定JSONにある研究上の事実・計画・全合成値・集約単位・架空発表者・素材区分を相互照合して整理した教材資料。JSONより前に存在した元論文や実験記録ではない。既存資料との互換性のためOrgを保持しており、新規制作の標準はMarkdownとする。研究内容はOrgで、ページ順・章・部品型・座標はJSONで確認できるよう分離している。今回JSONは変更せず、生成は従来どおりJSONを読む。Orgからの自動変換・自動同期や、研究資料だけから独立して構成した検証を実施済みとは扱わない。
 
 枚数と章数は各作例の入力による値であり、短い研究発表の必須値ではない。著者名と `example.org` の連絡先は架空入力。画像は同梱概念素材であり、実物・実装・実測の証拠ではない。従来型の9枚教材は [visual-reference.md](visual-reference.md) の専用再生成手順を保持する。
 

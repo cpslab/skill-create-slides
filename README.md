@@ -16,6 +16,8 @@
 
 各工程の成果物を確認しながら進められます。「企画書だけ」「構成から再開」「既存PPTXの改訂」にも使えます。作成者の過去チャットや研究リポジトリは必要ありません。
 
+新規の企画書・アウトライン・スライド構成・制作記録・検証記録・発表メモは、Markdown（`.md`）で生成します。Org用の環境は不要です。既存のOrg・TXT等の資料や手修正は保持し、使用者の指定なく変換や二重管理をしません。PPTX・画像・機械用JSON等は、それぞれの用途に合う形式を使います。
+
 導入では前提と研究の便益をつなぎ、先行研究から今回の問いへ進めます。システムの原図を見せてから比較する、大きな問いで区切る、章内の提案をまとめるなど、聴衆の理解に必要な配置を選びます。既存資料への追加はイラストのタッチを合わせ、PPTXと発表原稿の手修正を保持します。
 
 目次とページ番号は必須です。短時間発表でも目次を残し、表紙からデッキ末尾まで全スライドに1始まりの連番を表示します。
@@ -33,7 +35,7 @@
 
 作例の表示・内容・再生成の実施範囲は各検証記録を参照してください。PowerPoint本体の操作・動画再生は、静止レンダーやネイティブ要素の検査とは別です。[再生成手順](references/generation.md#同梱の短い研究発表を再生成する)
 
-各作例の `research-source.org` は、固定JSONの研究内容を照合して整理した教材資料です。OrgからJSONへの自動変換・同期や、研究資料だけから独立して構成を作った試験は実施済みとしていません。
+各作例の `research-source.org` は、固定JSONの研究内容を照合して整理した教材資料です。既存資料との互換性のため元形式で保持しており、新規ドキュメントの標準形式ではありません。OrgからJSONへの自動変換・同期や、研究資料だけから独立して構成を作った試験は実施済みとしていません。
 
 同梱の9枚は、**架空研究・合成データによるレイアウト見本**です。表紙2種類と共通の本文デザインをまとめて確認できます。実際の発表では表紙をどちらか一方選びます。9枚という枚数は、発表の推奨枚数ではありません。
 
@@ -350,7 +352,7 @@ research-presentation-slides スキルを読み込んでください。
 
 開始時には制作の流れと、次にレビューしてほしい成果物を案内します。成果物を提示するときも、見るべき点と回答方法を伝えます。修正点を返すか、問題なければ「この案で次へ」と返してください。
 
-分かる情報だけで始められます。エージェントが資料から[入力票](assets/input-brief.org)を整理し、次の判断に必要な不足を確認します。既存のスタイルを使う場合は、その資料も渡してください。
+分かる情報だけで始められます。エージェントが資料から[入力票](assets/input-brief.md)を整理し、次の判断に必要な不足を確認します。既存のスタイルを使う場合は、その資料も渡してください。
 
 途中から再開する場合の例：
 
@@ -391,13 +393,13 @@ Codexの `Presentations`・`@oai/artifact-tool` が利用可能な環境では�
 | [通し作例](references/worked-example.md) | 根拠から企画書、メッセージ、図へ変換する具体例 |
 | [編集可能な見本PPTX](assets/visual-reference/cps-layout-reference.pptx) | 表紙2種類、目次、章扉、模式図、定量図、表、まとめ、最終サマリの9種類 |
 | [視覚作例の説明](references/visual-reference.md) | 比較ポイント、検証範囲、再生成方法 |
-| [検証記録のひな形](assets/quality-review.org) | 確認結果と未検証事項の記録 |
+| [検証記録のひな形](assets/quality-review.md) | 確認結果と未検証事項の記録 |
 
 見本の研究・データは架空です。実際の研究結果として使用しないでください。見本の表紙・目次には未提供素材の配置枠があり、表紙タイプBの実動画は同梱していません。9枚の見本PPTXは構造検査に加え、1.5.0の[検証記録](assets/visual-reference/validation.json)でPowerPoint 16.111のPDF書出しとPoppler Cairoによる全ページ個別目視を記録しています。この9枚の編集・再保存と動画再生は未検証です。7枚の計画作例では、別の試験用コピーによる文字・表の編集、保存、再オープンも記録しています。各検証は記録したファイルと操作の範囲に限り、別環境での表示や全要素の編集を保証しません。
 
 ## 生成と検査
 
-研究の根拠は利用者の資料、編集する構成の正本は `slide-structure.org` とし、承認済みの版と照合したJSONを生成入力にします。OrgとJSONは自動同期されません。修正は構成正本・生成入力・共通部品・コードへ戻し、再生成で維持します。コマンド、依存関係、出力の対応は [再生成と検査](references/generation.md) を参照してください。
+研究の根拠は利用者の資料、編集する構成の正本は `slide-structure.md` とし、承認済みの版と照合したJSONを生成入力にします。MarkdownとJSONは自動同期されません。修正は構成正本・生成入力・共通部品・コードへ戻し、再生成で維持します。コマンド、依存関係、出力の対応は [再生成と検査](references/generation.md) を参照してください。
 
 ```sh
 uv run --frozen python scripts/init_presentation.py --project-dir /path/to/presentation --title '研究発表'
@@ -405,9 +407,9 @@ uv run --frozen python scripts/doctor.py --backend portable --strict --report /p
 uv run --frozen python scripts/check_pptx.py assets/visual-reference/cps-layout-reference.pptx --expect-slides 9
 ```
 
-`init_presentation.py` は `workflow.org` だけを初期化し、既存ファイルを上書きしません。
+`init_presentation.py` は `workflow.md` だけを初期化します。既存の `workflow.md` または `workflow.org` がある場合は上書きや二重作成をせず、終了値2で作成を止めます。その既存の制作記録をエージェントが引き継いで使います。
 
-PPTX生成は `uv run --frozen node scripts/build_deck.mjs --backend portable --input INPUT.json --work-dir WORK --output WORK/output/deck-v1.pptx` を使います。最終PPTXは作業先配下の独立した出力ディレクトリへ保存し、既存PPTXへの上書きを拒否します。候補・検証記録は `.build/` へ分離し、成功時は最終PPTXと同じ場所へ `.layout.json` と `-発表メモ.txt` も出力します。
+PPTX生成は `uv run --frozen node scripts/build_deck.mjs --backend portable --input INPUT.json --work-dir WORK --output WORK/output/deck-v1.pptx` を使います。最終PPTXは作業先配下の独立した出力ディレクトリへ保存し、既存PPTXへの上書きを拒否します。候補・検証記録は `.build/` へ分離し、成功時は最終PPTXと同じ場所へ `.layout.json` と `-発表メモ.md` も出力します。既存の同名TXTメモを引き継ぐ場合は形式を保ち、Markdownとの二重作成を避けます。
 
 公開ツール経路の `render_portable.py` はLibreOfficeまたはmacOSのPowerPointからPDFを書き出し、PyMuPDFで全ページを描画します。Codex用の `render_deck.mjs` は既定の `artifact-tool` に加え、macOSのPowerPointとPopplerを使う `--renderer powerpoint`、対象アプリが書き出したPDFを使う `--renderer pdf` に対応します。全ページPNG・一覧・hash付き描画記録を出力します。PDF経路は書出し元PPTXのhashと実際の書出しログを別途照合します。画像の一覧化だけでは個別目視を合格にしません。
 
@@ -423,7 +425,7 @@ Gitで導入し、ローカルでファイルを変更していない場合は�
 
 ## 発表用メモ
 
-主張を補足・限定して説明したい箇所は、スライド上の細かな注意書きを増やさず、出力PPTXと同じディレクトリの `発表資料-発表メモ.txt` に記録します。ページ番号・スライドIDごとに、発表時に口頭で伝える補足、適用範囲・条件・未確認事項、根拠をまとめます。必要な箇所があればメモも納品され、PPTXの修正・並べ替えに合わせて更新します。[メモひな形](assets/presentation-memo-template.txt)を使えます。
+主張を補足・限定して説明したい箇所は、スライド上の細かな注意書きを増やさず、出力PPTXと同じディレクトリの `発表資料-発表メモ.md` に記録します。ページ番号・スライドIDごとに、発表時に口頭で伝える補足、適用範囲・条件・未確認事項、根拠をまとめます。必要な箇所があればメモも納品され、PPTXの修正・並べ替えに合わせて更新します。[メモひな形](assets/presentation-memo-template.md)を使えます。
 
 まず主張や図ラベルを根拠に合う短い表現へ直します。対象・分母・単位・比較条件・実測／例示／計画など、省くと結論の理解が変わる情報は読める形で画面にも残します。詳しい方法・補足・限定はメモへ送ります。長い発表原稿・想定質問集とは別の、発表者が該当ページを話すときに参照するメモです。
 

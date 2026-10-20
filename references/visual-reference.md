@@ -8,6 +8,8 @@
 - [根拠となる合成入力表](../assets/example-source.org)
 - [再生成コード](../assets/visual-reference/build.mjs)
 
+この教材のOrg入力・TXTメモ・専用生成コードは、既存の成果物・検証記録との対応を保つため維持する。新規制作の構成・発表メモはMarkdownを標準とする。
+
 ## 比較するポイント
 
 | ページ | 種類 | 合わせる見た目・編集性 |

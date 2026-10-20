@@ -30,6 +30,10 @@ test('public backend exports native elements, workbooks, notes and connector end
   assert.deepEqual(structure.errors,[]);
   const sidecar=JSON.parse(await fs.readFile(output.replace('.pptx','.layout.json'),'utf8'));
   assert.equal(sidecar.backend,'portable');
+  const memo=await fs.readFile(output.replace('.pptx','-発表メモ.md'),'utf8');
+  assert.match(memo,/# 発表メモ/);
+  assert.equal((memo.match(/^## 表示ページ \d+$/gm)||[]).length,sidecar.slides.length);
+  await assert.rejects(fs.access(output.replace('.pptx','-発表メモ.txt')));
   const overwrite=run(process.execPath,['scripts/build_deck.mjs','--backend','portable','--input',input,'--output',output,'--work-dir',work,'--python',python]);
   assert.notEqual(overwrite.status,0);assert.match(overwrite.stderr,/already exists/);
  }finally{await fs.rm(work,{recursive:true,force:true});}
@@ -91,14 +95,14 @@ test('unsupported SVG never produces an invalid PNG fallback',async()=>{
  }finally{await fs.rm(work,{recursive:true,force:true});}
 });
 
-test('sidecar and memo links are rejected before publishing; regular memo additions survive',async()=>{
+test('sidecar and either memo format reject links; a legacy text memo is preserved in place',async()=>{
  const work=await fs.mkdtemp(path.join(os.tmpdir(),'cps-portable-files-'));
  try{
   const input=path.join(root,'assets/plan-reference/input.json'),output=path.join(work,'output/deck.pptx');
   await fs.mkdir(path.dirname(output));
   const sentinel=path.join(work,'outside.txt');await fs.writeFile(sentinel,'Preserve this content');
   const build=()=>run(process.execPath,['scripts/build_deck.mjs','--input',input,'--output',output,'--work-dir',work,'--python',python]);
-  for(const destination of [output.replace('.pptx','.layout.json'),output.replace('.pptx','-発表メモ.txt')]){
+  for(const destination of [output.replace('.pptx','.layout.json'),output.replace('.pptx','-発表メモ.md'),output.replace('.pptx','-発表メモ.txt')]){
    await fs.symlink(sentinel,destination);
    const result=build();assert.notEqual(result.status,0);
    assert.equal(await fs.readFile(sentinel,'utf8'),'Preserve this content');await assert.rejects(fs.access(output));
@@ -108,5 +112,42 @@ test('sidecar and memo links are rejected before publishing; regular memo additi
   await fs.writeFile(memo,'My rehearsal note: pause here.');
   const result=build();assert.equal(result.status,0,result.stderr);
   assert.match(await fs.readFile(memo,'utf8'),/My rehearsal note: pause here\./);
+  assert.match(await fs.readFile(memo,'utf8'),/^=== GENERATED CONTENT START ===/);
+  await assert.rejects(fs.access(output.replace('.pptx','-発表メモ.md')));
+ }finally{await fs.rm(work,{recursive:true,force:true});}
+});
+
+test('Markdown memo regeneration replaces generated text and retains user additions around it',async()=>{
+ const work=await fs.mkdtemp(path.join(os.tmpdir(),'cps-portable-markdown-memo-'));
+ try{
+  const data=JSON.parse(await fs.readFile(path.join(root,'assets/plan-reference/input.json'),'utf8'));
+  data.slides[0].notes='Compare <sample> & [controls] *literally*\n# Keep this next line';
+  const input=path.join(work,'input.json'),output=path.join(work,'output/deck.pptx');
+  await fs.writeFile(input,JSON.stringify(data));
+  await fs.mkdir(path.dirname(output));
+  const memo=output.replace('.pptx','-発表メモ.md');
+  await fs.writeFile(memo,'Personal introduction\n\n<!-- GENERATED CONTENT START -->\n# Previous generated version\n<!-- GENERATED CONTENT END -->\n\n## My additions\nPause before the final page.\n');
+  const result=run(process.execPath,['scripts/build_deck.mjs','--input',input,'--output',output,'--work-dir',work,'--python',python]);
+  assert.equal(result.status,0,result.stderr);
+  const updated=await fs.readFile(memo,'utf8');
+  assert.ok(updated.startsWith('Personal introduction\n\n'));
+  assert.ok(updated.endsWith('\n\n## My additions\nPause before the final page.\n'));
+  assert.doesNotMatch(updated,/Previous generated version/);
+  assert.match(updated,/^# 発表メモ$/m);
+  assert.equal((updated.match(/<!-- GENERATED CONTENT START -->/g)||[]).length,1);
+  assert.ok(updated.includes('Compare &lt;sample\\> &amp; \\[controls\\] \\*literally\\*  \n\\# Keep this next line'));
+ }finally{await fs.rm(work,{recursive:true,force:true});}
+});
+
+test('competing Markdown and legacy memos stop generation before publishing or editing',async()=>{
+ const work=await fs.mkdtemp(path.join(os.tmpdir(),'cps-portable-competing-memos-'));
+ try{
+  const input=path.join(root,'assets/plan-reference/input.json'),output=path.join(work,'output/deck.pptx');
+  await fs.mkdir(path.dirname(output));
+  for(const suffix of ['md','txt'])await fs.writeFile(output.replace('.pptx',`-発表メモ.${suffix}`),`Original ${suffix}`);
+  const result=run(process.execPath,['scripts/build_deck.mjs','--input',input,'--output',output,'--work-dir',work,'--python',python]);
+  assert.notEqual(result.status,0);assert.match(result.stderr,/Both Markdown and legacy text presentation memos exist/);
+  await assert.rejects(fs.access(output));
+  for(const suffix of ['md','txt'])assert.equal(await fs.readFile(output.replace('.pptx',`-発表メモ.${suffix}`),'utf8'),`Original ${suffix}`);
  }finally{await fs.rm(work,{recursive:true,force:true});}
 });

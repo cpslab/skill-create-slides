@@ -31,18 +31,23 @@ for(const component of relativeOutput.split(path.sep)){
  const stat=await fs.lstat(outputDirectory);
  if(!stat.isDirectory()||stat.isSymbolicLink())throw new Error('Output subdirectories must be real directories inside --work-dir.');
 }
-const layoutPath=output.replace(/\.pptx$/i,'.layout.json'),memoPath=output.replace(/\.pptx$/i,'-発表メモ.txt');
+const layoutPath=output.replace(/\.pptx$/i,'.layout.json');
+const markdownMemoPath=output.replace(/\.pptx$/i,'-発表メモ.md'),legacyMemoPath=output.replace(/\.pptx$/i,'-発表メモ.txt');
 await requireAbsent(layoutPath);
 // A memo may contain user additions. Refuse links and inspect it before generation.
-async function readMemo(){
+async function readMemo(file){
  try{
-  const st=await fs.lstat(memoPath);
+  const st=await fs.lstat(file);
   if(!st.isFile()||st.isSymbolicLink()||st.nlink!==1)throw new Error('Presentation memo must be a regular file without links.');
-  const handle=await fs.open(memoPath,constants.O_RDONLY|(constants.O_NOFOLLOW||0));
+  const handle=await fs.open(file,constants.O_RDONLY|(constants.O_NOFOLLOW||0));
   try{return await handle.readFile('utf8');}finally{await handle.close();}
  }catch(e){if(e.code==='ENOENT')return null;throw e;}
 }
-const existingMemo=await readMemo();
+const markdownMemo=await readMemo(markdownMemoPath),legacyMemo=await readMemo(legacyMemoPath);
+if(markdownMemo!==null&&legacyMemo!==null)throw new Error('Both Markdown and legacy text presentation memos exist; choose the authoritative record before generation.');
+// Preserve an existing text memo in place; new presentation memos use Markdown.
+const isMarkdown=legacyMemo===null,memoPath=isMarkdown?markdownMemoPath:legacyMemoPath;
+const existingMemo=isMarkdown?markdownMemo:legacyMemo;
 let pres,cps,PresentationFile;
 if(backend==='portable'){
  const [{default:PptxGenJS},{default:sharp},{PortableCPS}]=await Promise.all([import('pptxgenjs'),import('sharp'),import('../assets/layouts/portable.mjs')]);
@@ -86,15 +91,22 @@ await finalizePresentation({workspaceDir:workspace,candidatePath:candidate,final
 const sha=crypto.createHash('sha256').update(await fs.readFile(output)).digest('hex');
 const layout={schema_version:1,backend,pptx_sha256:sha,source_sha256:crypto.createHash('sha256').update(await fs.readFile(inputPath)).digest('hex'),profile_id:profile.id,slides:cps.records,structure:resolved.structure,ranges:resolved.ranges};
 await fs.writeFile(layoutPath,JSON.stringify(layout,null,2)+'\n',{flag:'wx'});
-const start='=== GENERATED CONTENT START ===',end='=== GENERATED CONTENT END ===';
-const generated=start+'\n'+resolved.slides.map(s=>`表示ページ番号：${s.number}\nスライドID：${s.id}\n題名：${s.title||data.metadata.title}\n口頭補足：${s.notes||'追加の口頭補足なし'}\n根拠：${(s.sources||[]).join(' / ')||'今回の入力資料'}\n`).join('\n')+end;
+const start=isMarkdown?'<!-- GENERATED CONTENT START -->':'=== GENERATED CONTENT START ===';
+const end=isMarkdown?'<!-- GENERATED CONTENT END -->':'=== GENERATED CONTENT END ===';
+// Input fields are plain text. Keep their visible characters and line breaks in Markdown.
+function markdownText(value){
+ return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/[\\`*_[\]{}()#+\-.!|>~]/g,'\\$&').replace(/\r\n?/g,'\n').replace(/\n/g,'  \n');
+}
+const generated=start+'\n'+(isMarkdown?'# 発表メモ\n\n':'')+resolved.slides.map(s=>isMarkdown?
+ `## 表示ページ ${s.number}\n\n- スライドID：${markdownText(s.id)}\n- 題名：${markdownText(s.title||data.metadata.title)}\n\n### 口頭補足\n\n${markdownText(s.notes||'追加の口頭補足なし')}\n\n### 根拠\n\n${markdownText((s.sources||[]).join(' / ')||'今回の入力資料')}\n`:
+ `表示ページ番号：${s.number}\nスライドID：${s.id}\n題名：${s.title||data.metadata.title}\n口頭補足：${s.notes||'追加の口頭補足なし'}\n根拠：${(s.sources||[]).join(' / ')||'今回の入力資料'}\n`).join('\n')+end;
 const existing=existingMemo||'';
-const merged=existing.includes(start)&&existing.includes(end)?existing.slice(0,existing.indexOf(start))+generated+existing.slice(existing.indexOf(end)+end.length):generated+'\n\n利用者の追記（再生成時も保持）：\n'+existing;
+const merged=existing.includes(start)&&existing.includes(end)?existing.slice(0,existing.indexOf(start))+generated+existing.slice(existing.indexOf(end)+end.length):generated+(isMarkdown?'\n\n## 利用者の追記（再生成時も保持）\n\n':'\n\n利用者の追記（再生成時も保持）：\n')+existing;
 if(existingMemo===null)await fs.writeFile(memoPath,merged,{flag:'wx'});
 else{
- if(await readMemo()!==existingMemo)throw new Error('Presentation memo changed during generation; retain the current file and reconcile it before delivery.');
+ if(await readMemo(memoPath)!==existingMemo)throw new Error('Presentation memo changed during generation; retain the current file and reconcile it before delivery.');
  // Rename replaces the directory entry, never following a late symlink or hard link.
- const memoTemp=path.join(stage,'memo.txt');await fs.writeFile(memoTemp,merged,{flag:'wx'});
+ const memoTemp=path.join(stage,isMarkdown?'memo.md':'memo.txt');await fs.writeFile(memoTemp,merged,{flag:'wx'});
  await fs.rename(memoTemp,memoPath);
 }
 console.log(JSON.stringify({pptx:output,sha256:sha,slides:resolved.slides.length,layout:layoutPath,memo:memoPath}));
