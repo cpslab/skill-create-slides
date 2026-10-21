@@ -282,7 +282,7 @@ uv sync --frozen --python 3.12
 
 LibreOfficeのOS別手順は[公式インストール案内](https://www.libreoffice.org/installation-instructions/)も参照してください。WindowsのWSLを使う場合は、Node・Python・LibreOffice・フォントもWSL内へ揃えます。Windows側だけへ入れたアプリがLinuxのコマンドとして使えるとは仮定しません。
 
-macOSのPowerPointを既に利用している場合は、LibreOfficeの代わりに `--renderer powerpoint` を指定する経路もあります。発表先がPowerPointなら、LibreOfficeでの静止表示確認に加えて発表先アプリで開き、動画・編集・スライドショーの動作を確認します。
+macOSのPowerPointを既に利用している場合は、LibreOfficeの代わりに `--renderer powerpoint` を指定する経路もあります。後続の `doctor.py` と `render_portable.py` の両方へ指定してください。doctorで省略するとLibreOfficeを検査します。発表先がPowerPointなら、LibreOfficeでの静止表示確認に加えて発表先アプリで開き、動画・編集・スライドショーの動作を確認します。
 
 ### 5. 環境と画像制作機能を確認する
 
@@ -390,6 +390,7 @@ Codexの `Presentations`・`@oai/artifact-tool` が利用可能な環境では�
 | [CPSスタイル](references/cps-lab-style.md) | 2つのプロファイル、色、余白、文字階層、ロゴ配置 |
 | [レイアウト選択](references/layout-patterns.md) | 問い・写真・表・UI・結果・分岐などの用途と選び方 |
 | [再生成と検査](references/generation.md) | 入力と共通部品、環境確認、生成・検査の実行方法 |
+| [1.6.0の公開ツール検証](references/portable-validation.md) | 3作例28枚、クライアント別の実施範囲と未検証事項 |
 | [通し作例](references/worked-example.md) | 根拠から企画書、メッセージ、図へ変換する具体例 |
 | [編集可能な見本PPTX](assets/visual-reference/cps-layout-reference.pptx) | 表紙2種類、目次、章扉、模式図、定量図、表、まとめ、最終サマリの9種類 |
 | [視覚作例の説明](references/visual-reference.md) | 比較ポイント、検証範囲、再生成方法 |
@@ -413,13 +414,15 @@ PPTX生成は `uv run --frozen node scripts/build_deck.mjs --backend portable --
 
 公開ツール経路の `render_portable.py` はLibreOfficeまたはmacOSのPowerPointからPDFを書き出し、PyMuPDFで全ページを描画します。Codex用の `render_deck.mjs` は既定の `artifact-tool` に加え、macOSのPowerPointとPopplerを使う `--renderer powerpoint`、対象アプリが書き出したPDFを使う `--renderer pdf` に対応します。全ページPNG・一覧・hash付き描画記録を出力します。PDF経路は書出し元PPTXのhashと実際の書出しログを別途照合します。画像の一覧化だけでは個別目視を合格にしません。
 
+公開バックエンドの共通チャート部品は棒・折れ線、直接埋め込む画像はPNG・JPEGに対応します。散布図、系列ごとのマーカー・線種、SVG等の未対応指定はエラーになります。同梱の9枚教材にある散布図まで、この公開生成器でそのまま再生成できるという意味ではありません。[対応範囲](references/generation.md#公開ツールで生成検証する標準)を確認してください。
+
 表紙タイプBは提供された静止ポスターを必須とし、MP4があれば自動開始・ループ・消音の設定付きで埋め込めます。埋込検査と対象アプリでの再生確認を分け、実際に操作していない再生・停止等は未検証として残します。
 
 Pythonの検査コードは標準ライブラリを基本とします。PPTX生成・レンダーのNode依存とフォントは別途必要です。構造検査、配置検査、全ページ個別目視、意味・編集可能性・対象アプリ動作を区別します。終了値0だけで完成とせず、[Q1〜Q11](references/quality-standard.md#最終受入の11項目)を個別に判定します。固定入力の開発内部試験では利用者レビューを捏造しません。
 
 ## 更新について
 
-Gitで導入し、ローカルでファイルを変更していない場合は、導入先で `git pull --ff-only` を実行します。独自の変更がある場合は、差分を保存してから更新内容を統合してください。
+Gitで導入し、ローカルでファイルを変更していない場合は、導入先で `git pull --ff-only` を実行します。独自の変更がある場合は、差分を保存してから更新内容を統合してください。更新後はスキルのフォルダで `npm ci` と `uv sync --frozen --python 3.12` を再実行し、lockファイルに合わせて依存も更新します。新しいセッションで読込み元と版を確認し、doctorで実行環境を再確認してください。
 
 同名の旧スキルが `.codex/skills/` などにある場合は、必要な旧版を検索対象外へ保存し、使用する版を1つにします。既存ファイルを無条件で上書きしないでください。
 
