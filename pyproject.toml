@@ -1,6 +1,6 @@
 [project]
 name = "research-presentation-slides"
-version = "1.7.3"
+version = "1.7.4"
 description = "Portable rendering and validation for editable research presentations"
 requires-python = ">=3.10"
 dependencies = [
