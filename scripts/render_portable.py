@@ -101,6 +101,7 @@ def render(source, output, renderer="libreoffice", soffice=None, dpi=144, timeou
         raise ValueError("The PowerPoint AppleScript renderer requires macOS.")
     expected_count = slide_count(source)
     source_hash = sha256(source)
+    open_verification = None
     output.mkdir(parents=True, exist_ok=False)
     try:
         # The export reads this byte-identical snapshot, never a stale supplied PDF.
@@ -128,9 +129,16 @@ def render(source, output, renderer="libreoffice", soffice=None, dpi=144, timeou
                 script = Path(__file__).with_name("render_powerpoint.applescript")
                 log = run_export(["/usr/bin/osascript", str(script), str(snapshot), str(pdf)], timeout)
                 parts = log["stdout"].strip().split("|")
-                if len(parts) != 2 or int(parts[1]) != expected_count:
-                    raise ValueError("PowerPoint did not confirm the requested slide count.")
+                if (len(parts) != 4 or int(parts[1]) != expected_count
+                        or parts[2] != "saved=true" or parts[3] != f"slides_read={expected_count}"):
+                    raise ValueError("PowerPoint did not confirm an unchanged normal open and every requested slide.")
                 engine = "Microsoft PowerPoint " + parts[0]
+                open_verification = {
+                    "status": "pass", "method": "Launch Services open of a new byte-identical snapshot; "
+                    "exact file alias matched, saved=true before export, all slides read; no repair action sent.",
+                    "slides_read": expected_count, "repair_action_sent": False,
+                    "editing_and_playback": "unverified",
+                }
             (output / "export-log.json").write_text(
                 json.dumps({**log, "pptx_sha256": source_hash, "renderer": renderer,
                             "engine_version": engine}, ensure_ascii=False, indent=2) + "\n")
@@ -178,6 +186,8 @@ def render(source, output, renderer="libreoffice", soffice=None, dpi=144, timeou
                 "visual_review": {"status": "unverified",
                                   "reason": "Review every page before completing the quality gate."},
             }
+            if open_verification is not None:
+                record["application_open_verification"] = open_verification
             (output / "render-record.json").write_text(
                 json.dumps(record, ensure_ascii=False, indent=2) + "\n")
             return record

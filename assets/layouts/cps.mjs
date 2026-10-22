@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import crypto from 'node:crypto';
+import {normalizeNotes,speakerNotes} from './memo.mjs';
 export const INCH_TO_EMU=914400, POINT_TO_EMU=12700, PX_PER_INCH=96;
 export const inch=v=>v*PX_PER_INCH, pt=v=>v*PX_PER_INCH/72;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
@@ -28,7 +29,7 @@ export async function loadProfile(id,overrides={}) {
 }
 export function resolveStructure(input,profile) {
  const slides=structuredClone(input.slides), ids=new Set();
- for(const s of slides){if(!s.id||ids.has(s.id))throw new Error(`Missing/duplicate slide ID ${s.id}`);ids.add(s.id);}
+ for(const s of slides){if(!s.id||ids.has(s.id))throw new Error(`Missing/duplicate slide ID ${s.id}`);ids.add(s.id);normalizeNotes(s);}
  const sections=input.structure?.sections||[];
  const sectionIds=new Set();
  for(const section of sections){
@@ -306,6 +307,6 @@ export class CPS {
     default:throw new Error(`Unknown layout type ${s.type}`);
    }
   }
-  this.slide.speakerNotes.textFrame.setText([s.notes||'',...(s.sources||[])].filter(Boolean).join('\n'));
+  this.slide.speakerNotes.textFrame.setText(speakerNotes(s));
  }
 }

@@ -13,6 +13,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 from check_pptx import inspect
 from tag_generated import tag
+from repair_pptx_compat import normalise_parts
 
 P = "http://schemas.openxmlformats.org/presentationml/2006/main"
 A = "http://schemas.openxmlformats.org/drawingml/2006/main"
@@ -60,12 +61,16 @@ def finalise(candidate, specification):
             if body is not None:
                 obj.remove(body)
         parts[filename] = ET.tostring(root, encoding="utf-8", xml_declaration=True)
+    # Normalise known package defects (including a shared notes-master theme)
+    # before the shared checker; this preserves themes and slide content.
+    parts, compatibility_changes = normalise_parts(parts)
     temporary = candidate.with_suffix(".portable.pptx")
     with zipfile.ZipFile(temporary, "w", zipfile.ZIP_DEFLATED) as archive:
         for filename, content in parts.items():
             archive.writestr(filename, content)
     os.replace(temporary, candidate)
     result = inspect(candidate)
+    result["compatibility_changes"] = compatibility_changes
     if result["errors"]:
         raise ValueError("Generated PPTX structural errors: " + "; ".join(result["errors"]))
     return result

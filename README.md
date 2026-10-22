@@ -6,6 +6,10 @@
 
 初めて使う方は [導入](#導入) から始めてください。[使い方](#使い方) に研究資料を渡す依頼例があります。
 
+1.7.1では、表の不正値、内部要素順、不要な定義・グラフ軸参照、ノート用テーマの共有を修正し、同じ不具合の検査と既存PPTXの限定修復を追加しました。回帰試験148件が成功し、再生成した架空作例3件・計28ページがPowerPoint 16.111で修復なしに開くことと全ページの表示を確認しました。[検証範囲](references/compatibility-validation.md)
+
+1.7.0では、発表メモの口頭補足・詳細根拠・制作事項を分け、PPTXと外部メモの対応を検査します。従来のメモ入力を保ち、生成範囲内の手修正も上書きから保護します。主張の対象・分母・期間と図の役割は、必要な箇所で確認します。[入力形式と検査手順](references/generation.md#発表メモと主張の入力)
+
 1.6.0では公開ツールによる3作例・28枚の生成、描画、全ページ確認を実施しました。OpenCodeの実クライアントでも生成・描画・機械検査まで確認しています。ただし、試験時の選択モデルは画像入力非対応で、Claude Codeは未ログインだったため、両クライアントの目視を含む完走は未検証です。[実施範囲と再実行手順](references/portable-validation.md)
 
 従来の**中間発表型（cps-midterm）**を維持し、**短い研究発表型（cps-workshop）**も選べます。研究入力、章構成、CPSの視覚仕様、ページのレイアウトを分け、研究に合う説明方法を使います。表紙は独立して**タイプA（題目帯＋写真）／タイプB（背景動画）**から選びます。
@@ -200,7 +204,7 @@ git clone https://github.com/cpslab/skill-create-slides.git "$HOME/.agents/skill
 Set-Location "$HOME/.agents/skills/research-presentation-slides"
 ```
 
-Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し、フォルダ名を `research-presentation-slides` にして同じ場所へ置きます。`SKILL.md` だけでなく、`assets/`・`references/`・`scripts/`・依存定義とlockファイルを含むフォルダ全体が必要です。この手順は **1.6.0の内容を取得した場合**を対象とします。取得した `SKILL.md` が旧版なら、配布担当者が指定したリリース・ブランチを確認してください。
+Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し、フォルダ名を `research-presentation-slides` にして同じ場所へ置きます。`SKILL.md` だけでなく、`assets/`・`references/`・`scripts/`・依存定義とlockファイルを含むフォルダ全体が必要です。この手順は **1.7.1の内容を取得した場合**を対象とします。取得した `SKILL.md` が旧版なら、配布担当者が指定したリリース・ブランチを確認してください。
 
 ### 3. 利用するエージェントへ登録する
 
@@ -390,6 +394,7 @@ Codexの `Presentations`・`@oai/artifact-tool` が利用可能な環境では�
 | [CPSスタイル](references/cps-lab-style.md) | 2つのプロファイル、色、余白、文字階層、ロゴ配置 |
 | [レイアウト選択](references/layout-patterns.md) | 問い・写真・表・UI・結果・分岐などの用途と選び方 |
 | [再生成と検査](references/generation.md) | 入力と共通部品、環境確認、生成・検査の実行方法 |
+| [1.7.1の互換性検証](references/compatibility-validation.md) | 修復なしのPowerPoint開封、限定修復、対象を絞ったOOXML検査の実施範囲 |
 | [1.6.0の公開ツール検証](references/portable-validation.md) | 3作例28枚、クライアント別の実施範囲と未検証事項 |
 | [通し作例](references/worked-example.md) | 根拠から企画書、メッセージ、図へ変換する具体例 |
 | [編集可能な見本PPTX](assets/visual-reference/cps-layout-reference.pptx) | 表紙2種類、目次、章扉、模式図、定量図、表、まとめ、最終サマリの9種類 |
@@ -420,6 +425,22 @@ PPTX生成は `uv run --frozen node scripts/build_deck.mjs --backend portable --
 
 Pythonの検査コードは標準ライブラリを基本とします。PPTX生成・レンダーのNode依存とフォントは別途必要です。構造検査、配置検査、全ページ個別目視、意味・編集可能性・対象アプリ動作を区別します。終了値0だけで完成とせず、[Q1〜Q11](references/quality-standard.md#最終受入の11項目)を個別に判定します。固定入力の開発内部試験では利用者レビューを捏造しません。
 
+最終検証には外部メモとの照合も含めます。次の `INPUT.json` は実際の生成入力へ、PPTXと各レポートは同じ版のファイルへ置き換えてください。
+
+```sh
+uv run --frozen python scripts/check_memo.py WORK/output/deck-v1.pptx \
+  --deck-spec INPUT.json --report WORK/memo-check-v1.json
+
+uv run --frozen python scripts/quality_gate.py WORK/output/deck-v1.pptx \
+  --layout-report WORK/layout-v1.json --deck-spec INPUT.json \
+  --memo-report WORK/memo-check-v1.json --visual-review WORK/visual-review-v1.json \
+  --report WORK/quality-v1.json
+```
+
+メモ検査の終了値0は文字・番号等の機械照合の結果です。意味や手修正の確認事項は別途レビューし、現行のメモ・入力のhashに対応する記録を残します。品質ゲートはメモ検査結果や生成入力がなければ未検証とします。詳しくは[個別目視と最終判定](references/generation.md#個別目視と最終判定)を参照してください。
+
+既存PPTXで今回対象とした互換性問題がある場合は、`uv run --frozen python scripts/repair_pptx_compat.py --input ORIGINAL.pptx --output NEW.pptx --report REPAIR.json` で原本とは別の新規ファイルへ限定修復できます。本文・図形・ノート・画像・グラフ値を作り直す処理ではありません。修正版はメモ対応・表示・対象アプリでの開封を再確認し、旧版の検査hashは流用しません。[対象と実行手順](references/generation.md#pptxの互換性検査と既存ファイルの限定修復)
+
 ## 更新について
 
 Gitで導入し、ローカルでファイルを変更していない場合は、導入先で `git pull --ff-only` を実行します。独自の変更がある場合は、差分を保存してから更新内容を統合してください。更新後はスキルのフォルダで `npm ci` と `uv sync --frozen --python 3.12` を再実行し、lockファイルに合わせて依存も更新します。新しいセッションで読込み元と版を確認し、doctorで実行環境を再確認してください。
@@ -430,10 +451,16 @@ Gitで導入し、ローカルでファイルを変更していない場合は�
 
 主張を補足・限定して説明したい箇所は、スライド上の細かな注意書きを増やさず、出力PPTXと同じディレクトリの `発表資料-発表メモ.md` に記録します。ページ番号・スライドIDごとに、発表時に口頭で伝える補足、適用範囲・条件・未確認事項、根拠をまとめます。必要な箇所があればメモも納品され、PPTXの修正・並べ替えに合わせて更新します。[メモひな形](assets/presentation-memo-template.md)を使えます。
 
+メモ入力の `notes` は従来の文字列に加え、`text`（口頭補足）、`evidence`（詳細根拠の文字列配列）、`preparation`（制作事項の文字列配列）へ任意に分けられます。口頭補足と詳細根拠はPPTX内ノートと外部メモへ、制作事項は作業先の `.build/` 内へ出力します。
+
+再生成では利用者の追記を保持します。生成範囲の手修正や、旧版の生成範囲に検証用hashがない場合は自動上書きを止め、候補メモの保存先を案内します。現物と候補を照合して引き継いでください。[入力と保持の仕様](references/generation.md#発表メモと主張の入力)
+
 まず主張や図ラベルを根拠に合う短い表現へ直します。対象・分母・単位・比較条件・実測／例示／計画など、省くと結論の理解が変わる情報は読める形で画面にも残します。詳しい方法・補足・限定はメモへ送ります。長い発表原稿・想定質問集とは別の、発表者が該当ページを話すときに参照するメモです。
 
 ## 同梱ファイルの管理
 
-現在のスキル版は **1.6.0** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。README・AGENTS・検査コードも一覧に含め、Git設定・キャッシュ・manifest自身はhash一覧の対象外です。[配布検査](references/generation.md#配布物を確認更新する)は `scripts/check_package.py` で実行できます。
+現在のスキル版は **1.7.1** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。README・AGENTS・検査コードも一覧に含め、Git設定・キャッシュ・manifest自身はhash一覧の対象外です。[配布検査](references/generation.md#配布物を確認更新する)は `scripts/check_package.py` で実行できます。
+
+1.7.1の互換性検証は新規に再生成した別ファイルを対象とし、同梱の旧PPTX・PNGは差し替えていません。新しい検証結果を旧ファイルの合格記録へ流用しないでください。
 
 PNG・PPTXは、メンバーが制作環境なしでも見本を確認できるよう同梱しています。合成入力は [example-source.org](assets/example-source.org)、生成コードは [build.mjs](assets/visual-reference/build.mjs)、再生成手順は[視覚作例の説明](references/visual-reference.md)にあります。フォントや制作エンジンは同梱していません。

@@ -108,6 +108,35 @@ class RenderTests(unittest.TestCase):
             self.render_with(self.exporter(mutate=True))
         self.assertFalse((self.output / "render-record.json").exists())
 
+    def test_powerpoint_requires_unchanged_open_and_all_slide_read_receipt(self):
+        def export(command, timeout):
+            import pymupdf
+            snapshot, output = Path(command[-2]), Path(command[-1])
+            self.assertEqual(renderer.sha256(snapshot), renderer.sha256(self.source))
+            with pymupdf.open() as pdf:
+                for _ in range(2):
+                    pdf.new_page(width=720, height=405)
+                pdf.save(output)
+            return {"command": command, "exit_code": 0,
+                    "stdout": "fixture-version|2|saved=true|slides_read=2", "stderr": ""}
+        with patch("render_portable.platform.system", return_value="Darwin"), \
+             patch("render_portable.run_export", side_effect=export):
+            record = renderer.render(self.source, self.output, renderer="powerpoint", dpi=72)
+        self.assertEqual(record['application_open_verification']['slides_read'], 2)
+        self.assertFalse(record['application_open_verification']['repair_action_sent'])
+        self.assertEqual(record['visual_review']['status'], 'unverified')
+
+    def test_powerpoint_count_only_receipt_does_not_prove_normal_open(self):
+        for stdout in ['fixture-version|2', 'fixture-version|2|saved=false|slides_read=2',
+                       'fixture-version|2|saved=true|slides_read=1']:
+            with self.subTest(stdout=stdout), \
+                 tempfile.TemporaryDirectory() as temporary, \
+                 patch("render_portable.platform.system", return_value="Darwin"), \
+                 patch("render_portable.run_export", return_value={
+                     "exit_code": 0, "stdout": stdout, "stderr": ""}):
+                with self.assertRaisesRegex(ValueError, 'unchanged normal open'):
+                    renderer.render(self.source, Path(temporary) / 'render', renderer='powerpoint')
+
 
 class DoctorTests(unittest.TestCase):
     def environment(self, fonts="pass"):

@@ -90,6 +90,8 @@ def check(path, profile=None, deck_spec=None, layout=None):
     profile, deck_spec, layout = profile or {}, deck_spec or {}, layout or {}
     inv = extract(path)
     report = {'schema_version': 1, 'file': str(path), 'pptx_sha256': inv['pptx_sha256'],
+              'deck_spec_content_sha256': hashlib.sha256(json.dumps(
+                  deck_spec, sort_keys=True, ensure_ascii=False).encode('utf-8')).hexdigest(),
               'slide_count': inv['slide_count'], 'findings': [], 'checks': [],
               'scope': 'Generated roles and explicit OOXML properties; visual and source judgement remain separate.',
               'errors': [], 'review_items': [], 'unverified': []}
@@ -285,22 +287,40 @@ def check(path, profile=None, deck_spec=None, layout=None):
             if normal(text) not in normal(slide['text']):
                 issue('error', 'required_text', number, None, f'Required input text absent: {text!r}')
         source_notes = source.get('notes')
+        evidence_notes = []
         if isinstance(source_notes, dict):
+            evidence_notes = source_notes.get('evidence', [])
+            if not isinstance(evidence_notes, list) or any(not isinstance(text, str) for text in evidence_notes):
+                issue('error', 'notes_schema', number, None, 'notes.evidence must be an array of strings.')
+                evidence_notes = []
             source_notes = source_notes.get('text')
-        for text in list(source.get('notes_required', [])) + list(expected.get('notes_required', [])) + ([source_notes] if isinstance(source_notes, str) and source_notes else []):
+        if source_notes is not None and not isinstance(source_notes, str):
+            issue('error', 'notes_schema', number, None, 'notes or notes.text must be a string.')
+        for text in list(source.get('notes_required', [])) + list(expected.get('notes_required', [])) + ([source_notes] if isinstance(source_notes, str) and source_notes else []) + evidence_notes:
             if normal(text) not in normal(slide['notes']):
                 issue('error', 'notes_required', number, None, f'Required note absent: {text!r}')
         if slide['notes']:
             issue('review_required', 'notes_meaning', number, None, 'Confirm notes against source and final page mapping; presence alone is not semantic validation.')
         claims = source.get('semantic_claims', expected.get('semantic_claims', []))
+        if not isinstance(claims, list):
+            issue('error', 'claim_schema', number, None, 'semantic_claims must be an array.')
+            claims = []
         for claim in claims:
-            if not claim.get('source') or claim.get('status') not in ('measured', 'illustrative', 'hypothesis', 'plan', 'reported', 'interpretation'):
+            if not isinstance(claim, dict):
+                issue('error', 'claim_schema', number, None, 'Each semantic claim must be an object.')
+                continue
+            if not isinstance(claim.get('source'), str) or not claim['source'].strip() or claim.get('status') not in ('measured', 'illustrative', 'hypothesis', 'plan', 'reported', 'interpretation'):
                 issue('error', 'claim_provenance', number, None, 'Each claim needs source and explicit evidence status.')
-            for key in ('text', 'unit', 'subject', 'aggregation', 'visible_condition'):
-                if claim.get(key) and normal(claim[key]) not in normal(slide['text']):
+            # Only authored, applicable conditions are required. Do not infer a
+            # population or denominator from a number or require them on every study.
+            for key in ('text', 'unit', 'subject', 'aggregation', 'denominator', 'period', 'visible_condition'):
+                if (key == 'text' or key in claim) and (not isinstance(claim.get(key), str) or not claim[key].strip()):
+                    issue('error', 'claim_schema', number, None, f'Semantic {key} must be a non-empty display string when supplied.')
+                elif claim.get(key) and normal(claim[key]) not in normal(slide['text']):
                     issue('error', 'claim_condition', number, None, f'Semantic {key} not visible: {claim[key]!r}')
         if source or expected:
-            issue('review_required', 'source_meaning', number, None, 'Confirm claims, conditions, citations and evidence status against input; text equality cannot establish meaning.')
+            issue('review_required', 'source_meaning', number, None,
+                  'Compare each final claim with its original source and scope. Where applicable, distinguish the full sample from the subgroup denominator, aggregation unit and period; check that shortening has not broadened the claim. Text equality cannot establish meaning.')
         permitted = {frozenset(pair) for pair in expected.get('allowed_overlaps', [])}
         for i, left in enumerate(elements):
             if not left['bounds_in'] or not left['transform_resolved'] or left['role'] in ('background', 'rule', 'diagram-edge'):
@@ -347,8 +367,9 @@ def main():
         parser.exit(1, f'Layout check failed: {exc}\n')
     output = json.dumps(report, ensure_ascii=False, indent=2) + '\n'
     if args.report:
-        if args.report.resolve() == args.pptx.resolve():
-            parser.error('--report must not overwrite the PPTX')
+        inputs = [args.pptx, args.profile, args.deck_spec, layout_path]
+        if args.report.resolve() in [path.resolve() for path in inputs if path]:
+            parser.error('--report must not overwrite an inspected source')
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(output)
     sys.stdout.write(output)

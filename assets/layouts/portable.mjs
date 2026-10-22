@@ -30,7 +30,7 @@ export class PortableCPS extends CPS {
   if(this.p.minimum_font_pt[role]&&size<this.p.minimum_font_pt[role])throw new Error(`${id}: font below profile minimum`);
   this.slide.addText(String(text),{...position(b),objectName:name(role,id),fontFace:opts.font||this.p.font,
    fontSize:size,bold:opts.bold??['title','question'].includes(role),color:colour(opts.color||this.p.colour_roles.body),
-   align:opts.align||'left',valign:opts.valign==='middle'?'mid':opts.valign||'top',
+   align:opts.align||'left',valign:opts.valign==='mid'?'middle':opts.valign||'top',
    margin:0,breakLine:false,paraSpaceAfter:0,fit:'none',wrap:true,
    ...(opts.fill&&opts.fill!=='none'?{fill:{color:colour(opts.fill)}}:{}),
    lang:this.input.metadata.language||'en-GB'});
@@ -65,7 +65,7 @@ export class PortableCPS extends CPS {
   const cells=rows.map((row,r)=>row.map(value=>({text:String(value),options:{bold:r===0,
    fill:colour(r===0?this.p.colour_roles.table_header:r===data.highlight_row?this.p.colour_roles.highlight:'#FFFFFF')}})));
   this.slide.addTable(cells,{...position(b),objectName:name('table',id),colW:widths,rowH:heights,
-   fontFace:this.p.font,fontSize:size,color:colour(this.p.colour_roles.body),align:'left',valign:'mid',
+   fontFace:this.p.font,fontSize:size,color:colour(this.p.colour_roles.body),align:'left',valign:'middle',
    margin:[padding.top,padding.right,padding.bottom,padding.left].map(v=>v*72),
    border:{type:'solid',color:'CCD3C8',pt:.45},autoPage:false,verbose:false});
   this.record(id,'table','table',b,{table:{rows},font_pt:size});return this.slide;

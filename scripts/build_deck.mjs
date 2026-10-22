@@ -9,6 +9,7 @@ import {fileURLToPath} from 'node:url';
 import {pathToFileURL} from 'node:url';
 import {runtime,args,readJSON} from './runtime.mjs';
 import {CPS,loadProfile,resolveStructure,inch} from '../assets/layouts/cps.mjs';
+import {managedMemo,memoHash,mergeMemo,renderMemoBody,renderPreparationMemo} from '../assets/layouts/memo.mjs';
 const a=args(['input','output','work-dir','backend','python']);if(!a.input||!a.output||!a['work-dir'])throw new Error('Required: --input <json> --work-dir <private workspace> --output <workspace/output/new.pptx>');
 const backend=a.backend||'portable';
 if(!['portable','codex'].includes(backend))throw new Error('Choose --backend portable or codex.');
@@ -48,6 +49,26 @@ if(markdownMemo!==null&&legacyMemo!==null)throw new Error('Both Markdown and leg
 // Preserve an existing text memo in place; new presentation memos use Markdown.
 const isMarkdown=legacyMemo===null,memoPath=isMarkdown?markdownMemoPath:legacyMemoPath;
 const existingMemo=isMarkdown?markdownMemo:legacyMemo;
+const memoFormat=isMarkdown?'markdown':'text';
+const stageRoot=path.join(workspace,'.build');
+await fs.mkdir(stageRoot,{recursive:true});
+if((await fs.lstat(stageRoot)).isSymbolicLink())throw new Error('Private build directory must not be a symbolic link.');
+const stage=await fs.mkdtemp(path.join(stageRoot,path.basename(output,'.pptx')+'-'));
+const generatedMemo=managedMemo(renderMemoBody(resolved.slides,data.metadata,memoFormat),memoFormat);
+const memoCandidate=path.join(stage,isMarkdown?'memo-candidate.md':'memo-candidate.txt');
+await fs.writeFile(memoCandidate,generatedMemo.text,{flag:'wx'});
+const preparation=renderPreparationMemo(resolved.slides);
+const preparationPath=path.join(stage,'production-checks.md');
+if(preparation)await fs.writeFile(preparationPath,preparation,{flag:'wx'});
+let mergedMemo;
+try{mergedMemo=mergeMemo(existingMemo,generatedMemo.text,memoFormat);}
+catch(error){throw new Error(`${error.message} Candidate memo: ${memoCandidate}`);}
+await fs.writeFile(memoCandidate,mergedMemo);
+async function verifyMemoUnchanged(){
+ if(await readMemo(memoPath)!==existingMemo)throw new Error(`Presentation memo changed during generation; retain the current file and reconcile it before delivery. Candidate memo: ${memoCandidate}`);
+ // An authoritative memo in the other format may have appeared after preflight.
+ if(await readMemo(isMarkdown?legacyMemoPath:markdownMemoPath)!==null)throw new Error(`Both Markdown and legacy text presentation memos exist; retain them and choose the authoritative record. Candidate memo: ${memoCandidate}`);
+}
 let pres,cps,PresentationFile;
 if(backend==='portable'){
  const [{default:PptxGenJS},{default:sharp},{PortableCPS}]=await Promise.all([import('pptxgenjs'),import('sharp'),import('../assets/layouts/portable.mjs')]);
@@ -62,10 +83,6 @@ if(backend==='portable'){
  cps=new CPS(pres,profile,data,path.dirname(inputPath),api.sharp);
 }
 for(const s of resolved.slides)await cps.page(s,resolved);
-const stageRoot=path.join(workspace,'.build');
-await fs.mkdir(stageRoot,{recursive:true});
-if((await fs.lstat(stageRoot)).isSymbolicLink())throw new Error('Private build directory must not be a symbolic link.');
-const stage=await fs.mkdtemp(path.join(stageRoot,path.basename(output,'.pptx')+'-'));
 const candidate=path.join(stage,'candidate.pptx');
 const scriptDir=path.dirname(fileURLToPath(import.meta.url));
 const skill=process.env.PRESENTATIONS_SKILL_DIR;
@@ -75,6 +92,7 @@ if(backend==='portable'){
  await pres.writeFile({fileName:candidate});
  execFileSync(python,[path.join(scriptDir,'finalize_portable.py'),candidate,rolePath]);
  if(cps.records.some(record=>record.media?.length))execFileSync(python,[path.join(scriptDir,'embed_media.py'),candidate,rolePath,'--input-dir',path.dirname(inputPath),'--report',path.join(stage,'media.json')]);
+ await verifyMemoUnchanged();
  // Exclusive creation protects an existing user revision, including a concurrent writer.
  await fs.copyFile(candidate,output,1);
 }else{
@@ -86,27 +104,18 @@ execFileSync(python,[path.join(scriptDir,'tag_generated.py'),candidate,rolePath]
 if(cps.records.some(record=>record.media?.length))execFileSync(python,[path.join(scriptDir,'embed_media.py'),candidate,rolePath,'--input-dir',path.dirname(inputPath),'--report',path.join(stage,'media.json')]);
 const tableOwners=cps.records.filter(r=>r.expected_elements.some(e=>e.kind==='table')).map(r=>r.number);
 const chartOwners=cps.records.filter(r=>r.expected_elements.some(e=>e.kind==='chart')).map(r=>r.number);
+await verifyMemoUnchanged();
 await finalizePresentation({workspaceDir:workspace,candidatePath:candidate,finalPath:output,pythonExecutable:python,integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','9144000,5143500','--validate-heading-fit',...tableOwners.flatMap(n=>['--require-native-table-slide',String(n)])],explicitTotalSlideCount:resolved.slides.length,requiredNativeTableOwnerSlides:tableOwners,requiredNativeChartOwnerSlides:chartOwners,materializeLiteralChartWorkbooks:true,fontPolicy:{basis:'design',families:[profile.font]},verifyArtifactToolImport:true,receiptPath:path.join(stage,'finalizer.json')});
 }
 const sha=crypto.createHash('sha256').update(await fs.readFile(output)).digest('hex');
-const layout={schema_version:1,backend,pptx_sha256:sha,source_sha256:crypto.createHash('sha256').update(await fs.readFile(inputPath)).digest('hex'),profile_id:profile.id,slides:cps.records,structure:resolved.structure,ranges:resolved.ranges};
+const layout={schema_version:1,backend,pptx_sha256:sha,source_sha256:crypto.createHash('sha256').update(await fs.readFile(inputPath)).digest('hex'),profile_id:profile.id,slides:cps.records,structure:resolved.structure,ranges:resolved.ranges,
+ memo:{file:path.basename(memoPath),format:memoFormat,sha256:memoHash(mergedMemo),generated_sha256:generatedMemo.generated_sha256}};
 await fs.writeFile(layoutPath,JSON.stringify(layout,null,2)+'\n',{flag:'wx'});
-const start=isMarkdown?'<!-- GENERATED CONTENT START -->':'=== GENERATED CONTENT START ===';
-const end=isMarkdown?'<!-- GENERATED CONTENT END -->':'=== GENERATED CONTENT END ===';
-// Input fields are plain text. Keep their visible characters and line breaks in Markdown.
-function markdownText(value){
- return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/[\\`*_[\]{}()#+\-.!|>~]/g,'\\$&').replace(/\r\n?/g,'\n').replace(/\n/g,'  \n');
-}
-const generated=start+'\n'+(isMarkdown?'# 発表メモ\n\n':'')+resolved.slides.map(s=>isMarkdown?
- `## 表示ページ ${s.number}\n\n- スライドID：${markdownText(s.id)}\n- 題名：${markdownText(s.title||data.metadata.title)}\n\n### 口頭補足\n\n${markdownText(s.notes||'追加の口頭補足なし')}\n\n### 根拠\n\n${markdownText((s.sources||[]).join(' / ')||'今回の入力資料')}\n`:
- `表示ページ番号：${s.number}\nスライドID：${s.id}\n題名：${s.title||data.metadata.title}\n口頭補足：${s.notes||'追加の口頭補足なし'}\n根拠：${(s.sources||[]).join(' / ')||'今回の入力資料'}\n`).join('\n')+end;
-const existing=existingMemo||'';
-const merged=existing.includes(start)&&existing.includes(end)?existing.slice(0,existing.indexOf(start))+generated+existing.slice(existing.indexOf(end)+end.length):generated+(isMarkdown?'\n\n## 利用者の追記（再生成時も保持）\n\n':'\n\n利用者の追記（再生成時も保持）：\n')+existing;
-if(existingMemo===null)await fs.writeFile(memoPath,merged,{flag:'wx'});
+await verifyMemoUnchanged();
+if(existingMemo===null)await fs.writeFile(memoPath,mergedMemo,{flag:'wx'});
 else{
- if(await readMemo(memoPath)!==existingMemo)throw new Error('Presentation memo changed during generation; retain the current file and reconcile it before delivery.');
  // Rename replaces the directory entry, never following a late symlink or hard link.
- const memoTemp=path.join(stage,isMarkdown?'memo.md':'memo.txt');await fs.writeFile(memoTemp,merged,{flag:'wx'});
+ const memoTemp=path.join(stage,isMarkdown?'memo.md':'memo.txt');await fs.writeFile(memoTemp,mergedMemo,{flag:'wx'});
  await fs.rename(memoTemp,memoPath);
 }
-console.log(JSON.stringify({pptx:output,sha256:sha,slides:resolved.slides.length,layout:layoutPath,memo:memoPath}));
+console.log(JSON.stringify({pptx:output,sha256:sha,slides:resolved.slides.length,layout:layoutPath,memo:memoPath,...(preparation?{preparation:preparationPath}:{})}));

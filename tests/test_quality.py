@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from check_layout import check
 from extract_reference import extract, chart_data, NS
 from quality_gate import evaluate
+from check_memo import check as check_memo
 from check_pptx import inspect, parse_xml
 import xml.etree.ElementTree as ET
 
@@ -87,6 +88,12 @@ class QualityTests(unittest.TestCase):
 
     def codes(self, report, status=None):
         return {f['code'] for f in report['findings'] if status is None or f['status'] == status}
+
+    def memo_evidence(self, visual):
+        spec_path = Path(self.temp.name) / 'independent-input.json'
+        spec_path.write_text(json.dumps(self.spec))
+        visual['deck_spec_sha256'] = hashlib.sha256(spec_path.read_bytes()).hexdigest()
+        return {'deck_spec': spec_path, 'memo_report': check_memo(self.path, spec_path)}
 
     def test_page_duplicate_and_missing(self):
         write_pptx(self.path, [base(1), base(1)])
@@ -173,12 +180,13 @@ class QualityTests(unittest.TestCase):
         image.write_bytes(b'fixture-image-not-a-render')
         visual={'pptx_sha256':report['pptx_sha256'],'pages':[{'number':1,'image':str(image),'image_sha256':hashlib.sha256(image.read_bytes()).hexdigest(),'status':'pass','reviewer':'fixture','notes':'Synthetic verification fixture; not a real visual review.'}],
                 'resolved_findings':[{'id':f['id'],'status':'pass','reason':'Fixture resolution','method':'test','evidence':'fixture'} for f in report['findings']]}
-        self.assertTrue(evaluate(self.path,report,visual)['verified_complete'])
+        memo = self.memo_evidence(visual)
+        self.assertTrue(evaluate(self.path,report,visual,**memo)['verified_complete'])
         visual['pptx_sha256']='stale'
-        self.assertFalse(evaluate(self.path,report,visual)['verified_complete'])
+        self.assertFalse(evaluate(self.path,report,visual,**memo)['verified_complete'])
         visual['pptx_sha256']=report['pptx_sha256']
         visual['pages']=[]
-        self.assertFalse(evaluate(self.path,report,visual)['verified_complete'])
+        self.assertFalse(evaluate(self.path,report,visual,**memo)['verified_complete'])
 
     def test_independent_source_catches_generator_sidecar_error(self):
         self.layout['slides'][0]['expected_elements'] = [{'id':'results','role':'chart','kind':'chart','chart':{'categories':['Item'],'series':[{'name':'Measured','values':[5]}]}}]
@@ -202,7 +210,8 @@ class QualityTests(unittest.TestCase):
             'resolved_findings': [
                 {'id': f['id'], 'status': 'pass', 'reason': 'Fixture resolution',
                  'method': 'test', 'evidence': 'fixture'} for f in report['findings']]}
-        self.assertTrue(evaluate(self.path, report, visual)['verified_complete'])
+        memo = self.memo_evidence(visual)
+        self.assertTrue(evaluate(self.path, report, visual, **memo)['verified_complete'])
         invalid = [
             {'schema_version': 1, 'pptx_sha256': report['pptx_sha256'], 'slides': []},
             {**report, 'checks': []},
@@ -213,7 +222,7 @@ class QualityTests(unittest.TestCase):
             [],
         ]
         for candidate in invalid:
-            result = evaluate(self.path, candidate, visual)
+            result = evaluate(self.path, candidate, visual, **memo)
             self.assertFalse(result['verified_complete'])
             self.assertIn('layout_report_schema', {i['code'] for i in result['issues']})
 

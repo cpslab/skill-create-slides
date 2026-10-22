@@ -6,6 +6,46 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {CPS,loadProfile,resolveStructure,wrapTitle} from '../assets/layouts/cps.mjs';
+import {managedMemo,memoHash,mergeMemo,normalizeNotes,renderMemoBody,renderPreparationMemo,speakerNotes} from '../assets/layouts/memo.mjs';
+
+test('structured notes separate spoken evidence from preparation without creating a claim from a title',()=>{
+ const slide={id:'study',number:3,title:'A topic',sources:['[1] Short source'],notes:{text:'Describe the observed scope.',evidence:['[1] Complete source and checked section.'],preparation:['Confirm the photograph caption.']}};
+ assert.deepEqual(normalizeNotes(slide).claims,[]);
+ const body=renderMemoBody([slide],{title:'Deck'}),pptxNotes=speakerNotes(slide);
+ for(const text of [body,pptxNotes]){
+  assert.match(text,/Describe the observed scope/);assert.match(text,/Complete source and checked section/);
+  assert.doesNotMatch(text,/Confirm the photograph caption|画面の主張/);
+ }
+ assert.match(renderPreparationMemo([slide]),/Confirm the photograph caption/);
+ slide.semantic_claims=[{text:'A bounded finding',source:'input',status:'reported'}];
+ assert.deepEqual(normalizeNotes(slide).claims,['A bounded finding']);
+ slide.message='One authored message';assert.deepEqual(normalizeNotes(slide).claims,['One authored message']);
+ assert.equal(normalizeNotes({id:'legacy',notes:'Keep my exact\nwording.'}).text,'Keep my exact\nwording.');
+});
+
+test('invalid notes are rejected while resolving input, before generation',async()=>{
+ const profile=await loadProfile('cps-workshop');
+ const input={slides:[{id:'cover',type:'cover'},{id:'contents',type:'toc'},{id:'summary',type:'summary'}]};
+ for(const notes of [null,42,[],{text:[]},{evidence:'Wrong type'},{preparation:[42]},{unknown:'Cannot silently disappear'}]){
+  input.slides[0].notes=notes;
+  assert.throws(()=>resolveStructure(input,profile),/Slide cover: /);
+ }
+ delete input.slides[0].notes;input.slides[0].sources='Not an array';
+ assert.throws(()=>resolveStructure(input,profile),/sources must be an array/);
+});
+
+test('managed memo hashes protect edited blocks and survive copying between revisions',()=>{
+ for(const format of ['markdown','text']){
+  const old=managedMemo('Original generated body\n',format),next=managedMemo('New generated body\n',format);
+  assert.equal(old.generated_sha256,memoHash('Original generated body\n'));
+  const existing='My opening\n'+old.text+'\nMy ending';
+  assert.equal(mergeMemo(existing,next.text,format),'My opening\n'+next.text+'\nMy ending');
+  assert.throws(()=>mergeMemo(existing.replace('Original generated body','Personal change'),next.text,format),/was edited/);
+  assert.throws(()=>mergeMemo(old.text.replace(/.*GENERATED CONTENT SHA256.*\n/,''),next.text,format),/no verified/);
+  assert.throws(()=>mergeMemo(old.text+old.text,next.text,format),/ambiguous/);
+  assert.ok(mergeMemo('Unmarked personal notes',next.text,format).endsWith('Unmarked personal notes'));
+ }
+});
 
 test('automatic English heading wrap avoids a stranded final word and preserves explicit breaks',()=>{
  const title='Separate permission to discuss and to publish';
