@@ -1,6 +1,6 @@
 {
   "name": "research-presentation-slides",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "packaged_on": "2026-10-22",
   "visual_example": {
     "kind": "fictional research with synthetic data",
@@ -30,16 +30,16 @@
   },
   "files": {
     "AGENTS.md": {
-      "bytes": 7658,
-      "sha256": "63c3282f712034f9efae69208eb5b28cc0951237154ef6b5f0f2c22a4dd5c05a"
+      "bytes": 8090,
+      "sha256": "7bb77544887aa8743622059d7e33ec177df25ab54fc711105efbcfce3e2ff81d"
     },
     "README.md": {
-      "bytes": 42686,
-      "sha256": "3865af203e0ba32c85e844915acebe951394960d3c295ee2d9e0a4bb68d45bf3"
+      "bytes": 44152,
+      "sha256": "a0f00a12b17d0f56367a3a59ba65e3f77d48d9809576bc40bf4d36cad49ed601"
     },
     "SKILL.md": {
-      "bytes": 41342,
-      "sha256": "d4f6f85e44cf279d15813d9aeafdfb09ac99949e7e1c64fa30ba612a6c8cf6d4"
+      "bytes": 43247,
+      "sha256": "1b24e6706a671fc10f2f208dc7d1dc18ac2731767e9d1378e509c5b6e48e20a6"
     },
     "agents/openai.yaml": {
       "bytes": 199,
@@ -54,8 +54,8 @@
       "sha256": "d7dfbf71ac5b278984e92c43813e77a7106c1aa0b1db55b47160a352acedb44f"
     },
     "assets/input-brief.md": {
-      "bytes": 4814,
-      "sha256": "8292720a9b344a6112e989c45da4a792bedfdf45eb0bdeab5adb2ea9e43a3985"
+      "bytes": 5458,
+      "sha256": "8c4acb613c1a970e33c6056ce4d03b7ddf657cc268b2a22cae28af2ecb4c5995"
     },
     "assets/layouts/cps.mjs": {
       "bytes": 27464,
@@ -190,8 +190,8 @@
       "sha256": "0c3cfcfdc64016a023c78b7d86b2da30957ebe4f397f34ddd09ebdbbd0c11ce0"
     },
     "assets/quality-review.md": {
-      "bytes": 5814,
-      "sha256": "2542bee3b3665ed464e64e7227300ad209c47a739c8d88b1aeb0fdb92281c9ca"
+      "bytes": 6314,
+      "sha256": "21046fe5c24a84b75def4df279a38be55b3ed1234bb8c43dcf201abbeff506a8"
     },
     "assets/visual-reference/build.mjs": {
       "bytes": 24362,
@@ -254,8 +254,8 @@
       "sha256": "f73df060c4b595d508af01413c0621668ee016dcde50d4371cd4f35194f01841"
     },
     "assets/workflow-template.md": {
-      "bytes": 8299,
-      "sha256": "445ae7b81a6dbfa12b71fceab03b0e98a193a73aaad3fada3ef37be6081d965e"
+      "bytes": 8825,
+      "sha256": "2dd5deb956b55402e69b1a583e94e9e228d80c21c967730e3f8ebfee79988247"
     },
     "assets/workshop-reference/contact-sheet.png": {
       "bytes": 377303,
@@ -355,15 +355,15 @@
     },
     "package-lock.json": {
       "bytes": 25757,
-      "sha256": "0e88f7eacb695854f199a7337e31877318bb9b36b747aef367b4c7d7830009e1"
+      "sha256": "41fc5f5d98a32d412b037d2081afa78774a2c44a6a9d13a58ab55d48d960eeb3"
     },
     "package.json": {
       "bytes": 315,
-      "sha256": "875ec7372df68027cb60972d2b1f9e0aba839f2b28830a55bc97c2e91f115489"
+      "sha256": "03a2d1fcb956dae6bc096085976837cf1f53b57040740cfae89db47a4f8974b5"
     },
     "pyproject.toml": {
       "bytes": 267,
-      "sha256": "0b5116eb6d5f7145c0dbe02b9a74e7b07a8fc83250a6c20066708b64d8799c09"
+      "sha256": "8e61769d1df1d13441404d88b2b2ced1902a9c45e9f5c7509589b872ace45133"
     },
     "references/compatibility-validation.md": {
       "bytes": 4220,
@@ -390,20 +390,20 @@
       "sha256": "671f2857eb94ba2da1558cb339914ddf94fb2979e63ea7d48733220cc7120439"
     },
     "references/planning.md": {
-      "bytes": 12528,
-      "sha256": "91981ee960d1e2fb00dde041b6b098e691c26b697a1eb2585ec51ad6dfe77754"
+      "bytes": 13424,
+      "sha256": "ff14a1b73cd7cf5f9edb66735fe35d82976ba6d58e645ce83f65f5c873f8c216"
     },
     "references/portable-validation.md": {
       "bytes": 7606,
       "sha256": "607f260ccf046ca08028ffa1db5a6ca89f3c3152cbbdfa6053fc4379ded2ebf2"
     },
     "references/production.md": {
-      "bytes": 35900,
-      "sha256": "b9eaaf404fbe0a8374d9d268fcaa46604431e10667e68f19079a59647cf91e72"
+      "bytes": 36904,
+      "sha256": "d9957c3e9bc20f11b1bcfc80ba4a8c4d1f341395a09c31cfe54392e0c7872ce9"
     },
     "references/quality-standard.md": {
-      "bytes": 20942,
-      "sha256": "413adb259a306e1eea393d9259527ebd511a939b8988d1dcbdd537b0164539c0"
+      "bytes": 21507,
+      "sha256": "4a987c5eca6766a5821b11656f76196dc0ef0f8f5e0513d3d0f15e31fb01c04b"
     },
     "references/sharing.md": {
       "bytes": 11141,
@@ -416,6 +416,10 @@
     "references/worked-example.md": {
       "bytes": 12015,
       "sha256": "63b7e6067bbf6e76bfed672e45828dc30591fc52bd2e49194fdef5b406449934"
+    },
+    "references/writing-style.md": {
+      "bytes": 12347,
+      "sha256": "7a8bc6041fef15f2275b7d9e247a164a5a0995f4a4cf21bab72b75f292edd99b"
     },
     "scripts/build_deck.mjs": {
       "bytes": 10219,
@@ -490,8 +494,8 @@
       "sha256": "0fa944c66891821e941b4fe6a7f66e4ad6cfb130267df65d023a62f6299b7250"
     },
     "tests/README.md": {
-      "bytes": 12350,
-      "sha256": "2b1a76c810149211fefaa59ce5a2f67b8041e4087362ca185640c57c03b6e472"
+      "bytes": 13214,
+      "sha256": "5837d98640f300fb952968e16c909eb6440c8099b7568623f2fe4267852984ed"
     },
     "tests/test_generator.mjs": {
       "bytes": 14964,
@@ -541,9 +545,13 @@
       "bytes": 18468,
       "sha256": "b9ac7cbaa7b88dfef95e474024584f8b5f07868b5fd901eb1b3abd6a5efcd122"
     },
+    "tests/writing-style-cases.md": {
+      "bytes": 4775,
+      "sha256": "71fed04deab3bccd622ab1d34fe0a4b0349896118b63514123cd9dc95875ae02"
+    },
     "uv.lock": {
       "bytes": 27487,
-      "sha256": "c1ac854a5a9493b5babed56ebbf9fb8b34c194a3226f3d127994c7595e886731"
+      "sha256": "7a3803ead7527812c614c5684b52695be1a1f8dd1d4eea1951c02cbbbd2cadf9"
     }
   },
   "design_profile": "midterm composition and body design",

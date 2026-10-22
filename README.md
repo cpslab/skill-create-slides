@@ -6,6 +6,8 @@
 
 初めて使う方は [導入](#導入) から始めてください。[使い方](#使い方) に研究資料を渡す依頼例があります。
 
+1.7.3では、利用者の文体を初稿から反映する手順を追加しました。本人が自然だと選んだ参考資料と、実行中のCodex・Claude Code・OpenCodeで参照できる本人のメモリを確認します。タイトルは話題名・説明文・問いを使い分け、本文は対象と動作が分かる日本語に整えます。メモリを参照できない場合も、今回の指示と文章を基準に進めます。[文体と日本語の指針](references/writing-style.md)
+
 1.7.2では、写真1つ以上と本編の研究全体の概要図・アーキテクチャ図1つ以上を独立した必須条件にしました。イラストは本文10枚あたり6〜8点程度を約半数のページへ配置する標準量を設け、表だけでなくグラフの使用を推奨します。制作手順・入力票・完成チェックへ反映しています。[素材の要件と確認方法](SKILL.md#写真と研究全体の概要図は必須イラストは標準量グラフは推奨)
 
 1.7.1では、表の不正値、内部要素順、不要な定義・グラフ軸参照、ノート用テーマの共有を修正し、同じ不具合の検査と既存PPTXの限定修復を追加しました。回帰試験148件が成功し、再生成した架空作例3件・計28ページがPowerPoint 16.111で修復なしに開くことと全ページの表示を確認しました。[検証範囲](references/compatibility-validation.md)
@@ -214,7 +216,7 @@ git clone https://github.com/cpslab/skill-create-slides.git "$HOME/.agents/skill
 Set-Location "$HOME/.agents/skills/research-presentation-slides"
 ```
 
-Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し、フォルダ名を `research-presentation-slides` にして同じ場所へ置きます。`SKILL.md` だけでなく、`assets/`・`references/`・`scripts/`・依存定義とlockファイルを含むフォルダ全体が必要です。この手順は **1.7.2の内容を取得した場合**を対象とします。取得した `SKILL.md` が旧版なら、配布担当者が指定したリリース・ブランチを確認してください。
+Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し、フォルダ名を `research-presentation-slides` にして同じ場所へ置きます。`SKILL.md` だけでなく、`assets/`・`references/`・`scripts/`・依存定義とlockファイルを含むフォルダ全体が必要です。この手順は **1.7.3の内容を取得した場合**を対象とします。取得した `SKILL.md` が旧版なら、配布担当者が指定したリリース・ブランチを確認してください。
 
 ### 3. 利用するエージェントへ登録する
 
@@ -371,6 +373,10 @@ research-presentation-slides スキルを読み込んでください。
 
 分かる情報だけで始められます。エージェントが資料から[入力票](assets/input-brief.md)を整理し、次の判断に必要な不足を確認します。既存のスタイルを使う場合は、その資料も渡してください。
 
+文体の参考資料は任意です。「このPPTXは文体だけ参考にして。見た目はCPS標準のまま」「タイトルは普通の話題名を中心に、本文は常体で」のように指定できます。今回の希望・修正を優先し、参考資料は研究内容・見た目・文体の用途を分けて使います。
+
+参照可能な本人の文体メモリがあれば必要な関連箇所だけを確認し、使えない場合も今回の指示と文章から進めます。採用する文体は `style.md` に短く記録し、通常の企画書・アウトライン等のレビューで調整します。メモリの設定変更・書込みや、文体だけの追加承認工程は行いません。[文体の詳しい手順](references/writing-style.md)
+
 途中から再開する場合の例：
 
 ```text
@@ -405,6 +411,7 @@ Codexの `Presentations`・`@oai/artifact-tool` が利用可能な環境では�
 |---|---|
 | [スキル本体](SKILL.md) | 6工程と対話・再開の手順 |
 | [CPSスタイル](references/cps-lab-style.md) | 2つのプロファイル、色、余白、文字階層、ロゴ配置 |
+| [文体と日本語](references/writing-style.md) | 本人のメモリ・参考文章の参照、タイトルと本文の書き方、意味を保つ確認 |
 | [レイアウト選択](references/layout-patterns.md) | 問い・写真・表・UI・結果・分岐などの用途と選び方 |
 | [再生成と検査](references/generation.md) | 入力と共通部品、環境確認、生成・検査の実行方法 |
 | [1.7.1の互換性検証](references/compatibility-validation.md) | 修復なしのPowerPoint開封、限定修復、対象を絞ったOOXML検査の実施範囲 |
@@ -472,7 +479,7 @@ Gitで導入し、ローカルでファイルを変更していない場合は�
 
 ## 同梱ファイルの管理
 
-現在のスキル版は **1.7.2** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。README・AGENTS・検査コードも一覧に含め、Git設定・キャッシュ・manifest自身はhash一覧の対象外です。[配布検査](references/generation.md#配布物を確認更新する)は `scripts/check_package.py` で実行できます。
+現在のスキル版は **1.7.3** です。[package-manifest.json](package-manifest.json)にはスキルの配布ファイルとSHA-256、見本の検証範囲を記録しています。README・AGENTS・検査コードも一覧に含め、Git設定・キャッシュ・manifest自身はhash一覧の対象外です。[配布検査](references/generation.md#配布物を確認更新する)は `scripts/check_package.py` で実行できます。
 
 1.7.1の互換性検証は新規に再生成した別ファイルを対象とし、同梱の旧PPTX・PNGは差し替えていません。新しい検証結果を旧ファイルの合格記録へ流用しないでください。
 
