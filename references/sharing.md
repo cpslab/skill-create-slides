@@ -4,7 +4,7 @@
 
 ## 導入
 
-初めて使うメンバーは [READMEの導入手順](../README.md#導入) を上から実施する。GitHubからのクローン、Git・Node.js・uv・LibreOffice・フォントの導入、クライアントへの登録、初回試験を記載している。
+初めて使うメンバーは [詳しい導入手順](installation.md) を上から実施する。GitHubからのクローン、Git・Node.js・uv・LibreOffice・フォントの導入、クライアントへの登録、初回試験を記載している。
 
 - スキルは `SKILL.md` だけでなく、`references/`・`assets/`・`scripts/`・`agents/`・依存定義・lockファイルを含むフォルダ全体で配布する。
 - CodexとOpenCodeの共通配置先は `~/.agents/skills/research-presentation-slides/`。Claude Codeには `~/.claude/skills/research-presentation-slides/` から同じ本体を参照するリンクを作るか、その場所へ本体を置く。

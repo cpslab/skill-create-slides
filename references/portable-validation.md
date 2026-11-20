@@ -48,6 +48,6 @@ Python 44件、Node.js 19件が成功。生成器には、表紙タイプBのネ
 
 ## 再実行
 
-[READMEの導入と7枚の試験](../README.md#導入)を行い、[生成・描画・個別確認・品質判定](generation.md)に従う。10枚は入力を `assets/workshop-reference/input.json` へ、日本語11枚は `assets/portable-reference/midterm-input.json` へ変更する。日本語11枚の配置検査には `assets/profiles/cps-midterm.json` を使う。毎回新しい出力名と描画ディレクトリを指定し、実行したファイルに対応する検証記録を作る。
+[導入と7枚の試験](installation.md)を行い、[生成・描画・個別確認・品質判定](generation.md)に従う。10枚は入力を `assets/workshop-reference/input.json` へ、日本語11枚は `assets/portable-reference/midterm-input.json` へ変更する。日本語11枚の配置検査には `assets/profiles/cps-midterm.json` を使う。毎回新しい出力名と描画ディレクトリを指定し、実行したファイルに対応する検証記録を作る。
 
 未検証なのは、Claude Code認証後の実行、画像入力可能なOpenCodeモデルでの目視までの完走、新規画像の制作、Windows/Linux/Apple Siliconでの実機試験、および今回の出力を対象とするGUI編集・動画再生・スライドショーである。公開バックエンドの未対応要素は[生成仕様](generation.md#公開ツールで生成検証する標準)に明記している。これらを配布検査の成功だけで検証済みにしない。

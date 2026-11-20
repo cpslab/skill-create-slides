@@ -34,8 +34,8 @@
       "sha256": "0e84f8bfc56f56753839b873679e095578a9bba48adb327ebdcb8861dcd2b63d"
     },
     "README.md": {
-      "bytes": 45817,
-      "sha256": "6af5a75ec81c44f5d35769abb3c4d25a9cd75c4b6ee3f5c77249bab07ac6f6f6"
+      "bytes": 9212,
+      "sha256": "563be415b00645cb945f81d07f2c8699076a69b1de9da59b3031869f3982c1b3"
     },
     "SKILL.md": {
       "bytes": 44907,
@@ -381,6 +381,10 @@
       "bytes": 4320,
       "sha256": "3b4278b52b70ed8c329cb94ee866e2107bf539286343d86ba67eda3f78911859"
     },
+    "references/installation.md": {
+      "bytes": 11830,
+      "sha256": "af23d5ee1b564e6fd731920d67a537f69229da1f50f61f729f17bc3417722452"
+    },
     "references/layout-patterns.md": {
       "bytes": 9576,
       "sha256": "b62ba905a2c2212cc92b51b01e539c1207605e7ab0ae7b117b7ce32f51aa20b3"
@@ -394,8 +398,8 @@
       "sha256": "ff14a1b73cd7cf5f9edb66735fe35d82976ba6d58e645ce83f65f5c873f8c216"
     },
     "references/portable-validation.md": {
-      "bytes": 7606,
-      "sha256": "607f260ccf046ca08028ffa1db5a6ca89f3c3152cbbdfa6053fc4379ded2ebf2"
+      "bytes": 7593,
+      "sha256": "a5f88e92a1077bfeec3524477c8520d82b17b89ed07661878350dadded772fcc"
     },
     "references/production.md": {
       "bytes": 39216,
@@ -406,8 +410,8 @@
       "sha256": "77bc0e8e79b5e625215ae14c70f64637e71f4b148feb3e2caf65543d721e3831"
     },
     "references/sharing.md": {
-      "bytes": 11141,
-      "sha256": "a4d9d43c8bc5aaed90b11d7ec71d8b27637604219c2f4dc3eb3490b14a40b742"
+      "bytes": 11137,
+      "sha256": "ff35f695be0f23cfec0705d47af3e8e5a8da1d5973e607844eb87d0e821774e4"
     },
     "references/visual-reference.md": {
       "bytes": 8228,
