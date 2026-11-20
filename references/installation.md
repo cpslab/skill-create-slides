@@ -73,7 +73,9 @@ git clone https://github.com/cpslab/skill-create-slides.git "$HOME/.agents/skill
 Set-Location "$HOME/.agents/skills/research-presentation-slides"
 ```
 
-Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し、フォルダ名を `research-presentation-slides` にして同じ場所へ置きます。`SKILL.md` だけでなく、`assets/`・`references/`・`scripts/`・依存定義とlockファイルを含むフォルダ全体が必要です。この手順は **1.7.4の内容を取得した場合**を対象とします。取得した `SKILL.md` が旧版なら、配布担当者が指定したリリース・ブランチを確認してください。
+Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し、フォルダ名を `research-presentation-slides` にして同じ場所へ置きます。`SKILL.md`、`assets/`・`references/`・`scripts/`、依存定義とlockファイルを含むフォルダ全体を取得してください。
+
+版1.8.0には [yomiyasu の推敲手順](vendor/yomiyasu/revision.md) と [unslop を使った研究図の作り方](figure-design-unslop.md) が同梱されています。新しく設定するPCでも、この2つのガイドはスキル本体と一緒に使えます。yomiyasu 公式版のPython検査ツールも使いたい場合は、別途[公式版の導入手順](https://github.com/nanaism/yomiyasu#readme)に従ってください。
 
 ### 3. 利用するエージェントへ登録する
 

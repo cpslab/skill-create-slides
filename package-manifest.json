@@ -1,6 +1,6 @@
 {
   "name": "research-presentation-slides",
-  "version": "1.7.4",
+  "version": "1.8.0",
   "packaged_on": "2026-10-22",
   "visual_example": {
     "kind": "fictional research with synthetic data",
@@ -34,12 +34,12 @@
       "sha256": "0e84f8bfc56f56753839b873679e095578a9bba48adb327ebdcb8861dcd2b63d"
     },
     "README.md": {
-      "bytes": 9820,
-      "sha256": "0d1b59f035b987511738607df6b548a5f4fa10b50b5aa0db647a31670ca2d244"
+      "bytes": 11277,
+      "sha256": "1e7084e681bf8708402763d490d0e88b9886e5ebb9005f847c3e54765440a8dc"
     },
     "SKILL.md": {
-      "bytes": 44907,
-      "sha256": "f408bb6a3453e2f32fa09a5c69e8e103c350903613aacc5862dac12a6c7b9143"
+      "bytes": 45198,
+      "sha256": "af141648ef6df4689fc230c029590c8a1a5513fff6a86c44c03953942b2a3eba"
     },
     "agents/openai.yaml": {
       "bytes": 199,
@@ -355,15 +355,15 @@
     },
     "package-lock.json": {
       "bytes": 25757,
-      "sha256": "2d3143b9425489578549d6edd147bb92522b4a317eb4ebe134bbf61018c39dd6"
+      "sha256": "26e6f888697e02cca719b159482650646f1bd19c6b56697fe1a296812d6c3dee"
     },
     "package.json": {
       "bytes": 315,
-      "sha256": "2bff7881f863306a85192afd7c3f83ff96a9350278d32d5890d2051bf6adeda9"
+      "sha256": "9b100f2818b4c56469da655a81d18a1a8d18f8ec3fcfd3fe93d959345d775dc9"
     },
     "pyproject.toml": {
       "bytes": 267,
-      "sha256": "66c04006b5f675e753f064a7a189de82bed130732b4cf3bd4cfdcb202de977c5"
+      "sha256": "53f3e26869fa7875cec73e918ca1f945e3ac23996fdec25f17076d9cc98439f9"
     },
     "references/compatibility-validation.md": {
       "bytes": 4220,
@@ -372,6 +372,10 @@
     "references/cps-lab-style.md": {
       "bytes": 24903,
       "sha256": "a8fb0200bfe312bdaf7a117a7e99b0984de9e4558d88ab3dc3aaf81ca2b8f85e"
+    },
+    "references/figure-design-unslop.md": {
+      "bytes": 3776,
+      "sha256": "6ce4c5cc0b97b20ddaa73ef416fb728489287e1d227d9746cf1cc82e99521b71"
     },
     "references/generation.md": {
       "bytes": 32547,
@@ -382,8 +386,8 @@
       "sha256": "3b4278b52b70ed8c329cb94ee866e2107bf539286343d86ba67eda3f78911859"
     },
     "references/installation.md": {
-      "bytes": 13198,
-      "sha256": "f2d64489c550b23aa1d73d509f4810df5f2c2912b09acb95526b61fd2af03d1f"
+      "bytes": 13432,
+      "sha256": "fe04b9afc67a3e89117b2494e0d68e0866faf38d821e3c5a8ea8a83efa28ff44"
     },
     "references/layout-patterns.md": {
       "bytes": 9576,
@@ -402,8 +406,8 @@
       "sha256": "a5f88e92a1077bfeec3524477c8520d82b17b89ed07661878350dadded772fcc"
     },
     "references/production.md": {
-      "bytes": 39216,
-      "sha256": "a417dfe7b5064e502c709f0dfde10fce5aaec7dde77bef7a15137b409deb3cbf"
+      "bytes": 39518,
+      "sha256": "572c729bafd5ca1bee18d46ebf0d25a88d88a0274a0675a0ced0ef43556a51eb"
     },
     "references/quality-standard.md": {
       "bytes": 22794,
@@ -412,6 +416,14 @@
     "references/sharing.md": {
       "bytes": 11233,
       "sha256": "371db4fe95f35bf1a7606272b03886c161736f3e6d7387e1c3731f9ce1194c04"
+    },
+    "references/vendor/yomiyasu/LICENSE.txt": {
+      "bytes": 1064,
+      "sha256": "79d802f15bc8caf67f1a83c1bdbe214ccb41a0a0275f9046b329b89c65ee1fca"
+    },
+    "references/vendor/yomiyasu/revision.md": {
+      "bytes": 2892,
+      "sha256": "bd84943e91c1a8f724ea7e8d483f903de37ff2635198db9caa9bbead16703972"
     },
     "references/visual-reference.md": {
       "bytes": 8228,
@@ -422,8 +434,8 @@
       "sha256": "be40256a53f0e0e8b979fdf01eb31cff11a13a1973570cea48ae25c728d4c0a9"
     },
     "references/writing-style.md": {
-      "bytes": 12347,
-      "sha256": "7a8bc6041fef15f2275b7d9e247a164a5a0995f4a4cf21bab72b75f292edd99b"
+      "bytes": 13498,
+      "sha256": "0c1075e239bcd1df2b8858c7fc2746eac1234c1c7c5e26c36cfb7418e14f24f8"
     },
     "scripts/build_deck.mjs": {
       "bytes": 10219,
@@ -555,7 +567,7 @@
     },
     "uv.lock": {
       "bytes": 27487,
-      "sha256": "77a8175406af1ca1d432e22ef21577e3b11617e2b227b1d27c30ff9684625ee0"
+      "sha256": "9fc6e9d1c8bb52c75eca5007ff5c8e1ea2f4eb48f0a7c80fa031d39ebe7af657"
     }
   },
   "design_profile": "midterm composition and body design",
