@@ -4,10 +4,10 @@
 
 ## 導入
 
-初めて使うメンバーは [詳しい導入手順](installation.md) を上から実施する。GitHubからのクローン、Git・Node.js・uv・LibreOffice・フォントの導入、クライアントへの登録、初回試験を記載している。
+初めて使うメンバーは、研究プロジェクトで `npx skills add cpslab/skill-create-slides` を実行し、使うエージェントを選ぶ。導入先でのPPTX生成環境の準備、初回試験、Git・ZIPで手動導入する場合の配置は[詳しい導入手順](installation.md)に従う。
 
 - スキルは `SKILL.md` だけでなく、`references/`・`assets/`・`scripts/`・`agents/`・依存定義・lockファイルを含むフォルダ全体で配布する。
-- CodexとOpenCodeの共通配置先は `~/.agents/skills/research-presentation-slides/`。Claude Codeには `~/.claude/skills/research-presentation-slides/` から同じ本体を参照するリンクを作るか、その場所へ本体を置く。
+- 個人用に手動導入する場合、CodexとOpenCodeの共通配置先は `~/.agents/skills/research-presentation-slides/`。Claude Codeには `~/.claude/skills/research-presentation-slides/` から同じ本体を参照するリンクを作るか、その場所へ本体を置く。
 - 特定研究のプロジェクトだけで使う場合は、プロジェクト内の `.agents/skills/`、Claude Codeでは `.claude/skills/` を使う。個人用とプロジェクト用のどちらかを選ぶ。同名の古いコピーを複数の探索先に残さず、必要な旧版は探索対象外へ保存する。
 - `.venv/`・`node_modules/` は受取人のPCで `uv sync --frozen`・`npm ci` により作り、他OSからコピーしない。制作物・私的素材は利用者の研究フォルダへ保存する。
 - Codexは `$research-presentation-slides`、OpenCodeは自然文で「research-presentation-slides スキルを読み込んで」、Claude Codeは `/research-presentation-slides` で明示的に開始する。認識しないときは配置先・権限・同名の重複を確認し、新しいセッションで読込み元と版を確認する。

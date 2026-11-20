@@ -51,7 +51,7 @@ research-presentation-slides スキルを読み込んでください。
 
 利用するエージェントの導入・ログインに加え、次を用意します。
 
-- Git、Node.js 20以上（npmを含む）、uv
+- Git、Node.js（npm・npxを含む）、uv。下記の `npx skills` による導入にはNode.js 22.20.0以上、PPTX生成には20以上を使います。
 - LibreOffice、日本語フォントのNoto Sans JP
 - 画像の生成・編集と、出力画像を確認できるモデル・ツール
 
@@ -59,18 +59,21 @@ macOSのPowerPointを描画に使う経路もあります。スキルを置く�
 
 ### 1. スキルを取得する
 
-macOS・Linuxの例です。既存の同名フォルダがある場合は[更新について](#更新について)を先に確認してください。
+研究プロジェクトのフォルダで次を実行し、使うエージェントを選びます。複数の研究プロジェクトで共通に使う場合は `-g` を追加します。[Skills CLIの導入オプション](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-add)
 
 ```sh
-mkdir -p "$HOME/.agents/skills"
-git clone https://github.com/cpslab/skill-create-slides.git \
-  "$HOME/.agents/skills/research-presentation-slides"
-cd "$HOME/.agents/skills/research-presentation-slides"
+npx skills add cpslab/skill-create-slides
+```
+
+次に、CLIが表示した導入先でPPTX生成・検査用の依存を入れます。プロジェクト内に標準の配置で導入した場合は次のとおりです。
+
+```sh
+cd .agents/skills/research-presentation-slides
 npm ci
 uv sync --frozen --python 3.12
 ```
 
-Codex・OpenCodeではこの配置先を使います。Claude Codeでは、同じフォルダを参照するリンクを `.claude/skills/` に作ります。既存スキルへの上書きは避けてください。
+Gitでクローンする場合やZIPで取得する場合は、[詳しい導入手順](references/installation.md)を参照してください。
 
 ### 2. 環境を確認する
 
@@ -147,10 +150,15 @@ PowerPointを使う場合は `--renderer powerpoint` を追加します。doctor
 
 ## 更新について
 
-Gitで導入し、独自の変更がない場合は、導入先で次を実行します。
+プロジェクト内にCLIで導入した場合は、そのプロジェクトで次を実行します。個人用に `-g` で導入した場合は、更新時も `-p` を `-g` に替えます。
 
 ```sh
-git pull --ff-only
+npx skills update research-presentation-slides -p
+```
+
+Gitでクローンした場合は、スキルのフォルダで `git pull --ff-only` を実行します。どちらの場合も、更新後にスキルのフォルダで依存を揃えます。
+
+```sh
 npm ci
 uv sync --frozen --python 3.12
 ```

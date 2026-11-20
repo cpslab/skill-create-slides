@@ -10,7 +10,7 @@
 | ツール | 用途 | 導入方法 |
 |---|---|---|
 | Git | スキルの取得・更新 | [公式導入ページ](https://git-scm.com/install/)でOSを選ぶ |
-| Node.js | 編集可能なPPTXの生成 | [公式ダウンロード](https://nodejs.org/en/download)から、20以上のサポート中LTSを入れる。npmも使用する |
+| Node.js | スキルの取得・編集可能なPPTXの生成 | [公式ダウンロード](https://nodejs.org/en/download)から、22.20.0以上のサポート中LTSを入れる。npmとnpxも使用する。手動で導入する場合、PPTX生成は20以上で動作する |
 | uv | Pythonと検査・描画用ライブラリの管理 | [公式導入手順](https://docs.astral.sh/uv/getting-started/installation/)を使う。Pythonは後の `uv sync` で用意できる |
 
 uvの公式インストーラーを使う例です。
@@ -38,6 +38,24 @@ uv --version
 
 ### 2. スキルをGitHubから取得する
 
+#### npx skills で導入する
+
+macOS・Linux・Windowsとも、使いたい研究プロジェクトのフォルダで実行します。
+
+```sh
+npx skills add cpslab/skill-create-slides
+```
+
+表示されたエージェントから使うものを選びます。たとえばCodexだけに導入する場合は `--agent codex`、3つとも使う場合は `--agent codex claude-code opencode` を付けて指定できます。全プロジェクトで共通に使う個人用の導入には `-g` を付けます。[Skills CLIのオプション](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-add)
+
+導入先はCLIの完了画面に表示されます。標準のプロジェクト配置では、次を実行すると手順4で使うスキルのフォルダへ移動できます。個人用に導入した場合は、完了画面のパスを使ってください。
+
+```sh
+cd .agents/skills/research-presentation-slides
+```
+
+#### Git・ZIPで手動導入する
+
 macOS・Linuxのターミナルで実行します。既存の同名フォルダがある場合は[更新について](../README.md#更新について)を先に確認してください。
 
 ```sh
@@ -59,11 +77,13 @@ Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し�
 
 ### 3. 利用するエージェントへ登録する
 
+`npx skills` で導入すると、選んだエージェントへの登録も完了します。下表で呼び出し方を確認し、手順4へ進んでください。手動導入の場合は、下表とリンク作成の手順に従います。
+
 | 利用環境 | 導入・ログイン | スキルの呼び出し |
 |---|---|---|
 | Codex | [公式案内](https://learn.chatgpt.com/docs/build-skills)に従ってCodexを用意する。上記 `.agents/skills` を認識する | `$research-presentation-slides` |
 | OpenCode | [公式導入手順](https://opencode.ai/docs/)で使用する版を導入し、プロバイダーへ接続する。上記 `.agents/skills` を認識する | `research-presentation-slides スキルを読み込んでください` |
-| Claude Code | [公式導入手順](https://code.claude.com/docs/en/setup)で導入し、`claude` を起動してログインする。下記のリンクを追加する | `/research-presentation-slides` |
+| Claude Code | [公式導入手順](https://code.claude.com/docs/en/setup)で導入し、`claude` を起動してログインする。手動導入の場合は下記のリンクを追加する | `/research-presentation-slides` |
 
 <details>
 <summary>OpenCode・Claude Codeをまだ導入していない場合</summary>
@@ -97,7 +117,7 @@ claude
 
 OpenCodeは `.agents/skills` と `.claude/skills` の両方を探索します。Claude Codeは個人用スキルを `.claude/skills` から読み、スキルフォルダへのシンボリックリンクも扱えます。[OpenCodeのスキル仕様](https://opencode.ai/docs/skills/)・[Claude Codeのスキル仕様](https://code.claude.com/docs/en/skills)
 
-Claude Codeを使う人は、同じスキル本体を参照するリンクを1回だけ作ります。**既存の同名スキルへ上書きしません。**
+手動導入でClaude Codeを使う人は、同じスキル本体を参照するリンクを1回だけ作ります。**既存の同名スキルへ上書きしません。**
 
 macOS・Linux：
 
