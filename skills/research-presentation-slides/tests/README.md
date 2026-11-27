@@ -1,5 +1,7 @@
 # 合成fixtureによる回帰試験
 
+依存を導入したスキルフォルダで実行する。配布元をクローンした場合は、リポジトリ直下から `cd skills/research-presentation-slides` で移動する。
+
 ```bash
 uv run --frozen python -m unittest discover -s tests -v
 uv run --frozen node --test tests/test_*.mjs

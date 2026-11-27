@@ -31,9 +31,29 @@ ORG_LINK = re.compile(r"\[\[(?:file:)?([^\]\n]+)\](?:\[[^\]\n]*\])?\]")
 MODULE_IMPORT = re.compile(r"""(?:from\s*|import\s*\(\s*)['"](\.[^'"]+)['"]""")
 
 
-def digest(path):
-    data = path.read_bytes()
+def digest(data):
     return {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+
+
+def gh_source_bytes(data):
+    """Remove only gh's tracking fields from the canonical SKILL.md frontmatter."""
+    if not data.startswith(b"---\n"):
+        return data
+    front, closing, body = data.partition(b"\n---\n")
+    header = front + b"\n"
+    metadata = re.search(rb"(?m)^metadata:\n(?: [^\n]*\n)+", header)
+    if not closing or not metadata:
+        return data
+    tracking = re.compile(rb"(?m)^    (local-path|github-(?:path|pinned|ref|repo|tree-sha)): [^\r\n]+\n")
+    entries = tracking.findall(metadata[0])
+    keys = set(entries)
+    remote = {b"github-path", b"github-ref", b"github-repo", b"github-tree-sha"}
+    if len(entries) != len(keys) or keys not in ({b"local-path"}, remote, remote | {b"github-pinned"}):
+        return data
+    # gh reserializes YAML. The distributed header uses gh's ordering/indentation
+    # so removing those entries recovers every original byte, including the body.
+    header = header[:metadata.start()] + tracking.sub(b"", metadata[0]) + header[metadata.end():]
+    return header + b"---\n" + body
 
 
 def inventory(root):
@@ -44,7 +64,7 @@ def inventory(root):
         if path.is_symlink() or not path.is_file():
             issues.append({"code": "required_file", "path": name, "message": "Required regular file missing."})
         else:
-            files[name] = digest(path)
+            files[name] = digest(path.read_bytes())
     for directory in sorted(PACKAGE_DIRS):
         base = root / directory
         if not base.exists():
@@ -72,7 +92,7 @@ def inventory(root):
                 if path.is_symlink():
                     issues.append({"code": "symlink", "path": relative, "message": "Symlink files are not portable distribution inputs."})
                 else:
-                    files[relative] = digest(path)
+                    files[relative] = digest(path.read_bytes())
     return dict(sorted(files.items())), issues
 
 
@@ -133,14 +153,15 @@ def local_link(root, source, target, packaged):
     return None
 
 
-def inspect_content(root, files):
+def inspect_content(root, files, skill_bytes):
     issues, checked_links, scanned_parts = [], 0, 0
     for relative in files:
         path = root / relative
         texts = []
         if path.suffix.lower() in TEXT_EXTENSIONS:
             try:
-                texts.append((relative, path.read_text(encoding="utf-8")))
+                text = skill_bytes.decode("utf-8") if relative == "SKILL.md" else path.read_text(encoding="utf-8")
+                texts.append((relative, text))
             except UnicodeDecodeError:
                 issues.append({"code": "text_encoding", "path": relative, "message": "Text file is not UTF-8."})
         elif path.suffix.lower() == ".pptx":
@@ -184,6 +205,14 @@ def check(root, refresh=False):
     manifest_path = root / MANIFEST
     manifest = json.loads(manifest_path.read_text())
     files, issues = inventory(root)
+    installed = (root / "SKILL.md").read_bytes()
+    skill_bytes = gh_source_bytes(installed)
+    if installed != skill_bytes:
+        if refresh:
+            issues.append({"code": "install_metadata", "path": "SKILL.md",
+                           "message": "Refresh the manifest in the distribution source before installing it with gh."})
+        else:
+            files["SKILL.md"] = digest(skill_bytes)
     skill_version, readme_version = versions(root)
     if not skill_version or not readme_version or skill_version != readme_version:
         issues.append({"code": "version_sources", "message": "SKILL frontmatter and README current version must exist and match."})
@@ -195,7 +224,7 @@ def check(root, refresh=False):
                        else match.group(1) if match else None)
             if version != skill_version:
                 issues.append({"code": "dependency_version", "path": name, "message": "Dependency manifest version differs from SKILL.md."})
-    content_issues, checked_links, scanned_parts = inspect_content(root, files)
+    content_issues, checked_links, scanned_parts = inspect_content(root, files, skill_bytes)
     issues.extend(content_issues)
     if refresh:
         # Never bless an incomplete or non-portable package, or invent validation dates/results.

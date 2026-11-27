@@ -9,8 +9,9 @@
 
 | ツール | 用途 | 導入方法 |
 |---|---|---|
-| Git | スキルの取得・更新 | [公式導入ページ](https://git-scm.com/install/)でOSを選ぶ |
-| Node.js | スキルの取得・編集可能なPPTXの生成 | [公式ダウンロード](https://nodejs.org/en/download)から、22.20.0以上のサポート中LTSを入れる。npmとnpxも使用する。手動で導入する場合、PPTX生成は20以上で動作する |
+| GitHub CLI（gh） | `gh skill install` による取得 | この方法を使う場合は [GitHub CLI](https://cli.github.com/) を導入し、`gh skill install --help` で対応を確認する |
+| Git | Gitでの取得・更新 | [公式導入ページ](https://git-scm.com/install/)でOSを選ぶ |
+| Node.js | 編集可能なPPTXの生成・npxでの取得 | PPTX生成には20以上、`npx skills` も使う場合は22.20.0以上のサポート中LTSを用意する。[公式ダウンロード](https://nodejs.org/en/download) |
 | uv | Pythonと検査・描画用ライブラリの管理 | [公式導入手順](https://docs.astral.sh/uv/getting-started/installation/)を使う。Pythonは後の `uv sync` で用意できる |
 
 uvの公式インストーラーを使う例です。
@@ -38,6 +39,22 @@ uv --version
 
 ### 2. スキルをGitHubから取得する
 
+#### GitHub CLIで導入する
+
+研究プロジェクトのGitリポジトリで次を実行し、画面で `research-presentation-slides` と使うエージェントを選びます。
+
+```sh
+gh skill install cpslab/skill-create-slides
+```
+
+ホームディレクトリなどから個人用に導入する場合は、`--scope user` を指定できます。次はCodexの例です。[GitHub CLIの導入オプション](https://cli.github.com/manual/gh_skill_install)
+
+```sh
+gh skill install cpslab/skill-create-slides research-presentation-slides --agent codex --scope user
+```
+
+手順4は、CLIが表示した導入先のスキルフォルダで実行します。
+
 #### npx skills で導入する
 
 macOS・Linux・Windowsとも、使いたい研究プロジェクトのフォルダで実行します。
@@ -56,30 +73,33 @@ cd .agents/skills/research-presentation-slides
 
 #### Git・ZIPで手動導入する
 
-macOS・Linuxのターミナルで実行します。既存の同名フォルダがある場合は[更新について](../README.md#更新について)を先に確認してください。
+リポジトリを普段コードを保管する場所にクローンし、その中の `skills/research-presentation-slides/` をエージェントのスキルフォルダへリンクします。以下は個人用の配置例です。すでに同名のスキルがある場合は[更新について](#更新について)を先に確認してください。
+
+macOS・Linux：
 
 ```sh
-mkdir -p "$HOME/.agents/skills"
-git clone https://github.com/cpslab/skill-create-slides.git \
-  "$HOME/.agents/skills/research-presentation-slides"
+mkdir -p "$HOME/src" "$HOME/.agents/skills"
+git clone https://github.com/cpslab/skill-create-slides.git "$HOME/src/skill-create-slides"
+ln -s "$HOME/src/skill-create-slides/skills/research-presentation-slides" "$HOME/.agents/skills/"
 cd "$HOME/.agents/skills/research-presentation-slides"
 ```
 
 Windows PowerShellでは次を使います。
 
 ```powershell
-New-Item -ItemType Directory -Force "$HOME/.agents/skills" | Out-Null
-git clone https://github.com/cpslab/skill-create-slides.git "$HOME/.agents/skills/research-presentation-slides"
+New-Item -ItemType Directory -Force "$HOME/src", "$HOME/.agents/skills" | Out-Null
+git clone https://github.com/cpslab/skill-create-slides.git "$HOME/src/skill-create-slides"
+New-Item -ItemType Junction -Path "$HOME/.agents/skills/research-presentation-slides" -Target "$HOME/src/skill-create-slides/skills/research-presentation-slides"
 Set-Location "$HOME/.agents/skills/research-presentation-slides"
 ```
 
-Gitを使わない場合はGitHubの **Code → Download ZIP** から取得し、フォルダ名を `research-presentation-slides` にして同じ場所へ置きます。`SKILL.md`、`assets/`・`references/`・`scripts/`、依存定義とlockファイルを含むフォルダ全体を取得してください。
+ZIPで取得する場合はGitHubの **Code → Download ZIP** から展開し、中の `skills/research-presentation-slides/` をフォルダごと `.agents/skills/` へコピーします。コピー先の `research-presentation-slides/` 直下に `SKILL.md`、`assets/`、依存定義、lockファイルが並びます。
 
 版1.8.0には [yomiyasu の推敲手順](vendor/yomiyasu/revision.md) と [unslop を使った研究図の作り方](figure-design-unslop.md) が同梱されています。新しく設定するPCでも、この2つのガイドはスキル本体と一緒に使えます。yomiyasu 公式版のPython検査ツールも使いたい場合は、別途[公式版の導入手順](https://github.com/nanaism/yomiyasu#readme)に従ってください。
 
 ### 3. 利用するエージェントへ登録する
 
-`npx skills` で導入すると、選んだエージェントへの登録も完了します。下表で呼び出し方を確認し、手順4へ進んでください。手動導入の場合は、下表とリンク作成の手順に従います。
+`gh skill install` または `npx skills` で導入すると、選んだエージェントへの登録も完了します。下表で呼び出し方を確認し、手順4へ進んでください。手動導入の場合は、下表とリンク作成の手順に従います。
 
 | 利用環境 | 導入・ログイン | スキルの呼び出し |
 |---|---|---|
@@ -136,7 +156,7 @@ New-Item -ItemType Directory -Force "$HOME/.claude/skills" | Out-Null
 New-Item -ItemType Junction -Path "$HOME/.claude/skills/research-presentation-slides" -Target "$HOME/.agents/skills/research-presentation-slides"
 ```
 
-Claude Codeだけを使う場合は、手順2のクローン先を最初から `.claude/skills/research-presentation-slides` にしても構いません。その場合、以後のコマンドのスキルの場所も読み替えます。登録後に新しいセッションを開き、スキルの読込み元と版を確認してください。同名の古いコピーを複数の探索先へ残さないようにします。
+Claude Codeだけを使う場合は、手順2でリンクまたはZIPのコピーを作る親フォルダを `.claude/skills/` に変更できます。登録後に新しいセッションを開き、スキルの読込み元と版を確認してください。
 
 ### 4. 生成・描画用ツールを入れる
 
@@ -200,4 +220,15 @@ uv run --frozen python scripts/check_layout.py "$SLIDE_TRIAL_DIR/output/plan-v1.
 ```
 
 これは固定入力の内部試験で、利用者レビューや新規画像生成は行いません。既存の出力は上書きしないため、再試行では `plan-v2.pptx`・`render-v2` など新しい名前を使います。PPTX・発表メモ・配置対応表、全ページPNG・一覧・hash付き描画記録が作成されます。PNGを1枚ずつ開いて表示を確認してください。配置検査の終了値2は要確認事項が残る状態です。個別確認と[最終品質判定](generation.md#個別目視と最終判定)まで行って、初めて検証済みと記録します。
+
+## 更新について
+
+手元でスキルを編集した場合は差分を保存してから、導入に使った方法で更新してください。
+
+- **GitHub CLI** で導入した場合は `gh skill update research-presentation-slides` を実行します。プロジェクト用ならそのプロジェクト内で実行してください。[GitHub CLIの更新手順](https://cli.github.com/manual/gh_skill_update)
+- **npx skills** で導入した場合は、プロジェクト内で `npx skills update research-presentation-slides -p` を実行します。個人用は `-p` を `-g` に替えます。[Skills CLIの更新手順](https://github.com/vercel-labs/skills/blob/main/docs/commands.md#skills-update)
+- **Git** でクローンし、スキルのサブフォルダへリンクした場合は、クローン先で `git pull --ff-only` を実行します。以前の手順で `.agents/skills/research-presentation-slides/` 等にリポジトリを直接クローンした場合は、初回のみクローン全体をスキルの探索外（例：`~/src/skill-create-slides/`）に移してから更新します。手順2のリンク作成を行い、元の導入先から新しい `skills/research-presentation-slides/` を参照できるようにしてください。
+- **ZIP** で取得した場合は、旧版をスキルの探索外に移し、新しいZIPから手順2と同じフォルダをコピーします。
+
+更新後はスキルフォルダで `npm ci` と `uv sync --frozen --python 3.12` を実行し、新しいセッションで読込み元と版を確認してください。
 

@@ -4,9 +4,9 @@
 
 ## 導入
 
-初めて使うメンバーは、研究プロジェクトで `npx skills add cpslab/skill-create-slides` を実行し、使うエージェントを選ぶ。導入先でのPPTX生成環境の準備、初回試験、Git・ZIPで手動導入する場合の配置は[詳しい導入手順](installation.md)に従う。
+研究プロジェクトのGitリポジトリで `gh skill install cpslab/skill-create-slides` を実行し、`research-presentation-slides` と使うエージェントを選ぶ。`npx skills add cpslab/skill-create-slides` でも導入できる。個人用の導入、Git・ZIPでの配置、PPTX生成環境の準備と初回試験は[詳しい導入手順](installation.md)に従う。
 
-- スキルは `SKILL.md` だけでなく、`references/`・`assets/`・`scripts/`・`agents/`・依存定義・lockファイルを含むフォルダ全体で配布する。
+- 配布元の `skills/research-presentation-slides/` がスキル本体。`SKILL.md`、`references/`・`assets/`・`scripts/`・`agents/`、依存定義、lockファイルを含むフォルダ全体で配布する。
 - 個人用に手動導入する場合、CodexとOpenCodeの共通配置先は `~/.agents/skills/research-presentation-slides/`。Claude Codeには `~/.claude/skills/research-presentation-slides/` から同じ本体を参照するリンクを作るか、その場所へ本体を置く。
 - 特定研究のプロジェクトだけで使う場合は、プロジェクト内の `.agents/skills/`、Claude Codeでは `.claude/skills/` を使う。個人用とプロジェクト用のどちらかを選ぶ。同名の古いコピーを複数の探索先に残さず、必要な旧版は探索対象外へ保存する。
 - `.venv/`・`node_modules/` は受取人のPCで `uv sync --frozen`・`npm ci` により作り、他OSからコピーしない。制作物・私的素材は利用者の研究フォルダへ保存する。
@@ -70,7 +70,7 @@ doctorの成功は、利用中モデルの画像生成・画像閲覧、使用�
 ## 初回の品質合わせ
 
 - [通し作例](worked-example.md) で、根拠から主張と図へ変換する方法を確認する。
-- READMEの固定入力試験を実行し、自分の環境で最終PPTXから全ページを描画して1枚ずつ確認する。既存の `validation.json` を新規出力の検証結果へ流用しない。
+- [導入手順の固定入力試験](installation.md#6-架空作例で生成から描画まで試す)を実行し、自分の環境で最終PPTXから全ページを描画して1枚ずつ確認する。既存の `validation.json` を新規出力の検証結果へ流用しない。
 - [視覚作例](visual-reference.md) のPPTXを開き、文字・図形・表・チャートを編集できるか確認する。同梱の表紙タイプBは静止レイアウト見本で、背景動画を含まない。
 - 今回の代表ページを同じスタイルの見本と並べ、文字階層・余白・図の大きさを比較する。
 - 使用したスキル版、制作ツール、取得できるモデル情報、フォント、確認したアプリ、最終PPTXと検証画像のhashを制作記録に残す。

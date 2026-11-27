@@ -135,7 +135,7 @@ uv運用の環境なら `python3` の代わりに `uv run --no-project` を使�
 
 ## Codex経路の生成、描画、検査
 
-リポジトリのルートで実行する例。`/path/to/work` は利用者の作業先へ置き換える。実研究の出力・素材・分析は配布元へ置かない。
+スキルのルート（配布元では `skills/research-presentation-slides/`）で実行する例。`/path/to/work` は利用者の作業先へ置き換える。実研究の出力・素材・分析は配布元へ置かない。
 
 ```sh
 "$RUNTIME_NODE" scripts/build_deck.mjs --backend codex \
@@ -259,13 +259,17 @@ python3 -m unittest discover -s tests
 
 ## 配布物を確認・更新する
 
+配布元の `skills/research-presentation-slides/` で実行する。
+
 ```sh
 python3 scripts/check_package.py --report /path/to/work/package-check.json
 ```
 
 [check_package.py](../scripts/check_package.py) は、配布対象の欠落・追加、manifestのbytes/SHA-256、SKILL・README・manifestの版、Markdown／Orgの相対リンク、Markdownの見出しアンカー、ローカルES module importを確認する。UTF-8ファイルとPPTX内XML／relsの個人ホームへの絶対パスも検出する。特定の研究名や著者名を禁止語にせず、研究の独立性は別に入力と照合する。
 
-配布対象はルートの `AGENTS.md`・`README.md`・`SKILL.md` と、`agents`・`assets`・`references`・`scripts`・`tests` の対応拡張子。隠しファイル／ディレクトリ、`__pycache__`、`node_modules`、manifest自身はhash一覧から除く。シンボリックリンクを配布ファイルとして追跡しない。検査レポートは配布ディレクトリの外へ保存する。
+配布対象はスキル直下の `AGENTS.md`・`README.md`・`SKILL.md`、Node.js・Pythonの依存定義とlockファイル、`agents`・`assets`・`references`・`scripts`・`tests` の対応拡張子。隠しファイル／ディレクトリ、`__pycache__`、`node_modules`、manifest自身はhash一覧から除く。シンボリックリンクを配布ファイルとして追跡しない。検査レポートは配布ディレクトリの外へ保存する。
+
+`gh skill install` で導入したコピーでは、`SKILL.md` のヘッダーにCLIが追加した取得元の項目を除いて配布時のSHA-256と照合する。ヘッダーを編集するときはCLIの出力と同じキー順・字下げを保ち、配布元でmanifestを更新してから一時ディレクトリへの導入でも照合する。
 
 全成果物が揃った後、明示的に一覧を更新する。
 

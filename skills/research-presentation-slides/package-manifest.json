@@ -34,12 +34,12 @@
       "sha256": "0e84f8bfc56f56753839b873679e095578a9bba48adb327ebdcb8861dcd2b63d"
     },
     "README.md": {
-      "bytes": 11277,
-      "sha256": "1e7084e681bf8708402763d490d0e88b9886e5ebb9005f847c3e54765440a8dc"
+      "bytes": 1027,
+      "sha256": "5899e191d5924159efb4cfbf26951cf03498eda67ecb1dba01fd5222fb6383a9"
     },
     "SKILL.md": {
-      "bytes": 45198,
-      "sha256": "af141648ef6df4689fc230c029590c8a1a5513fff6a86c44c03953942b2a3eba"
+      "bytes": 45197,
+      "sha256": "792bb3d3ba992f0ce7c27a23962fe678a61535b2e68941ed2fafea57a0147c0b"
     },
     "agents/openai.yaml": {
       "bytes": 199,
@@ -378,16 +378,16 @@
       "sha256": "6ce4c5cc0b97b20ddaa73ef416fb728489287e1d227d9746cf1cc82e99521b71"
     },
     "references/generation.md": {
-      "bytes": 32547,
-      "sha256": "a4104ec319bc33cf6da862425424fd3b3ad786dcae84b5495dc855a0a4bd8757"
+      "bytes": 33084,
+      "sha256": "7d631579b698b2b19be2f391766a3569979e2a9ef961c17a2211e143df06b739"
     },
     "references/history.md": {
       "bytes": 4320,
       "sha256": "3b4278b52b70ed8c329cb94ee866e2107bf539286343d86ba67eda3f78911859"
     },
     "references/installation.md": {
-      "bytes": 13432,
-      "sha256": "fe04b9afc67a3e89117b2494e0d68e0866faf38d821e3c5a8ea8a83efa28ff44"
+      "bytes": 16156,
+      "sha256": "9f6efd8bcda315f1a4d0828b11c01d8eb0833c8f2e654d9df0c38b7ecb5d3bde"
     },
     "references/layout-patterns.md": {
       "bytes": 9576,
@@ -414,8 +414,8 @@
       "sha256": "77bc0e8e79b5e625215ae14c70f64637e71f4b148feb3e2caf65543d721e3831"
     },
     "references/sharing.md": {
-      "bytes": 11233,
-      "sha256": "371db4fe95f35bf1a7606272b03886c161736f3e6d7387e1c3731f9ce1194c04"
+      "bytes": 11424,
+      "sha256": "dc43626c02ee483813dbd0654073f25a239afb2b281abc0300a3f695a1767f71"
     },
     "references/vendor/yomiyasu/LICENSE.txt": {
       "bytes": 1064,
@@ -450,8 +450,8 @@
       "sha256": "eadd87fc44fcdbcf232a8f7f930a77ca28e993968b0c462e9667ae3b51d1b5f3"
     },
     "scripts/check_package.py": {
-      "bytes": 13235,
-      "sha256": "ca28f4024d6cecd23c33dfbb3c90e387e1c35834dc141f864bd4f23a6363d9e6"
+      "bytes": 14807,
+      "sha256": "cfc94d75df018ccb1ba3213b10859b1f4f1fa97265cf58a549195472d4107cb8"
     },
     "scripts/check_pptx.py": {
       "bytes": 16257,
@@ -510,8 +510,8 @@
       "sha256": "0fa944c66891821e941b4fe6a7f66e4ad6cfb130267df65d023a62f6299b7250"
     },
     "tests/README.md": {
-      "bytes": 13214,
-      "sha256": "5837d98640f300fb952968e16c909eb6440c8099b7568623f2fe4267852984ed"
+      "bytes": 13405,
+      "sha256": "760fdcee5360e2eca827afa3a87cdc21a8fafb138522aa9e46b28a73824c5c9b"
     },
     "tests/test_generator.mjs": {
       "bytes": 14964,
@@ -538,8 +538,8 @@
       "sha256": "0a3771c49bff0724990dded46ca07126e58a06cf99e30e1870fd943de0b47710"
     },
     "tests/test_package.py": {
-      "bytes": 4904,
-      "sha256": "171098874ca181d48dd4c62cbc34e075f198d6ace9b190a98ebec0291262a712"
+      "bytes": 6946,
+      "sha256": "f348655d03bd0451cf0f7df32468a4d15ce67e6f1a7c947deadde49fd1b0bc16"
     },
     "tests/test_portable.mjs": {
       "bytes": 17690,

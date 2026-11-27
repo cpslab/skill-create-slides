@@ -42,6 +42,33 @@ class PackageTests(unittest.TestCase):
         (self.root / "AGENTS.md").write_text("# Changed\n")
         self.assertIn("hash_or_size", {x["code"] for x in package_check.check(self.root)["issues"]})
 
+    def test_gh_installed_skill_preserves_source_hash(self):
+        skill = self.root / "SKILL.md"
+        source = '---\ndescription: Test\nmetadata:\n    version: 1.5.0\nname: fictional-test\n---\n# Title\n'
+        skill.write_text(source)
+        (self.root / "package.json").write_text(json.dumps({"version": "1.5.0"}))
+        self.assertEqual(package_check.check(self.root, refresh=True)["status"], "pass")
+        manifest = (self.root / "package-manifest.json").read_bytes()
+        remote = ("    github-path: skills/fictional-test\n    github-ref: refs/heads/main\n"
+                  "    github-repo: https://github.com/example/skills\n    github-tree-sha: abc123\n")
+        private_path = "/" + "home/" + "fixture/skills/fictional-test"
+        for tracking in ("    local-path: " + private_path + "\n", remote,
+                         remote.replace("    github-ref:", "    github-pinned: v1.5.0\n    github-ref:")):
+            with self.subTest(tracking=tracking):
+                installed = source.replace("metadata:\n", "metadata:\n" + tracking)
+                skill.write_text(installed)
+                self.assertEqual(package_check.check(self.root)["status"], "pass")
+                self.assertIn("install_metadata", {i["code"] for i in package_check.check(self.root, refresh=True)["issues"]})
+                self.assertEqual((self.root / "package-manifest.json").read_bytes(), manifest)
+        for changed in (installed.replace("Test", "Altered"), installed.replace("1.5.0", "1.5.1"),
+                        installed.replace("    version:", "    other: extra\n    version:"),
+                        installed + "    github-ref: in the body\n"):
+            with self.subTest(changed=changed):
+                skill.write_text(changed)
+                self.assertIn("hash_or_size", {i["code"] for i in package_check.check(self.root)["issues"]})
+        skill.write_text(installed + private_path)
+        self.assertIn("personal_absolute_path", {i["code"] for i in package_check.check(self.root)["issues"]})
+
     def test_bad_link_and_version_do_not_refresh(self):
         manifest_before = (self.root / "package-manifest.json").read_bytes()
         (self.root / "README.md").write_text("現在のスキル版は **9.0.0** です。\n[missing](references/guide.md#absent)")
